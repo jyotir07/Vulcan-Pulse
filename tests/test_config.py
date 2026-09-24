@@ -18,4 +18,4 @@ def test_unknown_key_rejected():
 def test_non_positive_size_rejected():
     fields = load_ecosystem_config().model_dump()
     with pytest.raises(ValidationError):
-        EcosystemConfig.model_validate({**fields, "n_issuers": 0})
+        EcosystemConfig.model_validate({**fields, "n_merchants": 0})
