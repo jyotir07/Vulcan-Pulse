@@ -80,7 +80,7 @@ def test_new_device_differs_from_usual(dataset):
 
 
 def test_roundtrip(tmp_path, small_config, dataset):
-    save_dataset(dataset, small_config, tmp_path)
+    save_dataset(dataset, tmp_path)
     loaded = load_dataset(tmp_path)
     pd.testing.assert_frame_equal(dataset.transactions, loaded.transactions)
     pd.testing.assert_frame_equal(dataset.latent.episodes, loaded.latent.episodes)
@@ -89,3 +89,4 @@ def test_roundtrip(tmp_path, small_config, dataset):
     )
     assert loaded.latent.start == dataset.latent.start
     assert loaded.festival_dates == dataset.festival_dates
+    assert loaded.config == dataset.config

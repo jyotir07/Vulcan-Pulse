@@ -28,6 +28,7 @@ AMOUNT_NOISE_SIGMA = 0.6
 
 @dataclass
 class Dataset:
+    config: EcosystemConfig
     customers: pd.DataFrame
     merchants: pd.DataFrame
     issuers: pd.DataFrame
@@ -175,6 +176,7 @@ def generate_dataset(config: EcosystemConfig) -> Dataset:
 
     attempts = simulate_outcomes(first_attempts, customers, merchants, latent, config.seed)
     return Dataset(
+        config=config,
         customers=customers,
         merchants=merchants,
         issuers=issuers_table(),

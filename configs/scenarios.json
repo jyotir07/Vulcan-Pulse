@@ -1,0 +1,8 @@
+[
+  {"name": "HDFC UPI success rate drops 15pp", "scenario": {"interventions": [{"type": "issuer_degradation", "issuer": "HDFC", "method": "UPI", "success_rate_delta": -0.15}]}},
+  {"name": "gateway_a down for 60 minutes at the evening peak", "scenario": {"interventions": [{"type": "gateway_outage", "gateway": "gateway_a", "start_hour": 18, "duration_minutes": 60}]}},
+  {"name": "UPI traffic up 30%", "scenario": {"interventions": [{"type": "traffic_change", "segment": "UPI", "volume_delta": 0.3}]}},
+  {"name": "20% of card payments move to UPI", "scenario": {"interventions": [{"type": "method_shift", "from": "CARD", "to": "UPI", "percentage": 0.2}]}},
+  {"name": "Reroute 25% of gateway_a traffic to gateway_b", "scenario": {"interventions": [{"type": "routing_change", "source_gateway": "gateway_a", "target_gateway": "gateway_b", "traffic_percentage": 0.25}]}},
+  {"name": "Festival-scale surge: all traffic up 80%", "scenario": {"interventions": [{"type": "traffic_change", "volume_delta": 0.8}]}}
+]
