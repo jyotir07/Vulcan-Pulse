@@ -1,0 +1,1270 @@
+{
+  "data": {
+    "seed": 42,
+    "n_customers": 50000,
+    "n_merchants": 2000,
+    "start_date": "2026-01-05",
+    "n_days": 30,
+    "target_transactions": 1000000,
+    "n_festival_days": 2,
+    "festival_traffic_multiplier": 1.6,
+    "offline_local_share": 0.9,
+    "new_device_rate": 0.03,
+    "gateway_spillover_rate": 0.15
+  },
+  "split": {
+    "train": [
+      "2026-01-05",
+      "2026-01-06",
+      "2026-01-07",
+      "2026-01-08",
+      "2026-01-09",
+      "2026-01-10",
+      "2026-01-11",
+      "2026-01-12",
+      "2026-01-13",
+      "2026-01-14",
+      "2026-01-15",
+      "2026-01-16",
+      "2026-01-17",
+      "2026-01-18",
+      "2026-01-19",
+      "2026-01-20",
+      "2026-01-21",
+      "2026-01-22",
+      "2026-01-23",
+      "2026-01-24",
+      "2026-01-25",
+      "2026-01-26",
+      "2026-01-27"
+    ],
+    "test": [
+      "2026-01-28",
+      "2026-01-29",
+      "2026-01-30",
+      "2026-01-31",
+      "2026-02-01",
+      "2026-02-02",
+      "2026-02-03"
+    ]
+  },
+  "windows": [
+    "2026-01-28",
+    "2026-02-03"
+  ],
+  "n_scenarios": 42,
+  "range_counts": {
+    "in_range": 49,
+    "out_of_range": 35
+  },
+  "targets": [
+    "success_rate_delta_pp",
+    "timeout_rate_delta_pp",
+    "failures_delta",
+    "gmv_at_risk",
+    "p95_latency_delta_ms"
+  ],
+  "by_range": [
+    {
+      "target": "failures_delta",
+      "range": "in_range",
+      "predictor": "independent_ml",
+      "n": 49,
+      "mae": 134.84127718867478,
+      "mae_ci_low": 68.31935827724637,
+      "mae_ci_high": 209.4094563219579,
+      "rmse": 291.4783207680998,
+      "median_relative_error": 0.34899053821766235,
+      "sign_accuracy": 0.9722222222222222,
+      "n_material": 36
+    },
+    {
+      "target": "failures_delta",
+      "range": "in_range",
+      "predictor": "rule_baseline",
+      "n": 49,
+      "mae": 82.17503473624703,
+      "mae_ci_low": 35.38909846374987,
+      "mae_ci_high": 145.5990522640161,
+      "rmse": 216.04581353812563,
+      "median_relative_error": 0.16533341989402617,
+      "sign_accuracy": 1.0,
+      "n_material": 36
+    },
+    {
+      "target": "failures_delta",
+      "range": "out_of_range",
+      "predictor": "independent_ml",
+      "n": 35,
+      "mae": 801.229860103013,
+      "mae_ci_low": 317.0120290837617,
+      "mae_ci_high": 1387.0864647070637,
+      "rmse": 1975.2557685788195,
+      "median_relative_error": 0.9341603670299234,
+      "sign_accuracy": 0.8285714285714286,
+      "n_material": 35
+    },
+    {
+      "target": "failures_delta",
+      "range": "out_of_range",
+      "predictor": "rule_baseline",
+      "n": 35,
+      "mae": 479.7531556651021,
+      "mae_ci_low": 44.13608983769056,
+      "mae_ci_high": 1056.850027051109,
+      "rmse": 1735.9154746926822,
+      "median_relative_error": 0.03037397773614981,
+      "sign_accuracy": 1.0,
+      "n_material": 35
+    },
+    {
+      "target": "gmv_at_risk",
+      "range": "in_range",
+      "predictor": "independent_ml",
+      "n": 49,
+      "mae": 405696.7818807281,
+      "mae_ci_low": 226657.63704222578,
+      "mae_ci_high": 625811.175709991,
+      "rmse": 834686.7674953508,
+      "median_relative_error": 0.6684789244433527,
+      "sign_accuracy": 0.8461538461538461,
+      "n_material": 26
+    },
+    {
+      "target": "gmv_at_risk",
+      "range": "in_range",
+      "predictor": "rule_baseline",
+      "n": 49,
+      "mae": 286248.6221647377,
+      "mae_ci_low": 145188.21026205394,
+      "mae_ci_high": 476846.8538102199,
+      "rmse": 662755.7703612751,
+      "median_relative_error": 0.4068764290920115,
+      "sign_accuracy": 0.7307692307692307,
+      "n_material": 26
+    },
+    {
+      "target": "gmv_at_risk",
+      "range": "out_of_range",
+      "predictor": "independent_ml",
+      "n": 35,
+      "mae": 2466717.851471227,
+      "mae_ci_low": 965640.7299508202,
+      "mae_ci_high": 4282273.322075136,
+      "rmse": 6085037.210533516,
+      "median_relative_error": 0.9495718420250703,
+      "sign_accuracy": 0.9333333333333333,
+      "n_material": 30
+    },
+    {
+      "target": "gmv_at_risk",
+      "range": "out_of_range",
+      "predictor": "rule_baseline",
+      "n": 35,
+      "mae": 1435498.7633216577,
+      "mae_ci_low": 159971.02985001288,
+      "mae_ci_high": 3123563.256817239,
+      "rmse": 5101905.521617309,
+      "median_relative_error": 0.049072889068459954,
+      "sign_accuracy": 1.0,
+      "n_material": 30
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "range": "in_range",
+      "predictor": "independent_ml",
+      "n": 49,
+      "mae": 310.95037328025256,
+      "mae_ci_low": 93.16595740144417,
+      "mae_ci_high": 655.9360865149811,
+      "rmse": 1036.6774340967215,
+      "median_relative_error": 0.29318912556046933,
+      "sign_accuracy": 1.0,
+      "n_material": 27
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "range": "in_range",
+      "predictor": "rule_baseline",
+      "n": 49,
+      "mae": 347.53153979661704,
+      "mae_ci_low": 108.18258723790875,
+      "mae_ci_high": 721.5316794506108,
+      "rmse": 1126.7303932791435,
+      "median_relative_error": 0.31298127642397156,
+      "sign_accuracy": 0.9259259259259259,
+      "n_material": 27
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "range": "out_of_range",
+      "predictor": "independent_ml",
+      "n": 35,
+      "mae": 1307.2866298004228,
+      "mae_ci_low": 402.0995144847734,
+      "mae_ci_high": 2389.6640132483226,
+      "rmse": 3405.128233711516,
+      "median_relative_error": 0.9743855881277029,
+      "sign_accuracy": 1.0,
+      "n_material": 29
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "range": "out_of_range",
+      "predictor": "rule_baseline",
+      "n": 35,
+      "mae": 1369.6709603060986,
+      "mae_ci_low": 434.23451741108187,
+      "mae_ci_high": 2491.0052664968416,
+      "rmse": 3552.442775811387,
+      "median_relative_error": 1.0,
+      "sign_accuracy": 0.1724137931034483,
+      "n_material": 29
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "range": "in_range",
+      "predictor": "independent_ml",
+      "n": 49,
+      "mae": 0.33667045023341874,
+      "mae_ci_low": 0.1813934199700099,
+      "mae_ci_high": 0.5127230571036164,
+      "rmse": 0.6820467008999049,
+      "median_relative_error": 0.7008241059256115,
+      "sign_accuracy": 0.9090909090909091,
+      "n_material": 22
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "range": "in_range",
+      "predictor": "rule_baseline",
+      "n": 49,
+      "mae": 0.20579029678160432,
+      "mae_ci_low": 0.09324469338822251,
+      "mae_ci_high": 0.3607725493568413,
+      "rmse": 0.518395779533307,
+      "median_relative_error": 0.3055898267988504,
+      "sign_accuracy": 1.0,
+      "n_material": 22
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "range": "out_of_range",
+      "predictor": "independent_ml",
+      "n": 35,
+      "mae": 1.7719665589620248,
+      "mae_ci_low": 0.9977855085626702,
+      "mae_ci_high": 2.6960311694733647,
+      "rmse": 3.2376597969484573,
+      "median_relative_error": 0.9338782406806633,
+      "sign_accuracy": 0.8484848484848485,
+      "n_material": 33
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "range": "out_of_range",
+      "predictor": "rule_baseline",
+      "n": 35,
+      "mae": 0.8266811371721966,
+      "mae_ci_low": 0.142151040308719,
+      "mae_ci_high": 1.6665996084151187,
+      "rmse": 2.6350322672025066,
+      "median_relative_error": 0.03037397773614989,
+      "sign_accuracy": 1.0,
+      "n_material": 33
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "range": "in_range",
+      "predictor": "independent_ml",
+      "n": 49,
+      "mae": 0.30067730735207876,
+      "mae_ci_low": 0.15539813513548736,
+      "mae_ci_high": 0.4852102137169959,
+      "rmse": 0.6520096584850839,
+      "median_relative_error": 0.5850058219681383,
+      "sign_accuracy": 0.8387096774193549,
+      "n_material": 31
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "range": "in_range",
+      "predictor": "rule_baseline",
+      "n": 49,
+      "mae": 0.30769112015396555,
+      "mae_ci_low": 0.1246652070345463,
+      "mae_ci_high": 0.5429212183590281,
+      "rmse": 0.8008975700165836,
+      "median_relative_error": 0.3187781537464243,
+      "sign_accuracy": 0.967741935483871,
+      "n_material": 31
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "range": "out_of_range",
+      "predictor": "independent_ml",
+      "n": 35,
+      "mae": 1.5940992520512896,
+      "mae_ci_low": 0.8270935556978044,
+      "mae_ci_high": 2.5347696310453154,
+      "rmse": 3.1842288210068093,
+      "median_relative_error": 0.9149676775819799,
+      "sign_accuracy": 0.8181818181818182,
+      "n_material": 33
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "range": "out_of_range",
+      "predictor": "rule_baseline",
+      "n": 35,
+      "mae": 1.3466412915941854,
+      "mae_ci_low": 0.4495480983038231,
+      "mae_ci_high": 2.4587317120338934,
+      "rmse": 3.5465031136603575,
+      "median_relative_error": 0.4540968908998139,
+      "sign_accuracy": 1.0,
+      "n_material": 33
+    }
+  ],
+  "by_type": [
+    {
+      "target": "failures_delta",
+      "type": "combined",
+      "predictor": "independent_ml",
+      "n": 4,
+      "mae": 801.9965409932242,
+      "mae_ci_low": 730.8537139385169,
+      "mae_ci_high": 932.8735333015646,
+      "rmse": 810.0070069533701,
+      "median_relative_error": 0.6262376477173928,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "failures_delta",
+      "type": "combined",
+      "predictor": "rule_baseline",
+      "n": 4,
+      "mae": 430.7013849148488,
+      "mae_ci_low": 46.23334429306311,
+      "mae_ci_high": 815.1637350661238,
+      "rmse": 585.1819248052818,
+      "median_relative_error": 0.3653381448909888,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "failures_delta",
+      "type": "gateway_outage",
+      "predictor": "independent_ml",
+      "n": 16,
+      "mae": 329.94001753528335,
+      "mae_ci_low": 204.08579208181104,
+      "mae_ci_high": 467.69389200247946,
+      "rmse": 431.6292228162568,
+      "median_relative_error": 0.9298765761485781,
+      "sign_accuracy": 1.0,
+      "n_material": 16
+    },
+    {
+      "target": "failures_delta",
+      "type": "gateway_outage",
+      "predictor": "rule_baseline",
+      "n": 16,
+      "mae": 2.022779494879373,
+      "mae_ci_low": 1.144294990372756,
+      "mae_ci_high": 3.116442340344122,
+      "rmse": 2.9136518698065768,
+      "median_relative_error": 0.0034003449060492474,
+      "sign_accuracy": 1.0,
+      "n_material": 16
+    },
+    {
+      "target": "failures_delta",
+      "type": "issuer_degradation",
+      "predictor": "independent_ml",
+      "n": 28,
+      "mae": 211.7465737046868,
+      "mae_ci_low": 88.95063972671532,
+      "mae_ci_high": 368.174972804191,
+      "rmse": 445.628331870571,
+      "median_relative_error": 0.9976223918674799,
+      "sign_accuracy": 0.7083333333333334,
+      "n_material": 24
+    },
+    {
+      "target": "failures_delta",
+      "type": "issuer_degradation",
+      "predictor": "rule_baseline",
+      "n": 28,
+      "mae": 7.4453464562958755,
+      "mae_ci_low": 4.201558760441872,
+      "mae_ci_high": 12.341617881169492,
+      "rmse": 14.433282131917533,
+      "median_relative_error": 0.042297772817517655,
+      "sign_accuracy": 1.0,
+      "n_material": 24
+    },
+    {
+      "target": "failures_delta",
+      "type": "method_shift",
+      "predictor": "independent_ml",
+      "n": 10,
+      "mae": 6.276716855343944,
+      "mae_ci_low": 3.858075814029654,
+      "mae_ci_high": 8.97458844606445,
+      "rmse": 7.601052837892578,
+      "median_relative_error": 0.23713988253566218,
+      "sign_accuracy": 1.0,
+      "n_material": 7
+    },
+    {
+      "target": "failures_delta",
+      "type": "method_shift",
+      "predictor": "rule_baseline",
+      "n": 10,
+      "mae": 25.711286221943077,
+      "mae_ci_low": 15.225279971772867,
+      "mae_ci_high": 38.86335423667534,
+      "rmse": 32.15794423484956,
+      "median_relative_error": 0.5846516338797455,
+      "sign_accuracy": 1.0,
+      "n_material": 7
+    },
+    {
+      "target": "failures_delta",
+      "type": "routing_change",
+      "predictor": "independent_ml",
+      "n": 12,
+      "mae": 172.96703568745193,
+      "mae_ci_low": 48.25714648991942,
+      "mae_ci_high": 324.899996492393,
+      "rmse": 302.45820096519384,
+      "median_relative_error": 0.5206488700719714,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "failures_delta",
+      "type": "routing_change",
+      "predictor": "rule_baseline",
+      "n": 12,
+      "mae": 177.25714875350695,
+      "mae_ci_low": 52.89836674469599,
+      "mae_ci_high": 325.78137458346515,
+      "rmse": 303.67856669899203,
+      "median_relative_error": 0.5493997878944736,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "failures_delta",
+      "type": "traffic_change",
+      "predictor": "independent_ml",
+      "n": 14,
+      "mae": 1292.568970055642,
+      "mae_ci_low": 115.6623880123468,
+      "mae_ci_high": 2940.761625528355,
+      "rmse": 3029.099746887491,
+      "median_relative_error": 0.1318337619600591,
+      "sign_accuracy": 1.0,
+      "n_material": 14
+    },
+    {
+      "target": "failures_delta",
+      "type": "traffic_change",
+      "predictor": "rule_baseline",
+      "n": 14,
+      "mae": 1176.4356279099586,
+      "mae_ci_low": 111.34134715930035,
+      "mae_ci_high": 2670.1517661286703,
+      "rmse": 2742.0468489044233,
+      "median_relative_error": 0.16533341989402617,
+      "sign_accuracy": 1.0,
+      "n_material": 14
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "combined",
+      "predictor": "independent_ml",
+      "n": 4,
+      "mae": 2037958.7434297267,
+      "mae_ci_low": 1327983.255071969,
+      "mae_ci_high": 2762836.844711631,
+      "rmse": 2178191.7274576267,
+      "median_relative_error": 0.7334045644594707,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "combined",
+      "predictor": "rule_baseline",
+      "n": 4,
+      "mae": 1310040.538970527,
+      "mae_ci_low": 122963.63446065527,
+      "mae_ci_high": 2484443.8072971636,
+      "rmse": 1792065.656715973,
+      "median_relative_error": 0.37759948894728673,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "gateway_outage",
+      "predictor": "independent_ml",
+      "n": 16,
+      "mae": 1106588.6100487134,
+      "mae_ci_low": 663915.6331582576,
+      "mae_ci_high": 1570527.1254511874,
+      "rmse": 1451856.940066195,
+      "median_relative_error": 0.9462283764555319,
+      "sign_accuracy": 1.0,
+      "n_material": 15
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "gateway_outage",
+      "predictor": "rule_baseline",
+      "n": 16,
+      "mae": 31143.20369372936,
+      "mae_ci_low": 15119.005996546175,
+      "mae_ci_high": 51386.49356982592,
+      "rmse": 48369.08374381935,
+      "median_relative_error": 0.017409093126103708,
+      "sign_accuracy": 1.0,
+      "n_material": 15
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "issuer_degradation",
+      "predictor": "independent_ml",
+      "n": 28,
+      "mae": 595436.0499602491,
+      "mae_ci_low": 208849.43679548317,
+      "mae_ci_high": 1081097.607086639,
+      "rmse": 1376224.9005842889,
+      "median_relative_error": 0.9913331052085236,
+      "sign_accuracy": 0.7857142857142857,
+      "n_material": 14
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "issuer_degradation",
+      "predictor": "rule_baseline",
+      "n": 28,
+      "mae": 54416.116470744135,
+      "mae_ci_low": 22893.997298076032,
+      "mae_ci_high": 91970.81192834378,
+      "rmse": 114554.33956783086,
+      "median_relative_error": 0.07323730726821176,
+      "sign_accuracy": 1.0,
+      "n_material": 14
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "method_shift",
+      "predictor": "independent_ml",
+      "n": 10,
+      "mae": 169286.93672605054,
+      "mae_ci_low": 70150.42531726218,
+      "mae_ci_high": 274137.0919415808,
+      "rmse": 243192.05431146797,
+      "median_relative_error": 0.573302007743999,
+      "sign_accuracy": 1.0,
+      "n_material": 7
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "method_shift",
+      "predictor": "rule_baseline",
+      "n": 10,
+      "mae": 341819.14828154014,
+      "mae_ci_low": 173910.39378990894,
+      "mae_ci_high": 512790.47140441596,
+      "rmse": 445870.47974056774,
+      "median_relative_error": 1.2695963223660027,
+      "sign_accuracy": 0.42857142857142855,
+      "n_material": 7
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "routing_change",
+      "predictor": "independent_ml",
+      "n": 12,
+      "mae": 487483.18142710143,
+      "mae_ci_low": 121803.54052379001,
+      "mae_ci_high": 964737.9065874655,
+      "rmse": 899196.5583037402,
+      "median_relative_error": 0.5373038183910102,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "routing_change",
+      "predictor": "rule_baseline",
+      "n": 12,
+      "mae": 442524.891091831,
+      "mae_ci_low": 95767.38166637685,
+      "mae_ci_high": 897400.2956470706,
+      "rmse": 836713.0476078946,
+      "median_relative_error": 0.49847071225759454,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "traffic_change",
+      "predictor": "independent_ml",
+      "n": 14,
+      "mae": 4010152.6739912583,
+      "mae_ci_low": 365906.42721744964,
+      "mae_ci_high": 9029303.47583644,
+      "rmse": 9312345.463170165,
+      "median_relative_error": 0.7216641537591766,
+      "sign_accuracy": 0.7,
+      "n_material": 10
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "traffic_change",
+      "predictor": "rule_baseline",
+      "n": 14,
+      "mae": 3448431.7393035837,
+      "mae_ci_low": 299207.31455019646,
+      "mae_ci_high": 7816437.185888695,
+      "rmse": 8057443.2236882625,
+      "median_relative_error": 0.5646798954664236,
+      "sign_accuracy": 0.7,
+      "n_material": 10
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "combined",
+      "predictor": "independent_ml",
+      "n": 4,
+      "mae": 2838.9711519465736,
+      "mae_ci_low": 500.6449473913771,
+      "mae_ci_high": 6683.509129694824,
+      "rmse": 4456.708729478857,
+      "median_relative_error": 0.6519836920812986,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "combined",
+      "predictor": "rule_baseline",
+      "n": 4,
+      "mae": 2951.0054426111374,
+      "mae_ci_low": 522.3319673257174,
+      "mae_ci_high": 6877.754839030662,
+      "rmse": 4594.225757709417,
+      "median_relative_error": 0.698773390648719,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "gateway_outage",
+      "predictor": "independent_ml",
+      "n": 16,
+      "mae": 426.0948738023431,
+      "mae_ci_low": 223.6988076767806,
+      "mae_ci_high": 655.0824467169257,
+      "rmse": 626.5626291032967,
+      "median_relative_error": 0.9647888213122809,
+      "sign_accuracy": 1.0,
+      "n_material": 14
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "gateway_outage",
+      "predictor": "rule_baseline",
+      "n": 16,
+      "mae": 450.6875,
+      "mae_ci_low": 244.8109375,
+      "mae_ci_high": 684.5249999999999,
+      "rmse": 649.8714776784715,
+      "median_relative_error": 1.0,
+      "sign_accuracy": 0.0,
+      "n_material": 14
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "issuer_degradation",
+      "predictor": "independent_ml",
+      "n": 28,
+      "mae": 111.22240093293775,
+      "mae_ci_low": 47.78363421992494,
+      "mae_ci_high": 192.4617382635673,
+      "rmse": 228.97537688646926,
+      "median_relative_error": 0.9948877906733751,
+      "sign_accuracy": 1.0,
+      "n_material": 12
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "issuer_degradation",
+      "predictor": "rule_baseline",
+      "n": 28,
+      "mae": 111.64285714285714,
+      "mae_ci_low": 48.03303571428572,
+      "mae_ci_high": 192.93839285714284,
+      "rmse": 229.55251500006952,
+      "median_relative_error": 1.0,
+      "sign_accuracy": 0.0,
+      "n_material": 12
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "method_shift",
+      "predictor": "independent_ml",
+      "n": 10,
+      "mae": 58.15582394560706,
+      "mae_ci_low": 29.739208996727193,
+      "mae_ci_high": 91.10015836136444,
+      "rmse": 77.9638399630218,
+      "median_relative_error": 0.18846998912030488,
+      "sign_accuracy": 1.0,
+      "n_material": 8
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "method_shift",
+      "predictor": "rule_baseline",
+      "n": 10,
+      "mae": 30.268757451038027,
+      "mae_ci_low": 9.661166090878792,
+      "mae_ci_high": 57.8403329503464,
+      "rmse": 50.36875409015859,
+      "median_relative_error": 0.07523242693944492,
+      "sign_accuracy": 1.0,
+      "n_material": 8
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "routing_change",
+      "predictor": "independent_ml",
+      "n": 12,
+      "mae": 723.3633386512414,
+      "mae_ci_low": 90.50470618074395,
+      "mae_ci_high": 1724.3390557798582,
+      "rmse": 1787.801814647968,
+      "median_relative_error": 0.4063125801078418,
+      "sign_accuracy": 1.0,
+      "n_material": 8
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "routing_change",
+      "predictor": "rule_baseline",
+      "n": 12,
+      "mae": 861.5023398287079,
+      "mae_ci_low": 147.53378035025773,
+      "mae_ci_high": 1939.0441599675814,
+      "rmse": 1956.9598791495073,
+      "median_relative_error": 0.6567972358789883,
+      "sign_accuracy": 1.0,
+      "n_material": 8
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "traffic_change",
+      "predictor": "independent_ml",
+      "n": 14,
+      "mae": 2174.432301123584,
+      "mae_ci_low": 208.7520040216321,
+      "mae_ci_high": 4623.207018150055,
+      "rmse": 4876.091840023524,
+      "median_relative_error": 0.33403976429386184,
+      "sign_accuracy": 1.0,
+      "n_material": 10
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "traffic_change",
+      "predictor": "rule_baseline",
+      "n": 14,
+      "mae": 2298.985116989161,
+      "mae_ci_low": 235.52553942607554,
+      "mae_ci_high": 4848.321852398549,
+      "rmse": 5107.831537586031,
+      "median_relative_error": 0.5846007821545132,
+      "sign_accuracy": 1.0,
+      "n_material": 10
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "combined",
+      "predictor": "independent_ml",
+      "n": 4,
+      "mae": 2.1427250248557796,
+      "mae_ci_low": 1.509012203361093,
+      "mae_ci_high": 2.78382542322497,
+      "rmse": 2.2531676506069753,
+      "median_relative_error": 0.776494610499715,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "combined",
+      "predictor": "rule_baseline",
+      "n": 4,
+      "mae": 1.3310378078847882,
+      "mae_ci_low": 0.04301239000947629,
+      "mae_ci_high": 2.6190276005846447,
+      "rmse": 1.8767326244853662,
+      "median_relative_error": 0.36170222549513764,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "gateway_outage",
+      "predictor": "independent_ml",
+      "n": 16,
+      "mae": 1.0604241700403882,
+      "mae_ci_low": 0.6561164677951601,
+      "mae_ci_high": 1.5024076141069471,
+      "rmse": 1.3872576396053111,
+      "median_relative_error": 0.9298765761485781,
+      "sign_accuracy": 1.0,
+      "n_material": 16
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "gateway_outage",
+      "predictor": "rule_baseline",
+      "n": 16,
+      "mae": 0.006510128874247234,
+      "mae_ci_low": 0.0036807824516099825,
+      "mae_ci_high": 0.010038347809527958,
+      "rmse": 0.009382730583492933,
+      "median_relative_error": 0.003400344906048638,
+      "sign_accuracy": 1.0,
+      "n_material": 16
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "issuer_degradation",
+      "predictor": "independent_ml",
+      "n": 28,
+      "mae": 0.6805939959563246,
+      "mae_ci_low": 0.2857301412568773,
+      "mae_ci_high": 1.1837204140181043,
+      "rmse": 1.4324890484008796,
+      "median_relative_error": 0.9976223918674803,
+      "sign_accuracy": 0.7,
+      "n_material": 20
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "issuer_degradation",
+      "predictor": "rule_baseline",
+      "n": 28,
+      "mae": 0.02391124838649415,
+      "mae_ci_low": 0.013497629217434498,
+      "mae_ci_high": 0.039594647181692956,
+      "rmse": 0.04629968961216729,
+      "median_relative_error": 0.04387059921263334,
+      "sign_accuracy": 1.0,
+      "n_material": 20
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "method_shift",
+      "predictor": "independent_ml",
+      "n": 10,
+      "mae": 0.02018116114871127,
+      "mae_ci_low": 0.012404720305245254,
+      "mae_ci_high": 0.028862024926094573,
+      "rmse": 0.02445095444954298,
+      "median_relative_error": 0.10405917105596862,
+      "sign_accuracy": 1.0,
+      "n_material": 2
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "method_shift",
+      "predictor": "rule_baseline",
+      "n": 10,
+      "mae": 0.08265111691936666,
+      "mae_ci_low": 0.048905784935393604,
+      "mae_ci_high": 0.12493347264923527,
+      "rmse": 0.10336522327815487,
+      "median_relative_error": 0.5244303445890588,
+      "sign_accuracy": 1.0,
+      "n_material": 2
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "routing_change",
+      "predictor": "independent_ml",
+      "n": 12,
+      "mae": 0.5553626193215311,
+      "mae_ci_low": 0.15542678146075273,
+      "mae_ci_high": 1.0423458010374407,
+      "rmse": 0.9704201376424174,
+      "median_relative_error": 0.5206488700719711,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "routing_change",
+      "predictor": "rule_baseline",
+      "n": 12,
+      "mae": 0.5691893485596585,
+      "mae_ci_low": 0.17040456312239052,
+      "mae_ci_high": 1.0453581241048542,
+      "rmse": 0.9744460768283956,
+      "median_relative_error": 0.5493997878944736,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "traffic_change",
+      "predictor": "independent_ml",
+      "n": 14,
+      "mae": 1.9325142767797494,
+      "mae_ci_low": 0.2244146038238124,
+      "mae_ci_high": 4.287522439270897,
+      "rmse": 4.390066507548689,
+      "median_relative_error": 0.5373860745923893,
+      "sign_accuracy": 0.8571428571428571,
+      "n_material": 7
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "traffic_change",
+      "predictor": "rule_baseline",
+      "n": 14,
+      "mae": 1.8044966245047838,
+      "mae_ci_low": 0.21688825303833686,
+      "mae_ci_high": 3.9638383735707796,
+      "rmse": 4.057933004053585,
+      "median_relative_error": 0.534546083722219,
+      "sign_accuracy": 1.0,
+      "n_material": 7
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "combined",
+      "predictor": "independent_ml",
+      "n": 4,
+      "mae": 1.9580291360319442,
+      "mae_ci_low": 1.0544235428051976,
+      "mae_ci_high": 2.8611606932155986,
+      "rmse": 2.181913373558201,
+      "median_relative_error": 0.8206107562353181,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "combined",
+      "predictor": "rule_baseline",
+      "n": 4,
+      "mae": 1.791663255804691,
+      "mae_ci_low": 0.3074518518576296,
+      "mae_ci_high": 3.275084225128581,
+      "rmse": 2.3540548262176384,
+      "median_relative_error": 0.6018395535281182,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "gateway_outage",
+      "predictor": "independent_ml",
+      "n": 16,
+      "mae": 1.0527845949261314,
+      "mae_ci_low": 0.6505221474931241,
+      "mae_ci_high": 1.4902657034425046,
+      "rmse": 1.3787568301397513,
+      "median_relative_error": 0.9112156986559801,
+      "sign_accuracy": 1.0,
+      "n_material": 16
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "gateway_outage",
+      "predictor": "rule_baseline",
+      "n": 16,
+      "mae": 0.5575587420502612,
+      "mae_ci_low": 0.3403858727141608,
+      "mae_ci_high": 0.7979704555929166,
+      "rmse": 0.7375091926219216,
+      "median_relative_error": 0.4780905067345818,
+      "sign_accuracy": 1.0,
+      "n_material": 16
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "issuer_degradation",
+      "predictor": "independent_ml",
+      "n": 28,
+      "mae": 0.3312334304371645,
+      "mae_ci_low": 0.16155563914638196,
+      "mae_ci_high": 0.5376681543546397,
+      "rmse": 0.617960456498407,
+      "median_relative_error": 0.9995605897499953,
+      "sign_accuracy": 0.5238095238095238,
+      "n_material": 21
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "issuer_degradation",
+      "predictor": "rule_baseline",
+      "n": 28,
+      "mae": 0.04951748640780168,
+      "mae_ci_low": 0.028231201709752973,
+      "mae_ci_high": 0.07386694618307278,
+      "rmse": 0.07936707094722244,
+      "median_relative_error": 0.1695872547204762,
+      "sign_accuracy": 1.0,
+      "n_material": 21
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "method_shift",
+      "predictor": "independent_ml",
+      "n": 10,
+      "mae": 0.024441644948214446,
+      "mae_ci_low": 0.017110816387645986,
+      "mae_ci_high": 0.033133061339618596,
+      "rmse": 0.027737477340246293,
+      "median_relative_error": 0.2574316234290761,
+      "sign_accuracy": 1.0,
+      "n_material": 8
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "method_shift",
+      "predictor": "rule_baseline",
+      "n": 10,
+      "mae": 0.022243787016494633,
+      "mae_ci_low": 0.013109100646350009,
+      "mae_ci_high": 0.0329496380986365,
+      "rmse": 0.02732035664723046,
+      "median_relative_error": 0.20900076857765368,
+      "sign_accuracy": 1.0,
+      "n_material": 8
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "routing_change",
+      "predictor": "independent_ml",
+      "n": 12,
+      "mae": 0.6069609536817614,
+      "mae_ci_low": 0.16861837199746396,
+      "mae_ci_high": 1.1425307251779175,
+      "rmse": 1.058144829962668,
+      "median_relative_error": 0.631946883601851,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "routing_change",
+      "predictor": "rule_baseline",
+      "n": 12,
+      "mae": 0.7983329520147056,
+      "mae_ci_low": 0.2432219564351344,
+      "mae_ci_high": 1.4599805141007,
+      "rmse": 1.340415755476235,
+      "median_relative_error": 0.8647446122556448,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "traffic_change",
+      "predictor": "independent_ml",
+      "n": 14,
+      "mae": 2.07482199094266,
+      "mae_ci_low": 0.2449035602988686,
+      "mae_ci_high": 4.516795209134255,
+      "rmse": 4.645365750658275,
+      "median_relative_error": 0.5850058219681383,
+      "sign_accuracy": 0.8888888888888888,
+      "n_material": 9
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "traffic_change",
+      "predictor": "rule_baseline",
+      "n": 14,
+      "mae": 2.4951995916827143,
+      "mae_ci_low": 0.33045614848163196,
+      "mae_ci_high": 5.336621869772746,
+      "rmse": 5.470935769832978,
+      "median_relative_error": 0.8601230546013605,
+      "sign_accuracy": 0.8888888888888888,
+      "n_material": 9
+    }
+  ],
+  "transaction_level": {
+    "rule_baseline": {
+      "auc": 0.5158792433500012,
+      "brier": 0.03807293822272376,
+      "log_loss": 0.18941545827719838,
+      "mean_predicted": 0.9603490204436558,
+      "mean_observed": 0.9618042989710528,
+      "calibration": [
+        {
+          "predicted": 0.8729195395127365,
+          "observed": 0.9564401554751374
+        },
+        {
+          "predicted": 0.922978669816205,
+          "observed": 0.9622464480386025
+        },
+        {
+          "predicted": 0.941791760688854,
+          "observed": 0.9614869091234027
+        },
+        {
+          "predicted": 0.9545208686812985,
+          "observed": 0.9620677329997319
+        },
+        {
+          "predicted": 0.9649361263364241,
+          "observed": 0.9592529711375212
+        },
+        {
+          "predicted": 0.9742263004411814,
+          "observed": 0.960727370208203
+        },
+        {
+          "predicted": 0.9829188940991083,
+          "observed": 0.9628272719149317
+        },
+        {
+          "predicted": 0.9916349407191725,
+          "observed": 0.9630953444732374
+        },
+        {
+          "predicted": 0.998783505191174,
+          "observed": 0.9649495130015191
+        }
+      ],
+      "reason_log_loss": 1.7844458710769033,
+      "reason_top1_accuracy": 0.27921394315124576,
+      "latency_log_mae": 0.3201294406561267,
+      "latency_median_abs_error_ms": 418.06832290313173
+    },
+    "independent_ml": {
+      "auc": 0.590466494233188,
+      "brier": 0.03653247290481071,
+      "log_loss": 0.15991348905436623,
+      "mean_predicted": 0.9628838578933627,
+      "mean_observed": 0.9618042989710528,
+      "calibration": [
+        {
+          "predicted": 0.9329508481268421,
+          "observed": 0.9306616628691418
+        },
+        {
+          "predicted": 0.9528869040331486,
+          "observed": 0.9530426235367706
+        },
+        {
+          "predicted": 0.9589856844021976,
+          "observed": 0.95625949423644
+        },
+        {
+          "predicted": 0.9627104151256117,
+          "observed": 0.960861406487356
+        },
+        {
+          "predicted": 0.965113333752732,
+          "observed": 0.9628719506746493
+        },
+        {
+          "predicted": 0.9671029797555019,
+          "observed": 0.9657760700562953
+        },
+        {
+          "predicted": 0.9688852165468367,
+          "observed": 0.9689035832365294
+        },
+        {
+          "predicted": 0.9708011746596308,
+          "observed": 0.9692163345545528
+        },
+        {
+          "predicted": 0.9731353598918342,
+          "observed": 0.9756500759538915
+        },
+        {
+          "predicted": 0.976268000009043,
+          "observed": 0.9748011795192566
+        }
+      ],
+      "reason_log_loss": 1.7295911745525772,
+      "reason_top1_accuracy": 0.32038834951456313,
+      "latency_log_mae": 0.3001058791528289,
+      "latency_median_abs_error_ms": 389.75584218184713
+    },
+    "true_probability": {
+      "auc": 0.6008801915990877,
+      "brier": 0.036403103516791636,
+      "log_loss": 0.15906655632748673,
+      "mean_predicted": 0.962748651189435,
+      "mean_observed": 0.9618042989710528,
+      "calibration": [
+        {
+          "predicted": 0.9301529665246221,
+          "observed": 0.9243622391993924
+        },
+        {
+          "predicted": 0.9520680779625931,
+          "observed": 0.9534447323742293
+        },
+        {
+          "predicted": 0.9586732926536117,
+          "observed": 0.956616924314181
+        },
+        {
+          "predicted": 0.9623476518648459,
+          "observed": 0.9620230542400143
+        },
+        {
+          "predicted": 0.9650223117748415,
+          "observed": 0.9634080957912609
+        },
+        {
+          "predicted": 0.9673468349218823,
+          "observed": 0.9661335001340363
+        },
+        {
+          "predicted": 0.9694050063020598,
+          "observed": 0.9692610133142704
+        },
+        {
+          "predicted": 0.9712831758587885,
+          "observed": 0.9713162362612814
+        },
+        {
+          "predicted": 0.9735385371878147,
+          "observed": 0.9717183450987401
+        },
+        {
+          "predicted": 0.9776501131780533,
+          "observed": 0.9797605218479135
+        }
+      ]
+    }
+  },
+  "environment": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "scikit_learn": "1.9.1"
+  },
+  "quick": false
+}

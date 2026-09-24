@@ -138,6 +138,9 @@ class Attempts:
 class Outcomes:
     reason: np.ndarray  # failure reason code, -1 on success
     latency_ms: np.ndarray
+    # The true probability that the attempt succeeds, before its draws are compared. Only for
+    # scoring models against the best achievable; never a feature.
+    p_success: np.ndarray
 
 
 def _stage_draws(seed: int, keys: np.ndarray) -> np.ndarray:
@@ -168,11 +171,14 @@ def attempt_outcomes(
     is_upi = att.method == _UPI
     is_peak = np.isin((att.minute // 60) % 24, PEAK_HOURS)
     reason = np.full(n, -1)
+    p_pass = np.ones(n)
 
     def stage(name: str, p: np.ndarray, code) -> None:
+        nonlocal p_pass
         u = att.stage_draws[:, _U[name]]
         hit = (reason == -1) & (u < p)
         reason[hit] = code(u, p)[hit] if callable(code) else code
+        p_pass = p_pass * (1.0 - p)
 
     risk_logit = (
         -6.2
@@ -242,7 +248,7 @@ def attempt_outcomes(
     for name, ms in TIMEOUT_LATENCY_MS.items():
         latency = np.where(reason == _R[name], ms, latency)
 
-    return Outcomes(reason=reason, latency_ms=np.round(latency).astype(np.int64))
+    return Outcomes(reason=reason, latency_ms=np.round(latency).astype(np.int64), p_success=p_pass)
 
 
 def _retry_candidates(first: Attempts, seed: int) -> Attempts:
@@ -332,6 +338,19 @@ def first_attempt_context(attempts: pd.DataFrame) -> pd.DataFrame:
     """Strip outcomes, retries and state features, leaving the input to `simulate_outcomes`."""
     first = attempts[attempts["attempt"] == 1]
     return first[list(CONTEXT_COLUMNS)].sort_values("transaction_id", ignore_index=True)
+
+
+def true_success_probability(
+    transactions: pd.DataFrame,
+    customers: pd.DataFrame,
+    merchants: pd.DataFrame,
+    latent: LatentParams,
+    seed: int,
+) -> pd.Series:
+    """The true success probability of every attempt, indexed by transaction id."""
+    first = attempts_from_transactions(transactions, customers, merchants, latent, seed)
+    attempts, _, outcomes = solve(first, latent, seed)
+    return pd.Series(outcomes.p_success, index=attempts.key.astype(np.int64), name="p_success")
 
 
 def simulate_outcomes(

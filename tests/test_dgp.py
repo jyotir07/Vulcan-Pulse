@@ -4,7 +4,7 @@ import pytest
 
 from backend.data.catalog import GATEWAYS, ISSUERS
 from backend.data.keyed_random import keyed_uniform
-from backend.data.state import _trailing_success_rate
+from backend.data.state import HEALTH_PRIOR_START, _trailing_success_rate
 
 
 def test_keyed_uniform_depends_only_on_key():
@@ -87,13 +87,28 @@ def test_state_features_in_range(dataset):
     assert set(txns["gateway_id"]) <= set(range(len(GATEWAYS)))
 
 
-def test_trailing_health_excludes_own_minute():
+def test_trailing_health_uses_only_the_past():
     group = np.zeros(3, dtype=int)
     minute = np.array([0, 1, 2])
     success = np.array([0.0, 1.0, 1.0])
     health = _trailing_success_rate(group, 1, minute, success, n_minutes=3)[0]
-    prior = 2 / 3
+    # No history before any window yet, so the prior is the starting value throughout.
+    prior = HEALTH_PRIOR_START
     # Minute 0 has no history, so it sits at the prior regardless of its own failure.
     assert health[0] == pytest.approx(prior)
     assert health[1] == pytest.approx((0 + 5 * prior) / (1 + 5))
     assert health[2] == pytest.approx((1 + 5 * prior) / (2 + 5))
+
+
+def test_trailing_health_prior_is_causal():
+    """Changing the future must not change the health seen now."""
+    n = 60
+    group = np.zeros(n, dtype=int)
+    minute = np.arange(n)
+    success = np.ones(n)
+    changed = success.copy()
+    changed[40:] = 0.0
+    before = _trailing_success_rate(group, 1, minute, success, n_minutes=n)[0]
+    after = _trailing_success_rate(group, 1, minute, changed, n_minutes=n)[0]
+    np.testing.assert_array_equal(before[:41], after[:41])
+    assert after[41] < before[41]

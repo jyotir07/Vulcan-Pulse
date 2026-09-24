@@ -1,0 +1,841 @@
+scenario,type,window,range,outside_support_share,transactions_affected,predictor,target,predicted,truth
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,rule_baseline,success_rate_delta_pp,-0.08308101401277579,-0.1058133196524147
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,rule_baseline,timeout_rate_delta_pp,0.035062798611576636,0.08336807002917879
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,rule_baseline,failures_delta,25.91047584016451,32.999999999998636
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,rule_baseline,gmv_at_risk,53913.44909659773,63622.73999999929
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,rule_baseline,p95_latency_delta_ms,0.0,26.0
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,independent_ml,success_rate_delta_pp,-0.00029416407857363325,-0.1058133196524147
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,independent_ml,timeout_rate_delta_pp,-0.00017414704726898683,0.08336807002917879
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,independent_ml,failures_delta,0.09174095118487458,32.999999999998636
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,independent_ml,gmv_at_risk,1025.6247510565445,63622.73999999929
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,independent_ml,p95_latency_delta_ms,0.0,26.0
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,rule_baseline,success_rate_delta_pp,-0.16892596271295135,-0.18918138968159193
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,rule_baseline,timeout_rate_delta_pp,0.09170191210525029,0.1250521050437683
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,rule_baseline,failures_delta,52.682939991288094,58.99999999999818
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,rule_baseline,gmv_at_risk,109798.30166684091,107120.59999999963
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,rule_baseline,p95_latency_delta_ms,0.0,35.0
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,independent_ml,success_rate_delta_pp,-0.0007088701766799765,-0.18918138968159193
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,independent_ml,timeout_rate_delta_pp,-0.00038684236142224465,0.1250521050437683
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,independent_ml,failures_delta,0.22107534200108603,58.99999999999818
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,independent_ml,gmv_at_risk,2375.5401596827433,107120.59999999963
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,535,independent_ml,p95_latency_delta_ms,0.2858184188562518,35.0
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.3514018691588785,535,rule_baseline,success_rate_delta_pp,-0.3406158601133247,-0.36874338666751383
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.3514018691588785,535,rule_baseline,timeout_rate_delta_pp,0.17547817926980602,0.23086542469618748
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.3514018691588785,535,rule_baseline,failures_delta,106.22786829354254,114.9999999999975
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.3514018691588785,535,rule_baseline,gmv_at_risk,221568.00680732727,257803.0599999996
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.3514018691588785,535,rule_baseline,p95_latency_delta_ms,0.0,71.0
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.3514018691588785,535,independent_ml,success_rate_delta_pp,0.0006067957267652524,-0.36874338666751383
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.3514018691588785,535,independent_ml,timeout_rate_delta_pp,-0.0005612671122701141,0.23086542469618748
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.3514018691588785,535,independent_ml,failures_delta,-0.18924138330635287,114.9999999999975
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.3514018691588785,535,independent_ml,gmv_at_risk,2396.079984988086,257803.0599999996
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.3514018691588785,535,independent_ml,p95_latency_delta_ms,0.38223392245708965,71.0
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,535,rule_baseline,success_rate_delta_pp,-0.6839956549140491,-0.7054221310161202
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,535,rule_baseline,timeout_rate_delta_pp,0.34303071359891807,0.46173084939237496
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,535,rule_baseline,failures_delta,213.31772489804462,219.9999999999975
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,535,rule_baseline,gmv_at_risk,445107.4170882981,478278.4400000004
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,535,rule_baseline,p95_latency_delta_ms,0.0,131.0
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,535,independent_ml,success_rate_delta_pp,0.0006067957267652524,-0.7054221310161202
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,535,independent_ml,timeout_rate_delta_pp,-0.0005612671122701141,0.46173084939237496
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,535,independent_ml,failures_delta,-0.18924138330635287,219.9999999999975
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,535,independent_ml,gmv_at_risk,2396.079984988086,478278.4400000004
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,535,independent_ml,p95_latency_delta_ms,0.38223392245708965,131.0
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,rule_baseline,success_rate_delta_pp,-0.09700725966881318,-0.09298746272484726
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,rule_baseline,timeout_rate_delta_pp,0.047423794467066,0.06092282040593838
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,rule_baseline,failures_delta,30.253654072912923,28.99999999999818
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,rule_baseline,gmv_at_risk,69518.87103214487,27418.069999999367
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,rule_baseline,p95_latency_delta_ms,0.0,21.0
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,independent_ml,success_rate_delta_pp,-0.0013331354908663329,-0.09298746272484726
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,independent_ml,timeout_rate_delta_pp,0.0007756921271796086,0.06092282040593838
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,independent_ml,failures_delta,0.4157649655364821,28.99999999999818
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,independent_ml,gmv_at_risk,750.8320588525385,27418.069999999367
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,independent_ml,p95_latency_delta_ms,0.16293211315041845,21.0
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,rule_baseline,success_rate_delta_pp,-0.19489652872742846,-0.18918138968159193
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,rule_baseline,timeout_rate_delta_pp,0.1101495913532688,0.12825856927565962
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,rule_baseline,failures_delta,60.7823804142231,58.99999999999818
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,rule_baseline,gmv_at_risk,139667.89385282062,87217.74999999907
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,rule_baseline,p95_latency_delta_ms,0.0,36.0
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,independent_ml,success_rate_delta_pp,-0.00344440455188888,-0.18918138968159193
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,independent_ml,timeout_rate_delta_pp,0.0026685364312651477,0.12825856927565962
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,independent_ml,failures_delta,1.0742064475975894,58.99999999999818
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,independent_ml,gmv_at_risk,5385.777555449866,87217.74999999907
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,611,independent_ml,p95_latency_delta_ms,0.6575177807499131,36.0
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.5400981996726678,611,rule_baseline,success_rate_delta_pp,-0.3906750668446701,-0.37515631513129755
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.5400981996726678,611,rule_baseline,timeout_rate_delta_pp,0.2056799362526448,0.240484817391862
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.5400981996726678,611,rule_baseline,failures_delta,121.83983309684731,116.99999999999773
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.5400981996726678,611,rule_baseline,gmv_at_risk,279965.93949417025,211119.6299999999
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.5400981996726678,611,rule_baseline,p95_latency_delta_ms,0.0,74.0
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.5400981996726678,611,independent_ml,success_rate_delta_pp,-0.0016790356422990982,-0.37515631513129755
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.5400981996726678,611,independent_ml,timeout_rate_delta_pp,0.0024875894246626992,0.240484817391862
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.5400981996726678,611,independent_ml,failures_delta,0.5236408457637935,116.99999999999773
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.5400981996726678,611,independent_ml,gmv_at_risk,2904.748652932234,211119.6299999999
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.5400981996726678,611,independent_ml,p95_latency_delta_ms,1.3767284608065893,74.0
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,611,rule_baseline,success_rate_delta_pp,-0.7822321430791312,-0.8016160579728648
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,611,rule_baseline,timeout_rate_delta_pp,0.3967406260513966,0.47776317055183254
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,611,rule_baseline,failures_delta,243.9547384620887,249.99999999999727
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,611,rule_baseline,gmv_at_risk,560562.0307768714,553845.0800000001
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,611,rule_baseline,p95_latency_delta_ms,0.0,136.0
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,611,independent_ml,success_rate_delta_pp,-0.0016790356422990982,-0.8016160579728648
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,611,independent_ml,timeout_rate_delta_pp,0.0024875894246626992,0.47776317055183254
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,611,independent_ml,failures_delta,0.5236408457637935,249.99999999999727
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,611,independent_ml,gmv_at_risk,2904.748652932234,553845.0800000001
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,611,independent_ml,p95_latency_delta_ms,1.3767284608065893,136.0
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,115,rule_baseline,success_rate_delta_pp,-0.0180932903395159,-0.02565171385512377
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,115,rule_baseline,timeout_rate_delta_pp,0.008853812123012748,0.0192387853913489
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,115,rule_baseline,failures_delta,5.642754458184982,7.999999999997499
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,115,rule_baseline,gmv_at_risk,13250.439087633975,32014.540000000037
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,115,rule_baseline,p95_latency_delta_ms,0.0,8.0
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,115,independent_ml,success_rate_delta_pp,-9.928198687614298e-05,-0.02565171385512377
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,115,independent_ml,timeout_rate_delta_pp,-3.7086758284017585e-05,0.0192387853913489
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,115,independent_ml,failures_delta,0.0309630732469941,7.999999999997499
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,115,independent_ml,gmv_at_risk,197.23134916089475,32014.540000000037
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.0,115,independent_ml,p95_latency_delta_ms,0.0,8.0
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.034782608695652174,115,rule_baseline,success_rate_delta_pp,-0.03652702133054575,-0.03206464231890749
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.034782608695652174,115,rule_baseline,timeout_rate_delta_pp,0.019806918815059617,0.03527110655080646
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.034782608695652174,115,rule_baseline,failures_delta,11.39168214235724,9.999999999997726
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.034782608695652174,115,rule_baseline,gmv_at_risk,26627.122943665832,36016.71999999974
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.034782608695652174,115,rule_baseline,p95_latency_delta_ms,0.0,13.0
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.034782608695652174,115,independent_ml,success_rate_delta_pp,-0.0002857333247230365,-0.03206464231890749
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.034782608695652174,115,independent_ml,timeout_rate_delta_pp,0.00032698903142530655,0.03527110655080646
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.034782608695652174,115,independent_ml,failures_delta,0.08911165198128401,9.999999999997726
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.034782608695652174,115,independent_ml,gmv_at_risk,197.05509524419904,36016.71999999974
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-01-28,in_range,0.034782608695652174,115,independent_ml,p95_latency_delta_ms,-0.1903816994799854,13.0
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.6956521739130435,115,rule_baseline,success_rate_delta_pp,-0.07339448331261655,-0.05450989194215605
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.6956521739130435,115,rule_baseline,timeout_rate_delta_pp,0.03779643591218969,0.04168403501458931
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.6956521739130435,115,rule_baseline,failures_delta,22.88953751070585,17.000000000000227
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.6956521739130435,115,rule_baseline,gmv_at_risk,53380.49065573141,44315.1799999997
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.6956521739130435,115,rule_baseline,p95_latency_delta_ms,0.0,15.0
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.6956521739130435,115,independent_ml,success_rate_delta_pp,0.00019938633951666063,-0.05450989194215605
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.6956521739130435,115,independent_ml,timeout_rate_delta_pp,0.00045046370209279873,0.04168403501458931
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.6956521739130435,115,independent_ml,failures_delta,-0.06218261770504796,17.000000000000227
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.6956521739130435,115,independent_ml,gmv_at_risk,-1.8585213674232364,44315.1799999997
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,0.6956521739130435,115,independent_ml,p95_latency_delta_ms,-0.14064368738672783,15.0
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,115,rule_baseline,success_rate_delta_pp,-0.14712940727673596,-0.11222624811619841
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,115,rule_baseline,timeout_rate_delta_pp,0.07377547010645036,0.07054221310161274
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,115,rule_baseline,failures_delta,45.88524824739579,34.99999999999886
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,115,rule_baseline,gmv_at_risk,106887.2260798607,76749.79000000004
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,115,rule_baseline,p95_latency_delta_ms,0.0,24.0
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,115,independent_ml,success_rate_delta_pp,0.00019938633951666063,-0.11222624811619841
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,115,independent_ml,timeout_rate_delta_pp,0.00045046370209279873,0.07054221310161274
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,115,independent_ml,failures_delta,-0.06218261770504796,34.99999999999886
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,115,independent_ml,gmv_at_risk,-1.8585213674232364,76749.79000000004
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-01-28,out_of_range,1.0,115,independent_ml,p95_latency_delta_ms,-0.14064368738672783,24.0
+HDFC all methods -10pp all day,issuer_degradation,2026-01-28,in_range,0.01879271070615034,5268,rule_baseline,success_rate_delta_pp,-1.6529452984351156,-1.632090294032762
+HDFC all methods -10pp all day,issuer_degradation,2026-01-28,in_range,0.01879271070615034,5268,rule_baseline,timeout_rate_delta_pp,0.647230916081207,0.7663449514220668
+HDFC all methods -10pp all day,issuer_degradation,2026-01-28,in_range,0.01879271070615034,5268,rule_baseline,failures_delta,515.5040502229594,508.9999999999975
+HDFC all methods -10pp all day,issuer_degradation,2026-01-28,in_range,0.01879271070615034,5268,rule_baseline,gmv_at_risk,1609611.2890223023,1594940.1500000004
+HDFC all methods -10pp all day,issuer_degradation,2026-01-28,in_range,0.01879271070615034,5268,rule_baseline,p95_latency_delta_ms,0.0,244.0
+HDFC all methods -10pp all day,issuer_degradation,2026-01-28,in_range,0.01879271070615034,5268,independent_ml,success_rate_delta_pp,-0.012833292976688337,-1.632090294032762
+HDFC all methods -10pp all day,issuer_degradation,2026-01-28,in_range,0.01879271070615034,5268,independent_ml,timeout_rate_delta_pp,-0.00023832861665209343,0.7663449514220668
+HDFC all methods -10pp all day,issuer_degradation,2026-01-28,in_range,0.01879271070615034,5268,independent_ml,failures_delta,4.002319080639836,508.9999999999975
+HDFC all methods -10pp all day,issuer_degradation,2026-01-28,in_range,0.01879271070615034,5268,independent_ml,gmv_at_risk,40930.85129422229,1594940.1500000004
+HDFC all methods -10pp all day,issuer_degradation,2026-01-28,in_range,0.01879271070615034,5268,independent_ml,p95_latency_delta_ms,1.2140529758498815,244.0
+HDFC all methods -30pp all day,issuer_degradation,2026-01-28,out_of_range,1.0,5268,rule_baseline,success_rate_delta_pp,-5.029391349815682,-4.806489883605347
+HDFC all methods -30pp all day,issuer_degradation,2026-01-28,out_of_range,1.0,5268,rule_baseline,timeout_rate_delta_pp,1.83305427193612,2.0585500368743386
+HDFC all methods -30pp all day,issuer_degradation,2026-01-28,out_of_range,1.0,5268,rule_baseline,failures_delta,1568.5162802670166,1498.9999999999995
+HDFC all methods -30pp all day,issuer_degradation,2026-01-28,out_of_range,1.0,5268,rule_baseline,gmv_at_risk,4894361.13752307,4396504.489999999
+HDFC all methods -30pp all day,issuer_degradation,2026-01-28,out_of_range,1.0,5268,rule_baseline,p95_latency_delta_ms,0.0,816.0
+HDFC all methods -30pp all day,issuer_degradation,2026-01-28,out_of_range,1.0,5268,independent_ml,success_rate_delta_pp,-0.0028333532008262274,-4.806489883605347
+HDFC all methods -30pp all day,issuer_degradation,2026-01-28,out_of_range,1.0,5268,independent_ml,timeout_rate_delta_pp,-0.001969806934347569,2.0585500368743386
+HDFC all methods -30pp all day,issuer_degradation,2026-01-28,out_of_range,1.0,5268,independent_ml,failures_delta,0.8836378627415797,1498.9999999999995
+HDFC all methods -30pp all day,issuer_degradation,2026-01-28,out_of_range,1.0,5268,independent_ml,gmv_at_risk,35345.97599413339,4396504.489999999
+HDFC all methods -30pp all day,issuer_degradation,2026-01-28,out_of_range,1.0,5268,independent_ml,p95_latency_delta_ms,1.90726835051737,816.0
+gateway_a outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,268,rule_baseline,success_rate_delta_pp,-0.827931335698362,-0.8304742360598971
+gateway_a outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,268,rule_baseline,timeout_rate_delta_pp,0.42431524982394603,0.8400936287555714
+gateway_a outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,268,rule_baseline,failures_delta,258.2069456642482,259.0
+gateway_a outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,268,rule_baseline,gmv_at_risk,985562.3082516845,976242.8999999994
+gateway_a outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,268,rule_baseline,p95_latency_delta_ms,0.0,258.0
+gateway_a outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,268,independent_ml,success_rate_delta_pp,-0.051493939653946,-0.8304742360598971
+gateway_a outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,268,independent_ml,timeout_rate_delta_pp,0.0653622433267104,0.8400936287555714
+gateway_a outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,268,independent_ml,failures_delta,16.05941495987622,259.0
+gateway_a outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,268,independent_ml,gmv_at_risk,38689.456278991885,976242.8999999994
+gateway_a outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,268,independent_ml,p95_latency_delta_ms,9.07382194951606,258.0
+gateway_a outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,949,rule_baseline,success_rate_delta_pp,-2.9285509646228336,-2.9178824510212586
+gateway_a outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,949,rule_baseline,timeout_rate_delta_pp,1.515569892476029,2.965979414499631
+gateway_a outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,949,rule_baseline,failures_delta,913.3271893369233,910.0
+gateway_a outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,949,rule_baseline,gmv_at_risk,3201852.124478508,3162910.090000001
+gateway_a outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,949,rule_baseline,p95_latency_delta_ms,0.0,1453.0
+gateway_a outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,949,independent_ml,success_rate_delta_pp,-0.19650144534837377,-2.9178824510212586
+gateway_a outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,949,independent_ml,timeout_rate_delta_pp,0.2428872411597163,2.965979414499631
+gateway_a outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,949,independent_ml,failures_delta,61.28290576079735,910.0
+gateway_a outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,949,independent_ml,gmv_at_risk,170074.81066447962,3162910.090000001
+gateway_a outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,949,independent_ml,p95_latency_delta_ms,29.753702967584104,1453.0
+gateway_b outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,182,rule_baseline,success_rate_delta_pp,-0.5591769876912234,-0.5579247763491169
+gateway_b outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,182,rule_baseline,timeout_rate_delta_pp,0.2822107495643265,0.5707506332766856
+gateway_b outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,182,rule_baseline,failures_delta,174.39052715126195,173.9999999999991
+gateway_b outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,182,rule_baseline,gmv_at_risk,544778.8106039334,535456.9900000002
+gateway_b outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,182,rule_baseline,p95_latency_delta_ms,0.0,148.0
+gateway_b outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,182,independent_ml,success_rate_delta_pp,-0.03783285721330465,-0.5579247763491169
+gateway_b outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,182,independent_ml,timeout_rate_delta_pp,0.04924191497784492,0.5707506332766856
+gateway_b outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,182,independent_ml,failures_delta,11.798933179113419,173.9999999999991
+gateway_b outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,182,independent_ml,gmv_at_risk,26593.65968505293,535456.9900000002
+gateway_b outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,182,independent_ml,p95_latency_delta_ms,14.598176864555171,148.0
+gateway_b outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,782,rule_baseline,success_rate_delta_pp,-2.4050893742724844,-2.408054638150503
+gateway_b outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,782,rule_baseline,timeout_rate_delta_pp,1.2166415757599054,2.4433257447013177
+gateway_b outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,782,rule_baseline,failures_delta,750.0752231543597,750.9999999999973
+gateway_b outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,782,rule_baseline,gmv_at_risk,2377885.8816921413,2291414.12
+gateway_b outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,782,rule_baseline,p95_latency_delta_ms,0.0,996.0
+gateway_b outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,782,independent_ml,success_rate_delta_pp,-0.15922480921159998,-2.408054638150503
+gateway_b outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,782,independent_ml,timeout_rate_delta_pp,0.20776166249569117,2.4433257447013177
+gateway_b outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,782,independent_ml,failures_delta,49.65744124882167,750.9999999999973
+gateway_b outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,782,independent_ml,gmv_at_risk,117299.69848478306,2291414.12
+gateway_b outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,782,independent_ml,p95_latency_delta_ms,67.28533316248922,996.0
+gateway_c outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,118,rule_baseline,success_rate_delta_pp,-0.3717686445803503,-0.37515631513129755
+gateway_c outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,118,rule_baseline,timeout_rate_delta_pp,0.20304051487904062,0.37515631513130465
+gateway_c outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,118,rule_baseline,failures_delta,115.94348718527385,116.99999999999773
+gateway_c outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,118,rule_baseline,gmv_at_risk,398816.052132098,361939.20999999996
+gateway_c outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,118,rule_baseline,p95_latency_delta_ms,0.0,106.0
+gateway_c outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,118,independent_ml,success_rate_delta_pp,-0.028193487508787474,-0.37515631513129755
+gateway_c outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,118,independent_ml,timeout_rate_delta_pp,0.034613311826482,0.37515631513130465
+gateway_c outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,118,independent_ml,failures_delta,8.792702949365548,116.99999999999773
+gateway_c outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,118,independent_ml,gmv_at_risk,24616.431233174168,361939.20999999996
+gateway_c outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,118,independent_ml,p95_latency_delta_ms,3.7367655149409984,106.0
+gateway_c outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,479,rule_baseline,success_rate_delta_pp,-1.4892785125633967,-1.487799403597645
+gateway_c outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,479,rule_baseline,timeout_rate_delta_pp,0.8156951577281776,1.494212332061436
+gateway_c outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,479,rule_baseline,failures_delta,464.46128971314647,463.9999999999975
+gateway_c outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,479,rule_baseline,gmv_at_risk,1736701.9121140633,1667248.3499999996
+gateway_c outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,479,rule_baseline,p95_latency_delta_ms,0.0,529.0
+gateway_c outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,479,independent_ml,success_rate_delta_pp,-0.11011029220872048,-1.487799403597645
+gateway_c outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,479,independent_ml,timeout_rate_delta_pp,0.1370230428922514,1.494212332061436
+gateway_c outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,479,independent_ml,failures_delta,34.34009683113368,463.9999999999975
+gateway_c outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,479,independent_ml,gmv_at_risk,100274.88693468552,1667248.3499999996
+gateway_c outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,479,independent_ml,p95_latency_delta_ms,12.964200868351327,529.0
+gateway_d outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,49,rule_baseline,success_rate_delta_pp,-0.15438254407464935,-0.15391028313078703
+gateway_d outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,49,rule_baseline,timeout_rate_delta_pp,0.09364019111446006,0.15391028313079172
+gateway_d outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,49,rule_baseline,failures_delta,48.147284020560846,47.999999999998636
+gateway_d outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,49,rule_baseline,gmv_at_risk,107711.07809310034,107123.47999999952
+gateway_d outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,49,rule_baseline,p95_latency_delta_ms,0.0,44.0
+gateway_d outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,49,independent_ml,success_rate_delta_pp,-0.027635693085381607,-0.15391028313078703
+gateway_d outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,49,independent_ml,timeout_rate_delta_pp,0.028111203967481554,0.15391028313079172
+gateway_d outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,49,independent_ml,failures_delta,8.618743602537961,47.999999999998636
+gateway_d outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,49,independent_ml,gmv_at_risk,14370.21618169453,107123.47999999952
+gateway_d outage 15m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,49,independent_ml,p95_latency_delta_ms,16.03794423574527,44.0
+gateway_d outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,206,rule_baseline,success_rate_delta_pp,-0.6408049919627512,-0.6412928463782941
+gateway_d outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,206,rule_baseline,timeout_rate_delta_pp,0.3900972781054774,0.6444993106101902
+gateway_d outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,206,rule_baseline,failures_delta,199.8478528434232,199.99999999999864
+gateway_d outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,206,rule_baseline,gmv_at_risk,501412.4891187083,490217.2999999998
+gateway_d outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,206,rule_baseline,p95_latency_delta_ms,0.0,188.0
+gateway_d outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,206,independent_ml,success_rate_delta_pp,-0.1111546333994351,-0.6412928463782941
+gateway_d outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,206,independent_ml,timeout_rate_delta_pp,0.11426825119607784,0.6444993106101902
+gateway_d outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,206,independent_ml,failures_delta,34.66579551828181,199.99999999999864
+gateway_d outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,206,independent_ml,gmv_at_risk,71863.2116509378,490217.2999999998
+gateway_d outage 60m at 19:00,gateway_outage,2026-01-28,out_of_range,1.0,206,independent_ml,p95_latency_delta_ms,58.643011480018686,188.0
+all traffic -30%,traffic_change,2026-01-28,in_range,0.0046433878157503715,21536,rule_baseline,success_rate_delta_pp,0.009426920076383016,0.06048248419746605
+all traffic -30%,traffic_change,2026-01-28,in_range,0.0046433878157503715,21536,rule_baseline,timeout_rate_delta_pp,-0.0027590493304589098,-0.022907029823188672
+all traffic -30%,traffic_change,2026-01-28,in_range,0.0046433878157503715,21536,rule_baseline,failures_delta,-384.98704202422175,-381.0000000000009
+all traffic -30%,traffic_change,2026-01-28,in_range,0.0046433878157503715,21536,rule_baseline,gmv_at_risk,-15050.503009306733,109421.51955652097
+all traffic -30%,traffic_change,2026-01-28,in_range,0.0046433878157503715,21536,rule_baseline,p95_latency_delta_ms,-13.282714742335884,0.0
+all traffic -30%,traffic_change,2026-01-28,in_range,0.0046433878157503715,21536,independent_ml,success_rate_delta_pp,0.07638152967659462,0.06048248419746605
+all traffic -30%,traffic_change,2026-01-28,in_range,0.0046433878157503715,21536,independent_ml,timeout_rate_delta_pp,-0.029582492841858602,-0.022907029823188672
+all traffic -30%,traffic_change,2026-01-28,in_range,0.0046433878157503715,21536,independent_ml,failures_delta,-363.96182998925906,-381.0000000000009
+all traffic -30%,traffic_change,2026-01-28,in_range,0.0046433878157503715,21536,independent_ml,gmv_at_risk,-92040.87504456518,109421.51955652097
+all traffic -30%,traffic_change,2026-01-28,in_range,0.0046433878157503715,21536,independent_ml,p95_latency_delta_ms,-12.902186590286874,0.0
+all traffic +30%,traffic_change,2026-01-28,in_range,0.002987303958177745,40170,rule_baseline,success_rate_delta_pp,-0.0465821850566539,0.06115992618911381
+all traffic +30%,traffic_change,2026-01-28,in_range,0.002987303958177745,40170,rule_baseline,timeout_rate_delta_pp,0.019202309601245963,-0.03452918215055556
+all traffic +30%,traffic_change,2026-01-28,in_range,0.002987303958177745,40170,rule_baseline,failures_delta,401.81486638986576,342.9999999999998
+all traffic +30%,traffic_change,2026-01-28,in_range,0.002987303958177745,40170,rule_baseline,gmv_at_risk,48018.78864846751,-97984.56289257482
+all traffic +30%,traffic_change,2026-01-28,in_range,0.002987303958177745,40170,rule_baseline,p95_latency_delta_ms,68.11981281532098,65.0
+all traffic +30%,traffic_change,2026-01-28,in_range,0.002987303958177745,40170,independent_ml,success_rate_delta_pp,-0.10866241824156742,0.06115992618911381
+all traffic +30%,traffic_change,2026-01-28,in_range,0.002987303958177745,40170,independent_ml,timeout_rate_delta_pp,0.045130748120629505,-0.03452918215055556
+all traffic +30%,traffic_change,2026-01-28,in_range,0.002987303958177745,40170,independent_ml,failures_delta,391.3419824732405,342.9999999999998
+all traffic +30%,traffic_change,2026-01-28,in_range,0.002987303958177745,40170,independent_ml,gmv_at_risk,197759.9571338091,-97984.56289257482
+all traffic +30%,traffic_change,2026-01-28,in_range,0.002987303958177745,40170,independent_ml,p95_latency_delta_ms,65.75939225480761,65.0
+all traffic +80%,traffic_change,2026-01-28,in_range,0.02613377067883628,56096,rule_baseline,success_rate_delta_pp,-1.747978387278326,-3.7554273928058213
+all traffic +80%,traffic_change,2026-01-28,in_range,0.02613377067883628,56096,rule_baseline,timeout_rate_delta_pp,0.42613230903236177,3.5805202723287652
+all traffic +80%,traffic_change,2026-01-28,in_range,0.02613377067883628,56096,rule_baseline,failures_delta,2002.4340493488994,3088.9999999999977
+all traffic +80%,traffic_change,2026-01-28,in_range,0.02613377067883628,56096,rule_baseline,gmv_at_risk,3220234.7065798854,6493691.79706502
+all traffic +80%,traffic_change,2026-01-28,in_range,0.02613377067883628,56096,rule_baseline,p95_latency_delta_ms,1169.7692653906333,4995.0
+all traffic +80%,traffic_change,2026-01-28,in_range,0.02613377067883628,56096,independent_ml,success_rate_delta_pp,-1.73731300776917,-3.7554273928058213
+all traffic +80%,traffic_change,2026-01-28,in_range,0.02613377067883628,56096,independent_ml,timeout_rate_delta_pp,1.1773263316208988,3.5805202723287652
+all traffic +80%,traffic_change,2026-01-28,in_range,0.02613377067883628,56096,independent_ml,failures_delta,1901.3987579412342,3088.9999999999977
+all traffic +80%,traffic_change,2026-01-28,in_range,0.02613377067883628,56096,independent_ml,gmv_at_risk,2706904.7862363867,6493691.79706502
+all traffic +80%,traffic_change,2026-01-28,in_range,0.02613377067883628,56096,independent_ml,p95_latency_delta_ms,1434.0576449041719,4995.0
+all traffic +120%,traffic_change,2026-01-28,out_of_range,0.1181093178206418,68589,rule_baseline,success_rate_delta_pp,-5.7789362928334365,-16.959111111192946
+all traffic +120%,traffic_change,2026-01-28,out_of_range,0.1181093178206418,68589,rule_baseline,timeout_rate_delta_pp,1.397907846981884,16.21169103310373
+all traffic +120%,traffic_change,2026-01-28,out_of_range,0.1181093178206418,68589,rule_baseline,failures_delta,5496.7021842853355,13107.000000000002
+all traffic +120%,traffic_change,2026-01-28,out_of_range,0.1181093178206418,68589,rule_baseline,gmv_at_risk,12966756.621165108,35290083.911596425
+all traffic +120%,traffic_change,2026-01-28,out_of_range,0.1181093178206418,68589,rule_baseline,p95_latency_delta_ms,2641.2905769746876,15833.0
+all traffic +120%,traffic_change,2026-01-28,out_of_range,0.1181093178206418,68589,independent_ml,success_rate_delta_pp,-4.883267943671255,-16.959111111192946
+all traffic +120%,traffic_change,2026-01-28,out_of_range,0.1181093178206418,68589,independent_ml,timeout_rate_delta_pp,3.549788268920316,16.21169103310373
+all traffic +120%,traffic_change,2026-01-28,out_of_range,0.1181093178206418,68589,independent_ml,failures_delta,4739.606881814532,13107.000000000002
+all traffic +120%,traffic_change,2026-01-28,out_of_range,0.1181093178206418,68589,independent_ml,gmv_at_risk,9755848.139582606,35290083.911596425
+all traffic +120%,traffic_change,2026-01-28,out_of_range,0.1181093178206418,68589,independent_ml,p95_latency_delta_ms,3315.482203604244,15833.0
+UPI traffic +30%,traffic_change,2026-01-28,in_range,0.002962922692182233,36788,rule_baseline,success_rate_delta_pp,0.03656458107708094,0.09892076406514683
+UPI traffic +30%,traffic_change,2026-01-28,in_range,0.002962922692182233,36788,rule_baseline,timeout_rate_delta_pp,0.06443601337298849,0.025031764372993905
+UPI traffic +30%,traffic_change,2026-01-28,in_range,0.002962922692182233,36788,rule_baseline,failures_delta,244.5901294102589,210.99999999999955
+UPI traffic +30%,traffic_change,2026-01-28,in_range,0.002962922692182233,36788,rule_baseline,gmv_at_risk,-98470.4997491939,-82714.87724365946
+UPI traffic +30%,traffic_change,2026-01-28,in_range,0.002962922692182233,36788,rule_baseline,p95_latency_delta_ms,-105.80088343070838,-154.0
+UPI traffic +30%,traffic_change,2026-01-28,in_range,0.002962922692182233,36788,independent_ml,success_rate_delta_pp,-0.007031518540745463,0.09892076406514683
+UPI traffic +30%,traffic_change,2026-01-28,in_range,0.002962922692182233,36788,independent_ml,timeout_rate_delta_pp,0.07355320944281168,0.025031764372993905
+UPI traffic +30%,traffic_change,2026-01-28,in_range,0.002962922692182233,36788,independent_ml,failures_delta,236.89577669625874,210.99999999999955
+UPI traffic +30%,traffic_change,2026-01-28,in_range,0.002962922692182233,36788,independent_ml,gmv_at_risk,8268.505752934143,-82714.87724365946
+UPI traffic +30%,traffic_change,2026-01-28,in_range,0.002962922692182233,36788,independent_ml,p95_latency_delta_ms,-109.14958450902577,-154.0
+UPI traffic +80%,traffic_change,2026-01-28,in_range,0.0028190778483127297,47888,rule_baseline,success_rate_delta_pp,-0.33497778491511365,-0.6236066077823343
+UPI traffic +80%,traffic_change,2026-01-28,in_range,0.0028190778483127297,47888,rule_baseline,timeout_rate_delta_pp,0.2513529812384945,0.8595049045066121
+UPI traffic +80%,traffic_change,2026-01-28,in_range,0.0028190778483127297,47888,rule_baseline,failures_delta,849.6322663601841,961.0
+UPI traffic +80%,traffic_change,2026-01-28,in_range,0.0028190778483127297,47888,rule_baseline,gmv_at_risk,329646.5155815799,679059.6378304288
+UPI traffic +80%,traffic_change,2026-01-28,in_range,0.0028190778483127297,47888,rule_baseline,p95_latency_delta_ms,82.59209545538306,306.0
+UPI traffic +80%,traffic_change,2026-01-28,in_range,0.0028190778483127297,47888,independent_ml,success_rate_delta_pp,-0.49680171202226564,-0.6236066077823343
+UPI traffic +80%,traffic_change,2026-01-28,in_range,0.0028190778483127297,47888,independent_ml,timeout_rate_delta_pp,0.47981666121902355,0.8595049045066121
+UPI traffic +80%,traffic_change,2026-01-28,in_range,0.0028190778483127297,47888,independent_ml,failures_delta,863.222864650699,961.0
+UPI traffic +80%,traffic_change,2026-01-28,in_range,0.0028190778483127297,47888,independent_ml,gmv_at_risk,515535.0938319955,679059.6378304288
+UPI traffic +80%,traffic_change,2026-01-28,in_range,0.0028190778483127297,47888,independent_ml,p95_latency_delta_ms,215.35700401446593,306.0
+CARD traffic +80%,traffic_change,2026-01-28,in_range,0.0037494550210725184,34405,rule_baseline,success_rate_delta_pp,-0.04982647671035734,-0.01885606782295879
+CARD traffic +80%,traffic_change,2026-01-28,in_range,0.0037494550210725184,34405,rule_baseline,timeout_rate_delta_pp,-0.11047322871554285,-0.09574263342118239
+CARD traffic +80%,traffic_change,2026-01-28,in_range,0.0037494550210725184,34405,rule_baseline,failures_delta,267.37398911305854,245.9999999999984
+CARD traffic +80%,traffic_change,2026-01-28,in_range,0.0037494550210725184,34405,rule_baseline,gmv_at_risk,39403.72161209397,-76776.15847915504
+CARD traffic +80%,traffic_change,2026-01-28,in_range,0.0037494550210725184,34405,rule_baseline,p95_latency_delta_ms,6.5775047797778825,15.0
+CARD traffic +80%,traffic_change,2026-01-28,in_range,0.0037494550210725184,34405,independent_ml,success_rate_delta_pp,-0.13123770403301593,-0.01885606782295879
+CARD traffic +80%,traffic_change,2026-01-28,in_range,0.0037494550210725184,34405,independent_ml,timeout_rate_delta_pp,-0.07016909915448329,-0.09574263342118239
+CARD traffic +80%,traffic_change,2026-01-28,in_range,0.0037494550210725184,34405,independent_ml,failures_delta,274.55449263047285,245.9999999999984
+CARD traffic +80%,traffic_change,2026-01-28,in_range,0.0037494550210725184,34405,independent_ml,gmv_at_risk,193493.18692020793,-76776.15847915504
+CARD traffic +80%,traffic_change,2026-01-28,in_range,0.0037494550210725184,34405,independent_ml,p95_latency_delta_ms,8.171978266593214,15.0
+20% CARD -> UPI,method_shift,2026-01-28,in_range,0.003289473684210526,1520,rule_baseline,success_rate_delta_pp,0.04081492181999824,-0.006412928463783718
+20% CARD -> UPI,method_shift,2026-01-28,in_range,0.003289473684210526,1520,rule_baseline,timeout_rate_delta_pp,0.04723093213534601,0.03206464231891495
+20% CARD -> UPI,method_shift,2026-01-28,in_range,0.003289473684210526,1520,rule_baseline,failures_delta,-12.72894966800277,2.0000000000002274
+20% CARD -> UPI,method_shift,2026-01-28,in_range,0.003289473684210526,1520,rule_baseline,gmv_at_risk,-63658.204300193116,606841.5700000003
+20% CARD -> UPI,method_shift,2026-01-28,in_range,0.003289473684210526,1520,rule_baseline,p95_latency_delta_ms,-31.060036634305106,-46.0
+20% CARD -> UPI,method_shift,2026-01-28,in_range,0.003289473684210526,1520,independent_ml,success_rate_delta_pp,0.012735356383919427,-0.006412928463783718
+20% CARD -> UPI,method_shift,2026-01-28,in_range,0.003289473684210526,1520,independent_ml,timeout_rate_delta_pp,0.038771552966832164,0.03206464231891495
+20% CARD -> UPI,method_shift,2026-01-28,in_range,0.003289473684210526,1520,independent_ml,failures_delta,-3.971775595452982,2.0000000000002274
+20% CARD -> UPI,method_shift,2026-01-28,in_range,0.003289473684210526,1520,independent_ml,gmv_at_risk,101312.81978818215,606841.5700000003
+20% CARD -> UPI,method_shift,2026-01-28,in_range,0.003289473684210526,1520,independent_ml,p95_latency_delta_ms,-28.22545576772427,-46.0
+60% CARD -> UPI,method_shift,2026-01-28,in_range,0.002632156174599693,4559,rule_baseline,success_rate_delta_pp,0.10829028577996613,0.03206464231891859
+60% CARD -> UPI,method_shift,2026-01-28,in_range,0.002632156174599693,4559,rule_baseline,timeout_rate_delta_pp,0.14262443065630406,0.09940039118863618
+60% CARD -> UPI,method_shift,2026-01-28,in_range,0.002632156174599693,4559,rule_baseline,failures_delta,-33.77249142619803,-10.000000000001137
+60% CARD -> UPI,method_shift,2026-01-28,in_range,0.002632156174599693,4559,rule_baseline,gmv_at_risk,-184664.25793052372,684965.79
+60% CARD -> UPI,method_shift,2026-01-28,in_range,0.002632156174599693,4559,rule_baseline,p95_latency_delta_ms,-104.55546440461512,-114.0
+60% CARD -> UPI,method_shift,2026-01-28,in_range,0.002632156174599693,4559,independent_ml,success_rate_delta_pp,0.03966844783197532,0.03206464231891859
+60% CARD -> UPI,method_shift,2026-01-28,in_range,0.002632156174599693,4559,independent_ml,timeout_rate_delta_pp,0.11661304839284785,0.09940039118863618
+60% CARD -> UPI,method_shift,2026-01-28,in_range,0.002632156174599693,4559,independent_ml,failures_delta,-12.371398825358028,-10.000000000001137
+60% CARD -> UPI,method_shift,2026-01-28,in_range,0.002632156174599693,4559,independent_ml,gmv_at_risk,224679.95578585286,684965.79
+60% CARD -> UPI,method_shift,2026-01-28,in_range,0.002632156174599693,4559,independent_ml,p95_latency_delta_ms,-90.53749726065053,-114.0
+20% UPI -> CARD,method_shift,2026-01-28,in_range,0.004685196883554433,18996,rule_baseline,success_rate_delta_pp,-0.08951887387173008,-0.041684035014588616
+20% UPI -> CARD,method_shift,2026-01-28,in_range,0.004685196883554433,18996,rule_baseline,timeout_rate_delta_pp,-0.135456930654807,-0.1507038188989002
+20% UPI -> CARD,method_shift,2026-01-28,in_range,0.004685196883554433,18996,rule_baseline,failures_delta,27.91825119437658,12.999999999999773
+20% UPI -> CARD,method_shift,2026-01-28,in_range,0.004685196883554433,18996,rule_baseline,gmv_at_risk,66559.04586184025,42987.89999999944
+20% UPI -> CARD,method_shift,2026-01-28,in_range,0.004685196883554433,18996,rule_baseline,p95_latency_delta_ms,79.51427218631397,82.0
+20% UPI -> CARD,method_shift,2026-01-28,in_range,0.004685196883554433,18996,independent_ml,success_rate_delta_pp,-0.04641128704923059,-0.041684035014588616
+20% UPI -> CARD,method_shift,2026-01-28,in_range,0.004685196883554433,18996,independent_ml,timeout_rate_delta_pp,-0.11083126112275522,-0.1507038188989002
+20% UPI -> CARD,method_shift,2026-01-28,in_range,0.004685196883554433,18996,independent_ml,failures_delta,14.47428809204348,12.999999999999773
+20% UPI -> CARD,method_shift,2026-01-28,in_range,0.004685196883554433,18996,independent_ml,gmv_at_risk,13387.184556698427,42987.89999999944
+20% UPI -> CARD,method_shift,2026-01-28,in_range,0.004685196883554433,18996,independent_ml,p95_latency_delta_ms,62.6259261219584,82.0
+50% NETBANKING -> UPI,method_shift,2026-01-28,in_range,0.0007836990595611285,1276,rule_baseline,success_rate_delta_pp,0.10363444789479592,0.08978099849296095
+50% NETBANKING -> UPI,method_shift,2026-01-28,in_range,0.0007836990595611285,1276,rule_baseline,timeout_rate_delta_pp,0.04091250202723079,0.04168403501458931
+50% NETBANKING -> UPI,method_shift,2026-01-28,in_range,0.0007836990595611285,1276,rule_baseline,failures_delta,-32.32047526494989,-27.999999999999773
+50% NETBANKING -> UPI,method_shift,2026-01-28,in_range,0.0007836990595611285,1276,rule_baseline,gmv_at_risk,-218825.26624876726,-157245.43000000063
+50% NETBANKING -> UPI,method_shift,2026-01-28,in_range,0.0007836990595611285,1276,rule_baseline,p95_latency_delta_ms,-330.77801191728986,-468.0
+50% NETBANKING -> UPI,method_shift,2026-01-28,in_range,0.0007836990595611285,1276,independent_ml,success_rate_delta_pp,0.06204157463912674,0.08978099849296095
+50% NETBANKING -> UPI,method_shift,2026-01-28,in_range,0.0007836990595611285,1276,independent_ml,timeout_rate_delta_pp,0.032648689807885344,0.04168403501458931
+50% NETBANKING -> UPI,method_shift,2026-01-28,in_range,0.0007836990595611285,1276,independent_ml,failures_delta,-19.348905882704457,-27.999999999999773
+50% NETBANKING -> UPI,method_shift,2026-01-28,in_range,0.0007836990595611285,1276,independent_ml,gmv_at_risk,-44490.53358107712,-157245.43000000063
+50% NETBANKING -> UPI,method_shift,2026-01-28,in_range,0.0007836990595611285,1276,independent_ml,p95_latency_delta_ms,-330.78748923770036,-468.0
+30% UPI -> NETBANKING,method_shift,2026-01-28,in_range,0.004706974277380005,30168,rule_baseline,success_rate_delta_pp,-0.5538430374607772,-0.3495046012761738
+30% UPI -> NETBANKING,method_shift,2026-01-28,in_range,0.004706974277380005,30168,rule_baseline,timeout_rate_delta_pp,-0.19184991930036172,-0.20842017507294708
+30% UPI -> NETBANKING,method_shift,2026-01-28,in_range,0.004706974277380005,30168,rule_baseline,failures_delta,172.72702809289262,109.00000000000023
+30% UPI -> NETBANKING,method_shift,2026-01-28,in_range,0.004706974277380005,30168,rule_baseline,gmv_at_risk,357409.8277286496,257972.55000000075
+30% UPI -> NETBANKING,method_shift,2026-01-28,in_range,0.004706974277380005,30168,rule_baseline,p95_latency_delta_ms,1165.8548237465875,1184.0
+30% UPI -> NETBANKING,method_shift,2026-01-28,in_range,0.004706974277380005,30168,independent_ml,success_rate_delta_pp,-0.32222633392171574,-0.3495046012761738
+30% UPI -> NETBANKING,method_shift,2026-01-28,in_range,0.004706974277380005,30168,independent_ml,timeout_rate_delta_pp,-0.160621304772246,-0.20842017507294708
+30% UPI -> NETBANKING,method_shift,2026-01-28,in_range,0.004706974277380005,30168,independent_ml,failures_delta,100.4927267601654,109.00000000000023
+30% UPI -> NETBANKING,method_shift,2026-01-28,in_range,0.004706974277380005,30168,independent_ml,gmv_at_risk,209657.1611795174,257972.55000000075
+30% UPI -> NETBANKING,method_shift,2026-01-28,in_range,0.004706974277380005,30168,independent_ml,p95_latency_delta_ms,1048.1804828319564,1184.0
+route 25% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.0015097690941385435,22520,rule_baseline,success_rate_delta_pp,-0.03131185060863961,-0.009619392695670026
+route 25% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.0015097690941385435,22520,rule_baseline,timeout_rate_delta_pp,0.008051454945759949,0.009619392695674363
+route 25% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.0015097690941385435,22520,rule_baseline,failures_delta,9.765226849316377,2.9999999999986358
+route 25% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.0015097690941385435,22520,rule_baseline,gmv_at_risk,30457.339805968106,3810.839999999851
+route 25% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.0015097690941385435,22520,rule_baseline,p95_latency_delta_ms,92.42435435294465,105.0
+route 25% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.0015097690941385435,22520,independent_ml,success_rate_delta_pp,-0.024637240368585722,-0.009619392695670026
+route 25% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.0015097690941385435,22520,independent_ml,timeout_rate_delta_pp,0.007310781272462305,0.009619392695674363
+route 25% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.0015097690941385435,22520,independent_ml,failures_delta,7.6836161537507905,2.9999999999986358
+route 25% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.0015097690941385435,22520,independent_ml,gmv_at_risk,48471.714747971855,3810.839999999851
+route 25% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.0015097690941385435,22520,independent_ml,p95_latency_delta_ms,91.39980443328295,105.0
+route 75% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.03027490497657562,22626,rule_baseline,success_rate_delta_pp,-1.6660352019167934,-4.069003110270297
+route 75% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.03027490497657562,22626,rule_baseline,timeout_rate_delta_pp,0.3856788035929707,3.8221053644146603
+route 75% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.03027490497657562,22626,rule_baseline,failures_delta,519.5863984217904,1268.9999999999977
+route 75% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.03027490497657562,22626,rule_baseline,gmv_at_risk,1737152.7024737196,4085540.0200000005
+route 75% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.03027490497657562,22626,rule_baseline,p95_latency_delta_ms,1275.6548271117854,7751.0
+route 75% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.03027490497657562,22626,independent_ml,success_rate_delta_pp,-1.6246962276741495,-4.069003110270297
+route 75% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.03027490497657562,22626,independent_ml,timeout_rate_delta_pp,1.1052214855816755,3.8221053644146603
+route 75% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.03027490497657562,22626,independent_ml,failures_delta,506.694012524737,1268.9999999999977
+route 75% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.03027490497657562,22626,independent_ml,gmv_at_risk,1517104.8874668228,4085540.0200000005
+route 75% gateway_a -> gateway_b,routing_change,2026-01-28,in_range,0.03027490497657562,22626,independent_ml,p95_latency_delta_ms,1727.5438376030952,7751.0
+route 50% gateway_a -> gateway_c,routing_change,2026-01-28,in_range,0.00796812749003984,19076,rule_baseline,success_rate_delta_pp,-0.38473784005569334,-0.7823772725815248
+route 50% gateway_a -> gateway_c,routing_change,2026-01-28,in_range,0.00796812749003984,19076,rule_baseline,timeout_rate_delta_pp,0.09721157844827834,0.6477057748420816
+route 50% gateway_a -> gateway_c,routing_change,2026-01-28,in_range,0.00796812749003984,19076,rule_baseline,failures_delta,119.98819017816913,244.00000000000023
+route 50% gateway_a -> gateway_c,routing_change,2026-01-28,in_range,0.00796812749003984,19076,rule_baseline,gmv_at_risk,335186.04442501627,580043.9299999997
+route 50% gateway_a -> gateway_c,routing_change,2026-01-28,in_range,0.00796812749003984,19076,rule_baseline,p95_latency_delta_ms,154.6435563342111,489.0
+route 50% gateway_a -> gateway_c,routing_change,2026-01-28,in_range,0.00796812749003984,19076,independent_ml,success_rate_delta_pp,-0.43767451921103984,-0.7823772725815248
+route 50% gateway_a -> gateway_c,routing_change,2026-01-28,in_range,0.00796812749003984,19076,independent_ml,timeout_rate_delta_pp,0.2894860128395642,0.6477057748420816
+route 50% gateway_a -> gateway_c,routing_change,2026-01-28,in_range,0.00796812749003984,19076,independent_ml,failures_delta,136.49755230634696,244.00000000000023
+route 50% gateway_a -> gateway_c,routing_change,2026-01-28,in_range,0.00796812749003984,19076,independent_ml,gmv_at_risk,321377.4848807333,580043.9299999997
+route 50% gateway_a -> gateway_c,routing_change,2026-01-28,in_range,0.00796812749003984,19076,independent_ml,p95_latency_delta_ms,279.6456818844772,489.0
+route 50% gateway_b -> gateway_d,routing_change,2026-01-28,out_of_range,0.05538947018767647,12042,rule_baseline,success_rate_delta_pp,-0.7496407587776255,-2.677397633629397
+route 50% gateway_b -> gateway_d,routing_change,2026-01-28,out_of_range,0.05538947018767647,12042,rule_baseline,timeout_rate_delta_pp,0.2466018464634302,2.497835636643473
+route 50% gateway_b -> gateway_d,routing_change,2026-01-28,out_of_range,0.05538947018767647,12042,rule_baseline,failures_delta,233.7904634399781,835.0
+route 50% gateway_b -> gateway_d,routing_change,2026-01-28,out_of_range,0.05538947018767647,12042,rule_baseline,gmv_at_risk,538774.3638403863,1985442.959999999
+route 50% gateway_b -> gateway_d,routing_change,2026-01-28,out_of_range,0.05538947018767647,12042,rule_baseline,p95_latency_delta_ms,269.3883567228095,1403.0
+route 50% gateway_b -> gateway_d,routing_change,2026-01-28,out_of_range,0.05538947018767647,12042,independent_ml,success_rate_delta_pp,-0.7425715868081384,-2.677397633629397
+route 50% gateway_b -> gateway_d,routing_change,2026-01-28,out_of_range,0.05538947018767647,12042,independent_ml,timeout_rate_delta_pp,0.5173835034671682,2.497835636643473
+route 50% gateway_b -> gateway_d,routing_change,2026-01-28,out_of_range,0.05538947018767647,12042,independent_ml,failures_delta,231.58580077785405,835.0
+route 50% gateway_b -> gateway_d,routing_change,2026-01-28,out_of_range,0.05538947018767647,12042,independent_ml,gmv_at_risk,486605.7418488795,1985442.959999999
+route 50% gateway_b -> gateway_d,routing_change,2026-01-28,out_of_range,0.05538947018767647,12042,independent_ml,p95_latency_delta_ms,482.79547918615026,1403.0
+route 50% gateway_c -> gateway_a,routing_change,2026-01-28,in_range,0.003629286766252893,19012,rule_baseline,success_rate_delta_pp,-0.01436939510619517,0.0
+route 50% gateway_c -> gateway_a,routing_change,2026-01-28,in_range,0.003629286766252893,19012,rule_baseline,timeout_rate_delta_pp,0.003933044743287609,0.0
+route 50% gateway_c -> gateway_a,routing_change,2026-01-28,in_range,0.003629286766252893,19012,rule_baseline,failures_delta,4.481383251769103,0.0
+route 50% gateway_c -> gateway_a,routing_change,2026-01-28,in_range,0.003629286766252893,19012,rule_baseline,gmv_at_risk,16440.489958059043,0.0
+route 50% gateway_c -> gateway_a,routing_change,2026-01-28,in_range,0.003629286766252893,19012,rule_baseline,p95_latency_delta_ms,29.81652890002897,24.0
+route 50% gateway_c -> gateway_a,routing_change,2026-01-28,in_range,0.003629286766252893,19012,independent_ml,success_rate_delta_pp,-0.02700006344689143,0.0
+route 50% gateway_c -> gateway_a,routing_change,2026-01-28,in_range,0.003629286766252893,19012,independent_ml,timeout_rate_delta_pp,0.008984838566883022,0.0
+route 50% gateway_c -> gateway_a,routing_change,2026-01-28,in_range,0.003629286766252893,19012,independent_ml,failures_delta,8.420509787182027,0.0
+route 50% gateway_c -> gateway_a,routing_change,2026-01-28,in_range,0.003629286766252893,19012,independent_ml,gmv_at_risk,41809.735909962095,0.0
+route 50% gateway_c -> gateway_a,routing_change,2026-01-28,in_range,0.003629286766252893,19012,independent_ml,p95_latency_delta_ms,22.682734347031328,24.0
+route 90% gateway_d -> gateway_a,routing_change,2026-01-28,in_range,0.0010183990766515038,14729,rule_baseline,success_rate_delta_pp,0.004637669988560855,0.0
+route 90% gateway_d -> gateway_a,routing_change,2026-01-28,in_range,0.0010183990766515038,14729,rule_baseline,timeout_rate_delta_pp,-0.0021014675577531172,0.0
+route 90% gateway_d -> gateway_a,routing_change,2026-01-28,in_range,0.0010183990766515038,14729,rule_baseline,failures_delta,-1.4463501393324805,0.0
+route 90% gateway_d -> gateway_a,routing_change,2026-01-28,in_range,0.0010183990766515038,14729,rule_baseline,gmv_at_risk,-5385.554057048634,0.0
+route 90% gateway_d -> gateway_a,routing_change,2026-01-28,in_range,0.0010183990766515038,14729,rule_baseline,p95_latency_delta_ms,-22.151905899222584,-10.0
+route 90% gateway_d -> gateway_a,routing_change,2026-01-28,in_range,0.0010183990766515038,14729,independent_ml,success_rate_delta_pp,-0.01470400959620033,0.0
+route 90% gateway_d -> gateway_a,routing_change,2026-01-28,in_range,0.0010183990766515038,14729,independent_ml,timeout_rate_delta_pp,0.0013444827512833907,0.0
+route 90% gateway_d -> gateway_a,routing_change,2026-01-28,in_range,0.0010183990766515038,14729,independent_ml,failures_delta,4.585739472767045,0.0
+route 90% gateway_d -> gateway_a,routing_change,2026-01-28,in_range,0.0010183990766515038,14729,independent_ml,gmv_at_risk,20467.590965983458,0.0
+route 90% gateway_d -> gateway_a,routing_change,2026-01-28,in_range,0.0010183990766515038,14729,independent_ml,p95_latency_delta_ms,-25.861518844318198,-10.0
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-01-28,out_of_range,0.45753899480069327,1731,rule_baseline,success_rate_delta_pp,-1.0733959384348402,-4.120306537980567
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-01-28,out_of_range,0.45753899480069327,1731,rule_baseline,timeout_rate_delta_pp,0.25075052057737923,4.033732003719499
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-01-28,out_of_range,0.45753899480069327,1731,rule_baseline,failures_delta,334.75999131967365,1284.9999999999995
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-01-28,out_of_range,0.45753899480069327,1731,rule_baseline,gmv_at_risk,1131822.6548770247,4097408.4899999993
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-01-28,out_of_range,0.45753899480069327,1731,rule_baseline,p95_latency_delta_ms,512.7695260515502,9498.0
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-01-28,out_of_range,0.45753899480069327,1731,independent_ml,success_rate_delta_pp,-0.9192182318302322,-4.120306537980567
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-01-28,out_of_range,0.45753899480069327,1731,independent_ml,timeout_rate_delta_pp,0.7024602809870986,4.033732003719499
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-01-28,out_of_range,0.45753899480069327,1731,independent_ml,failures_delta,286.6765899608945,1284.9999999999995
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-01-28,out_of_range,0.45753899480069327,1731,independent_ml,gmv_at_risk,881929.7195377313,4097408.4899999993
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-01-28,out_of_range,0.45753899480069327,1731,independent_ml,p95_latency_delta_ms,761.2691430117811,9498.0
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-01-28,in_range,0.0035564315708286913,46676,rule_baseline,success_rate_delta_pp,-1.9804020893617547,-1.9345040601403518
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-01-28,in_range,0.0035564315708286913,46676,rule_baseline,timeout_rate_delta_pp,0.9688017568514078,1.3402788131859058
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-01-28,in_range,0.0035564315708286913,46676,rule_baseline,failures_delta,1564.6942724044416,1518.0
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-01-28,in_range,0.0035564315708286913,46676,rule_baseline,gmv_at_risk,2068773.075556185,1958483.077278765
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-01-28,in_range,0.0035564315708286913,46676,rule_baseline,p95_latency_delta_ms,346.6720657227024,902.0
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-01-28,in_range,0.0035564315708286913,46676,independent_ml,success_rate_delta_pp,-0.43316671380851934,-1.9345040601403518
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-01-28,in_range,0.0035564315708286913,46676,independent_ml,timeout_rate_delta_pp,0.24745835089022855,1.3402788131859058
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-01-28,in_range,0.0035564315708286913,46676,independent_ml,failures_delta,781.4760969110569,1518.0
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-01-28,in_range,0.0035564315708286913,46676,independent_ml,gmv_at_risk,656142.4263360463,1958483.077278765
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-01-28,in_range,0.0035564315708286913,46676,independent_ml,p95_latency_delta_ms,378.15605218536166,902.0
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,rule_baseline,success_rate_delta_pp,-0.07898367268813766,-0.10309942650944537
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,rule_baseline,timeout_rate_delta_pp,0.028033052283527905,0.048327856176300005
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,rule_baseline,failures_delta,24.51495232894422,32.00000000000182
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,rule_baseline,gmv_at_risk,53462.66510838643,59374.31999999937
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,rule_baseline,p95_latency_delta_ms,0.0,12.0
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,independent_ml,success_rate_delta_pp,0.00014310944441708884,-0.10309942650944537
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,independent_ml,timeout_rate_delta_pp,6.118846808582726e-05,0.048327856176300005
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,independent_ml,failures_delta,-0.0444183093582069,32.00000000000182
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,independent_ml,gmv_at_risk,-2280.313437730074,59374.31999999937
+HDFC UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,independent_ml,p95_latency_delta_ms,0.030586574610424577,12.0
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,rule_baseline,success_rate_delta_pp,-0.15898183220073303,-0.17720213931310402
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,rule_baseline,timeout_rate_delta_pp,0.0855971776657305,0.12565242605837995
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,rule_baseline,failures_delta,49.34478107846371,55.000000000001364
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,rule_baseline,gmv_at_risk,107507.47799084987,157601.83999999985
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,rule_baseline,p95_latency_delta_ms,0.0,33.0
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,independent_ml,success_rate_delta_pp,-0.00047147338265718375,-0.17720213931310402
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,independent_ml,timeout_rate_delta_pp,-0.00022670525990798468,0.12565242605837995
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,independent_ml,failures_delta,0.14633590850917244,55.000000000001364
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,independent_ml,gmv_at_risk,-172.82574453670532,157601.83999999985
+HDFC UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,497,independent_ml,p95_latency_delta_ms,0.1315797816414488,33.0
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.13883299798792756,497,rule_baseline,success_rate_delta_pp,-0.31897815122590156,-0.34796056446936285
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.13883299798792756,497,rule_baseline,timeout_rate_delta_pp,0.16366755088484553,0.20619885301887997
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.13883299798792756,497,rule_baseline,failures_delta,99.00443857749542,108.00000000000091
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.13883299798792756,497,rule_baseline,gmv_at_risk,215597.10375577677,271951.6799999997
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.13883299798792756,497,rule_baseline,p95_latency_delta_ms,0.0,55.0
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.13883299798792756,497,independent_ml,success_rate_delta_pp,0.0008171930194200705,-0.34796056446936285
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.13883299798792756,497,independent_ml,timeout_rate_delta_pp,-0.0004288224499843056,0.20619885301887997
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.13883299798792756,497,independent_ml,failures_delta,-0.25364036936775847,108.00000000000091
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.13883299798792756,497,independent_ml,gmv_at_risk,-2165.642361467704,271951.6799999997
+HDFC UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.13883299798792756,497,independent_ml,p95_latency_delta_ms,0.2886835436675028,55.0
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,497,rule_baseline,success_rate_delta_pp,-0.6389707892762386,-0.61859655905665
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,497,rule_baseline,timeout_rate_delta_pp,0.3198082973230751,0.41239770603776016
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,497,rule_baseline,failures_delta,198.32375357555907,192.00000000000318
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,497,rule_baseline,gmv_at_risk,431776.35528563056,444762.95999999996
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,497,rule_baseline,p95_latency_delta_ms,0.0,119.0
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,497,independent_ml,success_rate_delta_pp,0.0008171930194200705,-0.61859655905665
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,497,independent_ml,timeout_rate_delta_pp,-0.0004288224499843056,0.41239770603776016
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,497,independent_ml,failures_delta,-0.25364036936775847,192.00000000000318
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,497,independent_ml,gmv_at_risk,-2165.642361467704,444762.95999999996
+HDFC UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,497,independent_ml,p95_latency_delta_ms,0.2886835436675028,119.0
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,rule_baseline,success_rate_delta_pp,-0.0891518689830284,-0.08699014111734904
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,rule_baseline,timeout_rate_delta_pp,0.03498048391421416,0.05477157033313999
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,rule_baseline,failures_delta,27.670957094952428,27.000000000002956
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,rule_baseline,gmv_at_risk,57843.71167081036,40795.4299999997
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,rule_baseline,p95_latency_delta_ms,0.0,15.0
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,independent_ml,success_rate_delta_pp,-0.0009605597413142597,-0.08699014111734904
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,independent_ml,timeout_rate_delta_pp,0.0009228369769430367,0.05477157033313999
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,independent_ml,failures_delta,0.29813853250902866,27.000000000002956
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,independent_ml,gmv_at_risk,2406.952176945284,40795.4299999997
+SBI UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,independent_ml,p95_latency_delta_ms,0.05941919990982569,15.0
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,rule_baseline,success_rate_delta_pp,-0.17898216765789288,-0.16431471099942474
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,rule_baseline,timeout_rate_delta_pp,0.09805283052164229,0.10632128358785999
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,rule_baseline,failures_delta,55.55248519765678,51.00000000000159
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,rule_baseline,gmv_at_risk,116525.46823376324,71451.66000000015
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,rule_baseline,p95_latency_delta_ms,0.0,24.0
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,independent_ml,success_rate_delta_pp,-0.003648730442129544,-0.16431471099942474
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,independent_ml,timeout_rate_delta_pp,0.0021184798371287963,0.10632128358785999
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,independent_ml,failures_delta,1.1324929546281055,51.00000000000159
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,independent_ml,gmv_at_risk,6865.687250198796,71451.66000000015
+SBI UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,559,independent_ml,p95_latency_delta_ms,0.306109914496119,24.0
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.2737030411449016,559,rule_baseline,success_rate_delta_pp,-0.3586427650076329,-0.36084799278304214
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.2737030411449016,559,rule_baseline,timeout_rate_delta_pp,0.18571840916321666,0.18686771054836002
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.2737030411449016,559,rule_baseline,failures_delta,111.31554140306912,112.00000000000068
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.2737030411449016,559,rule_baseline,gmv_at_risk,233888.98135967087,241314.3099999996
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.2737030411449016,559,rule_baseline,p95_latency_delta_ms,0.0,50.0
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.2737030411449016,559,independent_ml,success_rate_delta_pp,-0.0022168685851697845,-0.36084799278304214
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.2737030411449016,559,independent_ml,timeout_rate_delta_pp,0.0025859202558400213,0.18686771054836002
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.2737030411449016,559,independent_ml,failures_delta,0.688071671464968,112.00000000000068
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.2737030411449016,559,independent_ml,gmv_at_risk,5337.7593737933785,241314.3099999996
+SBI UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.2737030411449016,559,independent_ml,p95_latency_delta_ms,0.806322292229197,50.0
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,559,rule_baseline,success_rate_delta_pp,-0.7179639597071241,-0.7410271280366088
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,559,rule_baseline,timeout_rate_delta_pp,0.36104956644636543,0.4478381339003801
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,559,rule_baseline,failures_delta,222.8416538138972,230.00000000000273
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,559,rule_baseline,gmv_at_risk,468616.0076114852,507775.43000000063
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,559,rule_baseline,p95_latency_delta_ms,0.0,139.0
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,559,independent_ml,success_rate_delta_pp,-0.0022168685851697845,-0.7410271280366088
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,559,independent_ml,timeout_rate_delta_pp,0.0025859202558400213,0.4478381339003801
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,559,independent_ml,failures_delta,0.688071671464968,230.00000000000273
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,559,independent_ml,gmv_at_risk,5337.7593737933785,507775.43000000063
+SBI UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,559,independent_ml,p95_latency_delta_ms,0.806322292229197,139.0
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,rule_baseline,success_rate_delta_pp,-0.016718039097862736,-0.019331142470524476
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,rule_baseline,timeout_rate_delta_pp,0.008415062980966087,0.006443714156839989
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,rule_baseline,failures_delta,5.188944975194772,6.000000000001592
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,rule_baseline,gmv_at_risk,9825.920419724658,12579.229999999516
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,rule_baseline,p95_latency_delta_ms,0.0,1.0
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,independent_ml,success_rate_delta_pp,-0.00020582051742934482,-0.019331142470524476
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,independent_ml,timeout_rate_delta_pp,0.00017571115189232364,0.006443714156839989
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,independent_ml,failures_delta,0.06388257219964544,6.000000000001592
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,independent_ml,gmv_at_risk,372.35148401372135,12579.229999999516
+AU Small Finance UPI -5pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,independent_ml,p95_latency_delta_ms,0.0,1.0
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,rule_baseline,success_rate_delta_pp,-0.034267147182376334,-0.028996713705786714
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,rule_baseline,timeout_rate_delta_pp,0.018898746982850753,0.025774856627359954
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,rule_baseline,failures_delta,10.635837142466016,9.000000000002274
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,rule_baseline,gmv_at_risk,20396.327890187502,14834.649999999441
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,rule_baseline,p95_latency_delta_ms,0.0,5.0
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,independent_ml,success_rate_delta_pp,-0.00045981710719011915,-0.028996713705786714
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,independent_ml,timeout_rate_delta_pp,0.0003540288437457739,0.025774856627359954
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,independent_ml,failures_delta,0.14271803372957947,9.000000000002274
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,independent_ml,gmv_at_risk,468.73425667826086,14834.649999999441
+AU Small Finance UPI -10pp 18:00-20:00,issuer_degradation,2026-02-03,in_range,0.0,109,independent_ml,p95_latency_delta_ms,0.0,5.0
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.48623853211009177,109,rule_baseline,success_rate_delta_pp,-0.06936536335140353,-0.07088085572524161
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.48623853211009177,109,rule_baseline,timeout_rate_delta_pp,0.03602495871282401,0.03544042786261994
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.48623853211009177,109,rule_baseline,failures_delta,21.52962147700873,22.000000000000682
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.48623853211009177,109,rule_baseline,gmv_at_risk,41537.14283111412,46637.610000000335
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.48623853211009177,109,rule_baseline,p95_latency_delta_ms,0.0,8.0
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.48623853211009177,109,independent_ml,success_rate_delta_pp,-0.00012807174342155392,-0.07088085572524161
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.48623853211009177,109,independent_ml,timeout_rate_delta_pp,0.0007856939819229913,0.03544042786261994
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.48623853211009177,109,independent_ml,failures_delta,0.039750907723146156,22.000000000000682
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.48623853211009177,109,independent_ml,gmv_at_risk,210.43562725372612,46637.610000000335
+AU Small Finance UPI -20pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,0.48623853211009177,109,independent_ml,p95_latency_delta_ms,-0.15902308593922498,8.0
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,109,rule_baseline,success_rate_delta_pp,-0.13956179568945792,-0.1192087119015417
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,109,rule_baseline,timeout_rate_delta_pp,0.07027738217277019,0.07732456988207995
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,109,rule_baseline,failures_delta,43.317190146093935,37.00000000000068
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,109,rule_baseline,gmv_at_risk,83818.77271296643,71180.12000000011
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,109,rule_baseline,p95_latency_delta_ms,0.0,18.0
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,109,independent_ml,success_rate_delta_pp,-0.00012807174342155392,-0.1192087119015417
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,109,independent_ml,timeout_rate_delta_pp,0.0007856939819229913,0.07732456988207995
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,109,independent_ml,failures_delta,0.039750907723146156,37.00000000000068
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,109,independent_ml,gmv_at_risk,210.43562725372612,71180.12000000011
+AU Small Finance UPI -40pp 18:00-20:00,issuer_degradation,2026-02-03,out_of_range,1.0,109,independent_ml,p95_latency_delta_ms,-0.15902308593922498,18.0
+HDFC all methods -10pp all day,issuer_degradation,2026-02-03,in_range,0.007138831486004133,5323,rule_baseline,success_rate_delta_pp,-1.6877639713113513,-1.6463689670726311
+HDFC all methods -10pp all day,issuer_degradation,2026-02-03,in_range,0.007138831486004133,5323,rule_baseline,timeout_rate_delta_pp,0.6481636596158321,0.6798118435466202
+HDFC all methods -10pp all day,issuer_degradation,2026-02-03,in_range,0.007138831486004133,5323,rule_baseline,failures_delta,523.8481814156173,511.0000000000034
+HDFC all methods -10pp all day,issuer_degradation,2026-02-03,in_range,0.007138831486004133,5323,rule_baseline,gmv_at_risk,1835348.9597051144,1657396.7600000007
+HDFC all methods -10pp all day,issuer_degradation,2026-02-03,in_range,0.007138831486004133,5323,rule_baseline,p95_latency_delta_ms,0.0,215.0
+HDFC all methods -10pp all day,issuer_degradation,2026-02-03,in_range,0.007138831486004133,5323,independent_ml,success_rate_delta_pp,-0.01591296213580007,-1.6463689670726311
+HDFC all methods -10pp all day,issuer_degradation,2026-02-03,in_range,0.007138831486004133,5323,independent_ml,timeout_rate_delta_pp,0.00029871629212896086,0.6798118435466202
+HDFC all methods -10pp all day,issuer_degradation,2026-02-03,in_range,0.007138831486004133,5323,independent_ml,failures_delta,4.939065187709502,511.0000000000034
+HDFC all methods -10pp all day,issuer_degradation,2026-02-03,in_range,0.007138831486004133,5323,independent_ml,gmv_at_risk,44131.093302359805,1657396.7600000007
+HDFC all methods -10pp all day,issuer_degradation,2026-02-03,in_range,0.007138831486004133,5323,independent_ml,p95_latency_delta_ms,0.6865167890809971,215.0
+HDFC all methods -30pp all day,issuer_degradation,2026-02-03,out_of_range,1.0,5323,rule_baseline,success_rate_delta_pp,-5.114585134909111,-5.132418325923071
+HDFC all methods -30pp all day,issuer_degradation,2026-02-03,out_of_range,1.0,5323,rule_baseline,timeout_rate_delta_pp,1.8287399639686868,2.0748759585024805
+HDFC all methods -30pp all day,issuer_degradation,2026-02-03,out_of_range,1.0,5323,rule_baseline,failures_delta,1587.4649341730901,1593.0000000000032
+HDFC all methods -30pp all day,issuer_degradation,2026-02-03,out_of_range,1.0,5323,rule_baseline,gmv_at_risk,5548525.020250343,5294725.61
+HDFC all methods -30pp all day,issuer_degradation,2026-02-03,out_of_range,1.0,5323,rule_baseline,p95_latency_delta_ms,0.0,782.0
+HDFC all methods -30pp all day,issuer_degradation,2026-02-03,out_of_range,1.0,5323,independent_ml,success_rate_delta_pp,-0.0035959272658314667,-5.132418325923071
+HDFC all methods -30pp all day,issuer_degradation,2026-02-03,out_of_range,1.0,5323,independent_ml,timeout_rate_delta_pp,-0.0017206046464198453,2.0748759585024805
+HDFC all methods -30pp all day,issuer_degradation,2026-02-03,out_of_range,1.0,5323,independent_ml,failures_delta,1.1161039047688064,1593.0000000000032
+HDFC all methods -30pp all day,issuer_degradation,2026-02-03,out_of_range,1.0,5323,independent_ml,gmv_at_risk,31774.83805502206,5294725.61
+HDFC all methods -30pp all day,issuer_degradation,2026-02-03,out_of_range,1.0,5323,independent_ml,p95_latency_delta_ms,1.412750786691504,782.0
+gateway_a outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,240,rule_baseline,success_rate_delta_pp,-0.7406786771949725,-0.7442489851150258
+gateway_a outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,240,rule_baseline,timeout_rate_delta_pp,0.38182602250628056,0.7442489851150202
+gateway_a outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,240,rule_baseline,failures_delta,229.89184782777556,231.00000000000182
+gateway_a outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,240,rule_baseline,gmv_at_risk,609882.8127132179,608612.2399999993
+gateway_a outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,240,rule_baseline,p95_latency_delta_ms,0.0,237.0
+gateway_a outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,240,independent_ml,success_rate_delta_pp,-0.04872260352152269,-0.7442489851150258
+gateway_a outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,240,independent_ml,timeout_rate_delta_pp,0.06049942776103698,0.7442489851150202
+gateway_a outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,240,independent_ml,failures_delta,15.122521681010085,231.00000000000182
+gateway_a outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,240,independent_ml,gmv_at_risk,34018.218414161354,608612.2399999993
+gateway_a outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,240,independent_ml,p95_latency_delta_ms,7.323492894289302,237.0
+gateway_a outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,971,rule_baseline,success_rate_delta_pp,-3.0106910584619895,-3.0059926541658677
+gateway_a outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,971,rule_baseline,timeout_rate_delta_pp,1.5371918031429188,3.041433082028481
+gateway_a outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,971,rule_baseline,failures_delta,934.4582907254326,933.0000000000023
+gateway_a outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,971,rule_baseline,gmv_at_risk,2862144.6203090437,2725303.340000001
+gateway_a outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,971,rule_baseline,p95_latency_delta_ms,0.0,1480.0
+gateway_a outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,971,independent_ml,success_rate_delta_pp,-0.19791345306102714,-3.0059926541658677
+gateway_a outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,971,independent_ml,timeout_rate_delta_pp,0.24728241459901437,3.041433082028481
+gateway_a outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,971,independent_ml,failures_delta,61.42837756108156,933.0000000000023
+gateway_a outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,971,independent_ml,gmv_at_risk,142222.21938371472,2725303.340000001
+gateway_a outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,971,independent_ml,p95_latency_delta_ms,30.837220539304326,1480.0
+gateway_b outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,167,rule_baseline,success_rate_delta_pp,-0.4989863892137736,-0.5187189896256217
+gateway_b outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,167,rule_baseline,timeout_rate_delta_pp,0.24962135735182284,0.5251627037824601
+gateway_b outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,167,rule_baseline,failures_delta,154.87539548417112,161.00000000000045
+gateway_b outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,167,rule_baseline,gmv_at_risk,696590.7755130697,742248.2199999997
+gateway_b outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,167,rule_baseline,p95_latency_delta_ms,0.0,152.0
+gateway_b outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,167,independent_ml,success_rate_delta_pp,-0.03436457919933078,-0.5187189896256217
+gateway_b outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,167,independent_ml,timeout_rate_delta_pp,0.045785988786224176,0.5251627037824601
+gateway_b outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,167,independent_ml,failures_delta,10.666078091888266,161.00000000000045
+gateway_b outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,167,independent_ml,gmv_at_risk,30462.85316420812,742248.2199999997
+gateway_b outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,167,independent_ml,p95_latency_delta_ms,15.282928501242168,152.0
+gateway_b outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,693,rule_baseline,success_rate_delta_pp,-2.1489420641023216,-2.171531670855087
+gateway_b outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,693,rule_baseline,timeout_rate_delta_pp,1.083870964752893,2.1844190991687604
+gateway_b outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,693,rule_baseline,failures_delta,666.9886378560786,674.000000000002
+gateway_b outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,693,rule_baseline,gmv_at_risk,2529498.3256313717,2545716.2700000005
+gateway_b outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,693,rule_baseline,p95_latency_delta_ms,0.0,793.0
+gateway_b outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,693,independent_ml,success_rate_delta_pp,-0.14248234226582612,-2.171531670855087
+gateway_b outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,693,independent_ml,timeout_rate_delta_pp,0.18642909596505702,2.1844190991687604
+gateway_b outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,693,independent_ml,failures_delta,44.223669392466945,674.000000000002
+gateway_b outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,693,independent_ml,gmv_at_risk,124314.90232232865,2545716.2700000005
+gateway_b outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,693,independent_ml,p95_latency_delta_ms,62.00543117392772,793.0
+gateway_c outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,123,rule_baseline,success_rate_delta_pp,-0.3716563310124821,-0.3866228494104007
+gateway_c outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,123,rule_baseline,timeout_rate_delta_pp,0.2069231994044723,0.3898447064888202
+gateway_c outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,123,rule_baseline,failures_delta,115.3546920196543,120.00000000000023
+gateway_c outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,123,rule_baseline,gmv_at_risk,499751.7168574799,529096.2999999998
+gateway_c outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,123,rule_baseline,p95_latency_delta_ms,0.0,108.0
+gateway_c outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,123,independent_ml,success_rate_delta_pp,-0.028005755616988814,-0.3866228494104007
+gateway_c outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,123,independent_ml,timeout_rate_delta_pp,0.035235807752787354,0.3898447064888202
+gateway_c outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,123,independent_ml,failures_delta,8.69242642840095,120.00000000000023
+gateway_c outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,123,independent_ml,gmv_at_risk,24034.388233510777,529096.2999999998
+gateway_c outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,123,independent_ml,p95_latency_delta_ms,1.873214586929862,108.0
+gateway_c outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,509,rule_baseline,success_rate_delta_pp,-1.5764171520748937,-1.5851536825826407
+gateway_c outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,509,rule_baseline,timeout_rate_delta_pp,0.871755701392962,1.6012629679747405
+gateway_c outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,509,rule_baseline,failures_delta,489.28835566100565,492.0
+gateway_c outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,509,rule_baseline,gmv_at_risk,1654547.8657193147,1657740.67
+gateway_c outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,509,rule_baseline,p95_latency_delta_ms,0.0,555.0
+gateway_c outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,509,independent_ml,success_rate_delta_pp,-0.12593749348093208,-1.5851536825826407
+gateway_c outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,509,independent_ml,timeout_rate_delta_pp,0.1525481603656972,1.6012629679747405
+gateway_c outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,509,independent_ml,failures_delta,39.08847922661175,492.0
+gateway_c outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,509,independent_ml,gmv_at_risk,91970.59759691916,1657740.67
+gateway_c outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,509,independent_ml,p95_latency_delta_ms,14.215998589124865,555.0
+gateway_d outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,41,rule_baseline,success_rate_delta_pp,-0.12440269146093419,-0.1192087119015417
+gateway_d outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,41,rule_baseline,timeout_rate_delta_pp,0.07652412242742188,0.11920871190153996
+gateway_d outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,41,rule_baseline,failures_delta,38.61210737564488,37.00000000000068
+gateway_d outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,41,rule_baseline,gmv_at_risk,62932.87222401053,59796.99000000022
+gateway_d outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,41,rule_baseline,p95_latency_delta_ms,0.0,29.0
+gateway_d outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,41,independent_ml,success_rate_delta_pp,-0.022094282287210554,-0.1192087119015417
+gateway_d outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,41,independent_ml,timeout_rate_delta_pp,0.02281821140252306,0.11920871190153996
+gateway_d outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,41,independent_ml,failures_delta,6.857623336304414,37.00000000000068
+gateway_d outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,41,independent_ml,gmv_at_risk,9571.515720926225,59796.99000000022
+gateway_d outage 15m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,41,independent_ml,p95_latency_delta_ms,10.852601283860167,29.0
+gateway_d outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,145,rule_baseline,success_rate_delta_pp,-0.4524783210615779,-0.4510599909788082
+gateway_d outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,145,rule_baseline,timeout_rate_delta_pp,0.274704256371237,0.45105999097880006
+gateway_d outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,145,rule_baseline,failures_delta,140.4402212910927,140.0000000000025
+gateway_d outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,145,rule_baseline,gmv_at_risk,298662.9389096033,299125.46999999974
+gateway_d outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,145,rule_baseline,p95_latency_delta_ms,0.0,135.0
+gateway_d outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,145,independent_ml,success_rate_delta_pp,-0.06657809674519566,-0.4510599909788082
+gateway_d outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,145,independent_ml,timeout_rate_delta_pp,0.07014641231285028,0.45105999097880006
+gateway_d outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,145,independent_ml,failures_delta,20.6645096677737,140.0000000000025
+gateway_d outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,145,independent_ml,gmv_at_risk,34397.11327101663,299125.46999999974
+gateway_d outage 60m at 19:00,gateway_outage,2026-02-03,out_of_range,1.0,145,independent_ml,p95_latency_delta_ms,38.99817455063112,135.0
+all traffic -30%,traffic_change,2026-02-03,in_range,0.002379619260918253,21432,rule_baseline,success_rate_delta_pp,0.012888487502682455,0.011578488633501305
+all traffic -30%,traffic_change,2026-02-03,in_range,0.002379619260918253,21432,rule_baseline,timeout_rate_delta_pp,-0.0027104097482832587,0.06166148359473284
+all traffic -30%,traffic_change,2026-02-03,in_range,0.002379619260918253,21432,rule_baseline,failures_delta,-383.5252139963234,-366.9999999999991
+all traffic -30%,traffic_change,2026-02-03,in_range,0.002379619260918253,21432,rule_baseline,gmv_at_risk,20417.927021357697,93675.19947394356
+all traffic -30%,traffic_change,2026-02-03,in_range,0.002379619260918253,21432,rule_baseline,p95_latency_delta_ms,-1.0061321905322984,21.0
+all traffic -30%,traffic_change,2026-02-03,in_range,0.002379619260918253,21432,independent_ml,success_rate_delta_pp,0.06489514073287905,0.011578488633501305
+all traffic -30%,traffic_change,2026-02-03,in_range,0.002379619260918253,21432,independent_ml,timeout_rate_delta_pp,-0.028198822970381884,0.06166148359473284
+all traffic -30%,traffic_change,2026-02-03,in_range,0.002379619260918253,21432,independent_ml,failures_delta,-357.7740240156734,-366.9999999999991
+all traffic -30%,traffic_change,2026-02-03,in_range,0.002379619260918253,21432,independent_ml,gmv_at_risk,-18962.51045140857,93675.19947394356
+all traffic -30%,traffic_change,2026-02-03,in_range,0.002379619260918253,21432,independent_ml,p95_latency_delta_ms,-3.4920311008099816,21.0
+all traffic +30%,traffic_change,2026-02-03,in_range,0.0007507507507507507,39960,rule_baseline,success_rate_delta_pp,-0.01878472269077891,0.04085439979825134
+all traffic +30%,traffic_change,2026-02-03,in_range,0.0007507507507507507,39960,rule_baseline,timeout_rate_delta_pp,0.005554965898127082,0.0014939885979141018
+all traffic +30%,traffic_change,2026-02-03,in_range,0.0007507507507507507,39960,rule_baseline,failures_delta,388.30438007511816,348.00000000000205
+all traffic +30%,traffic_change,2026-02-03,in_range,0.0007507507507507507,39960,rule_baseline,gmv_at_risk,24355.4073958816,-147906.34930947516
+all traffic +30%,traffic_change,2026-02-03,in_range,0.0007507507507507507,39960,rule_baseline,p95_latency_delta_ms,62.29142931738352,90.0
+all traffic +30%,traffic_change,2026-02-03,in_range,0.0007507507507507507,39960,independent_ml,success_rate_delta_pp,-0.1112743199949695,0.04085439979825134
+all traffic +30%,traffic_change,2026-02-03,in_range,0.0007507507507507507,39960,independent_ml,timeout_rate_delta_pp,0.04439453407157658,0.0014939885979141018
+all traffic +30%,traffic_change,2026-02-03,in_range,0.0007507507507507507,39960,independent_ml,failures_delta,388.5723321634109,348.00000000000205
+all traffic +30%,traffic_change,2026-02-03,in_range,0.0007507507507507507,39960,independent_ml,gmv_at_risk,200352.72013047524,-147906.34930947516
+all traffic +30%,traffic_change,2026-02-03,in_range,0.0007507507507507507,39960,independent_ml,p95_latency_delta_ms,64.2928933102794,90.0
+all traffic +80%,traffic_change,2026-02-03,in_range,0.009675685361046408,55810,rule_baseline,success_rate_delta_pp,-1.3963924934361382,-2.4844556064749113
+all traffic +80%,traffic_change,2026-02-03,in_range,0.009675685361046408,55810,rule_baseline,timeout_rate_delta_pp,0.33139098931093747,2.36916089614694
+all traffic +80%,traffic_change,2026-02-03,in_range,0.009675685361046408,55810,rule_baseline,failures_delta,1795.4303042775337,2360.000000000001
+all traffic +80%,traffic_change,2026-02-03,in_range,0.009675685361046408,55810,rule_baseline,gmv_at_risk,2449622.212094535,3931293.436993908
+all traffic +80%,traffic_change,2026-02-03,in_range,0.009675685361046408,55810,rule_baseline,p95_latency_delta_ms,1153.1248761444022,2620.0
+all traffic +80%,traffic_change,2026-02-03,in_range,0.009675685361046408,55810,independent_ml,success_rate_delta_pp,-1.4998572189004467,-2.4844556064749113
+all traffic +80%,traffic_change,2026-02-03,in_range,0.009675685361046408,55810,independent_ml,timeout_rate_delta_pp,0.9831879787217283,2.36916089614694
+all traffic +80%,traffic_change,2026-02-03,in_range,0.009675685361046408,55810,independent_ml,failures_delta,1754.4295228673461,2360.000000000001
+all traffic +80%,traffic_change,2026-02-03,in_range,0.009675685361046408,55810,independent_ml,gmv_at_risk,2334641.9550153837,3931293.436993908
+all traffic +80%,traffic_change,2026-02-03,in_range,0.009675685361046408,55810,independent_ml,p95_latency_delta_ms,1285.455200558059,2620.0
+all traffic +120%,traffic_change,2026-02-03,out_of_range,0.10553765016114855,68260,rule_baseline,success_rate_delta_pp,-5.5942426614205125,-15.60246081333051
+all traffic +120%,traffic_change,2026-02-03,out_of_range,0.10553765016114855,68260,rule_baseline,timeout_rate_delta_pp,1.3412329852162388,14.93819517096337
+all traffic +120%,traffic_change,2026-02-03,out_of_range,0.10553765016114855,68260,rule_baseline,failures_delta,5342.954167791815,12112.000000000004
+all traffic +120%,traffic_change,2026-02-03,out_of_range,0.10553765016114855,68260,rule_baseline,gmv_at_risk,12490388.608273888,32426177.371493258
+all traffic +120%,traffic_change,2026-02-03,out_of_range,0.10553765016114855,68260,rule_baseline,p95_latency_delta_ms,2716.380576148804,15922.0
+all traffic +120%,traffic_change,2026-02-03,out_of_range,0.10553765016114855,68260,independent_ml,success_rate_delta_pp,-4.70248673340119,-15.60246081333051
+all traffic +120%,traffic_change,2026-02-03,out_of_range,0.10553765016114855,68260,independent_ml,timeout_rate_delta_pp,3.369566314528845,14.93819517096337
+all traffic +120%,traffic_change,2026-02-03,out_of_range,0.10553765016114855,68260,independent_ml,failures_delta,4585.81688931724,12112.000000000004
+all traffic +120%,traffic_change,2026-02-03,out_of_range,0.10553765016114855,68260,independent_ml,gmv_at_risk,9086606.106699713,32426177.371493258
+all traffic +120%,traffic_change,2026-02-03,out_of_range,0.10553765016114855,68260,independent_ml,p95_latency_delta_ms,3205.80153118169,15922.0
+UPI traffic +30%,traffic_change,2026-02-03,in_range,0.0007097038351303399,36635,rule_baseline,success_rate_delta_pp,0.06323369617156072,0.15350625652192917
+UPI traffic +30%,traffic_change,2026-02-03,in_range,0.0007097038351303399,36635,rule_baseline,timeout_rate_delta_pp,0.054742362686470945,0.03162926352110185
+UPI traffic +30%,traffic_change,2026-02-03,in_range,0.0007097038351303399,36635,rule_baseline,failures_delta,233.6734858713039,189.00000000000023
+UPI traffic +30%,traffic_change,2026-02-03,in_range,0.0007097038351303399,36635,rule_baseline,gmv_at_risk,-107551.31081325654,-168930.10286484566
+UPI traffic +30%,traffic_change,2026-02-03,in_range,0.0007097038351303399,36635,rule_baseline,p95_latency_delta_ms,-105.62952184167716,-143.0
+UPI traffic +30%,traffic_change,2026-02-03,in_range,0.0007097038351303399,36635,independent_ml,success_rate_delta_pp,-0.0012365997716479171,0.15350625652192917
+UPI traffic +30%,traffic_change,2026-02-03,in_range,0.0007097038351303399,36635,independent_ml,timeout_rate_delta_pp,0.07228746229348097,0.03162926352110185
+UPI traffic +30%,traffic_change,2026-02-03,in_range,0.0007097038351303399,36635,independent_ml,failures_delta,232.7028882638815,189.00000000000023
+UPI traffic +30%,traffic_change,2026-02-03,in_range,0.0007097038351303399,36635,independent_ml,gmv_at_risk,-45328.36925505381,-168930.10286484566
+UPI traffic +30%,traffic_change,2026-02-03,in_range,0.0007097038351303399,36635,independent_ml,p95_latency_delta_ms,-118.94260653958145,-143.0
+UPI traffic +80%,traffic_change,2026-02-03,in_range,0.003607231240300323,47682,rule_baseline,success_rate_delta_pp,-0.22784641079114376,-0.42490451091969916
+UPI traffic +80%,traffic_change,2026-02-03,in_range,0.003607231240300323,47682,rule_baseline,timeout_rate_delta_pp,0.21350799773789503,0.690445245366702
+UPI traffic +80%,traffic_change,2026-02-03,in_range,0.003607231240300323,47682,rule_baseline,failures_delta,795.039280587223,860.0000000000036
+UPI traffic +80%,traffic_change,2026-02-03,in_range,0.003607231240300323,47682,rule_baseline,gmv_at_risk,160011.750794773,220658.398463713
+UPI traffic +80%,traffic_change,2026-02-03,in_range,0.003607231240300323,47682,rule_baseline,p95_latency_delta_ms,64.85195656898759,166.0
+UPI traffic +80%,traffic_change,2026-02-03,in_range,0.003607231240300323,47682,independent_ml,success_rate_delta_pp,-0.3753727520176664,-0.42490451091969916
+UPI traffic +80%,traffic_change,2026-02-03,in_range,0.003607231240300323,47682,independent_ml,timeout_rate_delta_pp,0.38466452510984034,0.690445245366702
+UPI traffic +80%,traffic_change,2026-02-03,in_range,0.003607231240300323,47682,independent_ml,failures_delta,798.8143338711234,860.0000000000036
+UPI traffic +80%,traffic_change,2026-02-03,in_range,0.003607231240300323,47682,independent_ml,gmv_at_risk,235491.1867610216,220658.398463713
+UPI traffic +80%,traffic_change,2026-02-03,in_range,0.003607231240300323,47682,independent_ml,p95_latency_delta_ms,104.27114248188445,166.0
+CARD traffic +80%,traffic_change,2026-02-03,in_range,0.0008689103863754852,34526,rule_baseline,success_rate_delta_pp,-0.08170843200423494,0.008306350280296027
+CARD traffic +80%,traffic_change,2026-02-03,in_range,0.0008689103863754852,34526,rule_baseline,timeout_rate_delta_pp,-0.10530039292501164,-0.08005880861280167
+CARD traffic +80%,traffic_change,2026-02-03,in_range,0.0008689103863754852,34526,rule_baseline,failures_delta,279.0219365102521,235.00000000000182
+CARD traffic +80%,traffic_change,2026-02-03,in_range,0.0008689103863754852,34526,rule_baseline,gmv_at_risk,29464.807414148003,-114966.70596985333
+CARD traffic +80%,traffic_change,2026-02-03,in_range,0.0008689103863754852,34526,rule_baseline,p95_latency_delta_ms,3.3583358474234046,15.04999999993015
+CARD traffic +80%,traffic_change,2026-02-03,in_range,0.0008689103863754852,34526,independent_ml,success_rate_delta_pp,-0.12778331300002943,0.008306350280296027
+CARD traffic +80%,traffic_change,2026-02-03,in_range,0.0008689103863754852,34526,independent_ml,timeout_rate_delta_pp,-0.07156780114856301,-0.08005880861280167
+CARD traffic +80%,traffic_change,2026-02-03,in_range,0.0008689103863754852,34526,independent_ml,failures_delta,271.9232130188309,235.00000000000182
+CARD traffic +80%,traffic_change,2026-02-03,in_range,0.0008689103863754852,34526,independent_ml,gmv_at_risk,148609.7119989628,-114966.70596985333
+CARD traffic +80%,traffic_change,2026-02-03,in_range,0.0008689103863754852,34526,independent_ml,p95_latency_delta_ms,-5.8303951543312,15.04999999993015
+20% CARD -> UPI,method_shift,2026-02-03,in_range,0.0,1520,rule_baseline,success_rate_delta_pp,0.03801340228987149,0.012887428313679283
+20% CARD -> UPI,method_shift,2026-02-03,in_range,0.0,1520,rule_baseline,timeout_rate_delta_pp,0.04808218934235688,0.05477157033313999
+20% CARD -> UPI,method_shift,2026-02-03,in_range,0.0,1520,rule_baseline,failures_delta,-11.798599802730223,-3.9999999999997726
+20% CARD -> UPI,method_shift,2026-02-03,in_range,0.0,1520,rule_baseline,gmv_at_risk,-99037.8214960359,224522.06999999937
+20% CARD -> UPI,method_shift,2026-02-03,in_range,0.0,1520,rule_baseline,p95_latency_delta_ms,-35.63469114508189,-41.0
+20% CARD -> UPI,method_shift,2026-02-03,in_range,0.0,1520,independent_ml,success_rate_delta_pp,0.011863328970762588,0.012887428313679283
+20% CARD -> UPI,method_shift,2026-02-03,in_range,0.0,1520,independent_ml,timeout_rate_delta_pp,0.0392632157320447,0.05477157033313999
+20% CARD -> UPI,method_shift,2026-02-03,in_range,0.0,1520,independent_ml,failures_delta,-3.682140045945289,-3.9999999999997726
+20% CARD -> UPI,method_shift,2026-02-03,in_range,0.0,1520,independent_ml,gmv_at_risk,108752.42770261876,224522.06999999937
+20% CARD -> UPI,method_shift,2026-02-03,in_range,0.0,1520,independent_ml,p95_latency_delta_ms,-34.60245883524385,-41.0
+60% CARD -> UPI,method_shift,2026-02-03,in_range,0.0004385003288752467,4561,rule_baseline,success_rate_delta_pp,0.13135157606797287,0.02255299954893042
+60% CARD -> UPI,method_shift,2026-02-03,in_range,0.0004385003288752467,4561,rule_baseline,timeout_rate_delta_pp,0.14097793862144406,0.15787099684258007
+60% CARD -> UPI,method_shift,2026-02-03,in_range,0.0004385003288752467,4561,rule_baseline,failures_delta,-40.76890217997743,-6.999999999996817
+60% CARD -> UPI,method_shift,2026-02-03,in_range,0.0004385003288752467,4561,rule_baseline,gmv_at_risk,-186133.58847339824,521759.6299999999
+60% CARD -> UPI,method_shift,2026-02-03,in_range,0.0004385003288752467,4561,rule_baseline,p95_latency_delta_ms,-102.7764599164293,-143.0
+60% CARD -> UPI,method_shift,2026-02-03,in_range,0.0004385003288752467,4561,independent_ml,success_rate_delta_pp,0.040514882524833595,0.02255299954893042
+60% CARD -> UPI,method_shift,2026-02-03,in_range,0.0004385003288752467,4561,independent_ml,timeout_rate_delta_pp,0.11835784121689857,0.15787099684258007
+60% CARD -> UPI,method_shift,2026-02-03,in_range,0.0004385003288752467,4561,independent_ml,failures_delta,-12.575009238057874,-6.999999999996817
+60% CARD -> UPI,method_shift,2026-02-03,in_range,0.0004385003288752467,4561,independent_ml,gmv_at_risk,222633.78656123392,521759.6299999999
+60% CARD -> UPI,method_shift,2026-02-03,in_range,0.0004385003288752467,4561,independent_ml,p95_latency_delta_ms,-98.68946260854409,-143.0
+20% UPI -> CARD,method_shift,2026-02-03,in_range,0.0012502038375822144,18397,rule_baseline,success_rate_delta_pp,-0.13945756919725438,-0.03221857078420376
+20% UPI -> CARD,method_shift,2026-02-03,in_range,0.0012502038375822144,18397,rule_baseline,timeout_rate_delta_pp,-0.1283985237127824,-0.08376828403892012
+20% UPI -> CARD,method_shift,2026-02-03,in_range,0.0012502038375822144,18397,rule_baseline,failures_delta,43.28484032744382,10.000000000001364
+20% UPI -> CARD,method_shift,2026-02-03,in_range,0.0012502038375822144,18397,rule_baseline,gmv_at_risk,94559.00047323387,-35155.1799999997
+20% UPI -> CARD,method_shift,2026-02-03,in_range,0.0012502038375822144,18397,rule_baseline,p95_latency_delta_ms,76.8684996295633,72.0
+20% UPI -> CARD,method_shift,2026-02-03,in_range,0.0012502038375822144,18397,independent_ml,success_rate_delta_pp,-0.0462570741746271,-0.03221857078420376
+20% UPI -> CARD,method_shift,2026-02-03,in_range,0.0012502038375822144,18397,independent_ml,timeout_rate_delta_pp,-0.1101562128149239,-0.08376828403892012
+20% UPI -> CARD,method_shift,2026-02-03,in_range,0.0012502038375822144,18397,independent_ml,failures_delta,14.357270682320632,10.000000000001364
+20% UPI -> CARD,method_shift,2026-02-03,in_range,0.0012502038375822144,18397,independent_ml,gmv_at_risk,-160.76319598499686,-35155.1799999997
+20% UPI -> CARD,method_shift,2026-02-03,in_range,0.0012502038375822144,18397,independent_ml,p95_latency_delta_ms,66.83775409303053,72.0
+50% NETBANKING -> UPI,method_shift,2026-02-03,in_range,0.0,1231,rule_baseline,success_rate_delta_pp,0.11258803353387803,0.09021199819575498
+50% NETBANKING -> UPI,method_shift,2026-02-03,in_range,0.0,1231,rule_baseline,timeout_rate_delta_pp,0.03629774186565699,0.05154971325471999
+50% NETBANKING -> UPI,method_shift,2026-02-03,in_range,0.0,1231,rule_baseline,failures_delta,-34.945073848244874,-27.99999999999841
+50% NETBANKING -> UPI,method_shift,2026-02-03,in_range,0.0,1231,rule_baseline,gmv_at_risk,-265415.29743054137,43390.74000000022
+50% NETBANKING -> UPI,method_shift,2026-02-03,in_range,0.0,1231,rule_baseline,p95_latency_delta_ms,-321.2337036620511,-386.0
+50% NETBANKING -> UPI,method_shift,2026-02-03,in_range,0.0,1231,independent_ml,success_rate_delta_pp,0.056533658701263256,0.09021199819575498
+50% NETBANKING -> UPI,method_shift,2026-02-03,in_range,0.0,1231,independent_ml,timeout_rate_delta_pp,0.03051113969265648,0.05154971325471999
+50% NETBANKING -> UPI,method_shift,2026-02-03,in_range,0.0,1231,independent_ml,failures_delta,-17.54691698769807,-27.99999999999841
+50% NETBANKING -> UPI,method_shift,2026-02-03,in_range,0.0,1231,independent_ml,gmv_at_risk,10938.600148381665,43390.74000000022
+50% NETBANKING -> UPI,method_shift,2026-02-03,in_range,0.0,1231,independent_ml,p95_latency_delta_ms,-319.9443794288518,-386.0
+30% UPI -> NETBANKING,method_shift,2026-02-03,in_range,0.002426700352370188,30082,rule_baseline,success_rate_delta_pp,-0.5472267878555703,-0.3737354210967214
+30% UPI -> NETBANKING,method_shift,2026-02-03,in_range,0.002426700352370188,30082,rule_baseline,timeout_rate_delta_pp,-0.18653406797402597,-0.1385398543720601
+30% UPI -> NETBANKING,method_shift,2026-02-03,in_range,0.002426700352370188,30082,rule_baseline,failures_delta,169.84825041461204,116.00000000000045
+30% UPI -> NETBANKING,method_shift,2026-02-03,in_range,0.002426700352370188,30082,rule_baseline,gmv_at_risk,359268.8928722199,135768.8200000003
+30% UPI -> NETBANKING,method_shift,2026-02-03,in_range,0.002426700352370188,30082,rule_baseline,p95_latency_delta_ms,1187.7734615065092,1193.0
+30% UPI -> NETBANKING,method_shift,2026-02-03,in_range,0.002426700352370188,30082,independent_ml,success_rate_delta_pp,-0.32512366841703777,-0.3737354210967214
+30% UPI -> NETBANKING,method_shift,2026-02-03,in_range,0.002426700352370188,30082,independent_ml,timeout_rate_delta_pp,-0.1598819501536816,-0.1385398543720601
+30% UPI -> NETBANKING,method_shift,2026-02-03,in_range,0.002426700352370188,30082,independent_ml,failures_delta,100.91188420328012,116.00000000000045
+30% UPI -> NETBANKING,method_shift,2026-02-03,in_range,0.002426700352370188,30082,independent_ml,gmv_at_risk,189810.5597600527,135768.8200000003
+30% UPI -> NETBANKING,method_shift,2026-02-03,in_range,0.002426700352370188,30082,independent_ml,p95_latency_delta_ms,1067.0108543582692,1193.0
+route 25% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.0016912942852056257,22468,rule_baseline,success_rate_delta_pp,-0.030520036447512222,0.0
+route 25% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.0016912942852056257,22468,rule_baseline,timeout_rate_delta_pp,0.0062370597563379815,0.0
+route 25% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.0016912942852056257,22468,rule_baseline,failures_delta,9.472808912579012,0.0
+route 25% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.0016912942852056257,22468,rule_baseline,gmv_at_risk,39973.30307171121,0.0
+route 25% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.0016912942852056257,22468,rule_baseline,p95_latency_delta_ms,59.631409680521756,68.0
+route 25% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.0016912942852056257,22468,independent_ml,success_rate_delta_pp,-0.023971993823967974,0.0
+route 25% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.0016912942852056257,22468,independent_ml,timeout_rate_delta_pp,0.0069345187824500915,0.0
+route 25% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.0016912942852056257,22468,independent_ml,failures_delta,7.440427443083081,0.0
+route 25% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.0016912942852056257,22468,independent_ml,gmv_at_risk,45997.45239359513,0.0
+route 25% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.0016912942852056257,22468,independent_ml,p95_latency_delta_ms,60.92470830510683,68.0
+route 75% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.010959388395421803,22629,rule_baseline,success_rate_delta_pp,-1.377227995584407,-2.171531670855087
+route 75% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.010959388395421803,22629,rule_baseline,timeout_rate_delta_pp,0.31340754424539885,1.9621109607577805
+route 75% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.010959388395421803,22629,rule_baseline,failures_delta,427.4640252694883,674.000000000002
+route 75% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.010959388395421803,22629,rule_baseline,gmv_at_risk,1370749.8513327856,1773234.62
+route 75% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.010959388395421803,22629,rule_baseline,p95_latency_delta_ms,1158.0759623088215,2662.0
+route 75% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.010959388395421803,22629,independent_ml,success_rate_delta_pp,-1.4665294012642827,-2.171531670855087
+route 75% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.010959388395421803,22629,independent_ml,timeout_rate_delta_pp,0.9659287529880447,1.9621109607577805
+route 75% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.010959388395421803,22629,independent_ml,failures_delta,455.1813955644079,674.000000000002
+route 75% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.010959388395421803,22629,independent_ml,gmv_at_risk,1277798.0930374134,1773234.62
+route 75% gateway_a -> gateway_b,routing_change,2026-02-03,in_range,0.010959388395421803,22629,independent_ml,p95_latency_delta_ms,1638.4670685437268,2662.0
+route 50% gateway_a -> gateway_c,routing_change,2026-02-03,in_range,0.0028255978232431585,19111,rule_baseline,success_rate_delta_pp,-0.48381192133452045,-0.6411495586055804
+route 50% gateway_a -> gateway_c,routing_change,2026-02-03,in_range,0.0028255978232431585,19111,rule_baseline,timeout_rate_delta_pp,0.11929364677751522,0.5638249887235002
+route 50% gateway_a -> gateway_c,routing_change,2026-02-03,in_range,0.0028255978232431585,19111,rule_baseline,failures_delta,150.16554414380857,199.00000000000023
+route 50% gateway_a -> gateway_c,routing_change,2026-02-03,in_range,0.0028255978232431585,19111,rule_baseline,gmv_at_risk,456572.4087523641,455518.83999999985
+route 50% gateway_a -> gateway_c,routing_change,2026-02-03,in_range,0.0028255978232431585,19111,rule_baseline,p95_latency_delta_ms,171.75472105711287,464.0
+route 50% gateway_a -> gateway_c,routing_change,2026-02-03,in_range,0.0028255978232431585,19111,independent_ml,success_rate_delta_pp,-0.4844149111671303,-0.6411495586055804
+route 50% gateway_a -> gateway_c,routing_change,2026-02-03,in_range,0.0028255978232431585,19111,independent_ml,timeout_rate_delta_pp,0.33960028894818395,0.5638249887235002
+route 50% gateway_a -> gateway_c,routing_change,2026-02-03,in_range,0.0028255978232431585,19111,independent_ml,failures_delta,150.3527001280538,199.00000000000023
+route 50% gateway_a -> gateway_c,routing_change,2026-02-03,in_range,0.0028255978232431585,19111,independent_ml,gmv_at_risk,368602.87581818085,455518.83999999985
+route 50% gateway_a -> gateway_c,routing_change,2026-02-03,in_range,0.0028255978232431585,19111,independent_ml,p95_latency_delta_ms,375.1444746872594,464.0
+route 50% gateway_b -> gateway_d,routing_change,2026-02-03,in_range,0.02911146738671842,11851,rule_baseline,success_rate_delta_pp,-0.5067614058154257,-1.549713254720031
+route 50% gateway_b -> gateway_d,routing_change,2026-02-03,in_range,0.02911146738671842,11851,rule_baseline,timeout_rate_delta_pp,0.16567231411207597,1.3757329724853404
+route 50% gateway_b -> gateway_d,routing_change,2026-02-03,in_range,0.02911146738671842,11851,rule_baseline,failures_delta,157.28860513699192,481.0000000000034
+route 50% gateway_b -> gateway_d,routing_change,2026-02-03,in_range,0.02911146738671842,11851,rule_baseline,gmv_at_risk,317214.56862171926,1071099.0
+route 50% gateway_b -> gateway_d,routing_change,2026-02-03,in_range,0.02911146738671842,11851,rule_baseline,p95_latency_delta_ms,220.6377123993725,751.0
+route 50% gateway_b -> gateway_d,routing_change,2026-02-03,in_range,0.02911146738671842,11851,independent_ml,success_rate_delta_pp,-0.5802678614630574,-1.549713254720031
+route 50% gateway_b -> gateway_d,routing_change,2026-02-03,in_range,0.02911146738671842,11851,independent_ml,timeout_rate_delta_pp,0.3953016456543905,1.3757329724853404
+route 50% gateway_b -> gateway_d,routing_change,2026-02-03,in_range,0.02911146738671842,11851,independent_ml,failures_delta,180.10353884090364,481.0000000000034
+route 50% gateway_b -> gateway_d,routing_change,2026-02-03,in_range,0.02911146738671842,11851,independent_ml,gmv_at_risk,342195.1582449684,1071099.0
+route 50% gateway_b -> gateway_d,routing_change,2026-02-03,in_range,0.02911146738671842,11851,independent_ml,p95_latency_delta_ms,396.24353927199354,751.0
+route 50% gateway_c -> gateway_a,routing_change,2026-02-03,in_range,0.0016308922558922558,19008,rule_baseline,success_rate_delta_pp,0.015647050972189547,-0.012887428313690386
+route 50% gateway_c -> gateway_a,routing_change,2026-02-03,in_range,0.0016308922558922558,19008,rule_baseline,timeout_rate_delta_pp,-0.004014288115228304,0.009665571235259983
+route 50% gateway_c -> gateway_a,routing_change,2026-02-03,in_range,0.0016308922558922558,19008,rule_baseline,failures_delta,-4.8565316807480485,4.000000000003411
+route 50% gateway_c -> gateway_a,routing_change,2026-02-03,in_range,0.0016308922558922558,19008,rule_baseline,gmv_at_risk,-14131.245495557785,4899.280000000261
+route 50% gateway_c -> gateway_a,routing_change,2026-02-03,in_range,0.0016308922558922558,19008,rule_baseline,p95_latency_delta_ms,28.32677412310386,17.0
+route 50% gateway_c -> gateway_a,routing_change,2026-02-03,in_range,0.0016308922558922558,19008,independent_ml,success_rate_delta_pp,-0.02645503399384408,-0.012887428313690386
+route 50% gateway_c -> gateway_a,routing_change,2026-02-03,in_range,0.0016308922558922558,19008,independent_ml,timeout_rate_delta_pp,0.008102648844881752,0.009665571235259983
+route 50% gateway_c -> gateway_a,routing_change,2026-02-03,in_range,0.0016308922558922558,19008,independent_ml,failures_delta,8.211113451009169,4.000000000003411
+route 50% gateway_c -> gateway_a,routing_change,2026-02-03,in_range,0.0016308922558922558,19008,independent_ml,gmv_at_risk,35969.29617716372,4899.280000000261
+route 50% gateway_c -> gateway_a,routing_change,2026-02-03,in_range,0.0016308922558922558,19008,independent_ml,p95_latency_delta_ms,21.49907352144328,17.0
+route 90% gateway_d -> gateway_a,routing_change,2026-02-03,in_range,0.0012265758091993186,14675,rule_baseline,success_rate_delta_pp,0.004338909718903938,-0.0032218570784281475
+route 90% gateway_d -> gateway_a,routing_change,2026-02-03,in_range,0.0012265758091993186,14675,rule_baseline,timeout_rate_delta_pp,-0.0013605195562593764,0.009665571235259983
+route 90% gateway_d -> gateway_a,routing_change,2026-02-03,in_range,0.0012265758091993186,14675,rule_baseline,failures_delta,-1.3467107985532039,1.0000000000027285
+route 90% gateway_d -> gateway_a,routing_change,2026-02-03,in_range,0.0012265758091993186,14675,rule_baseline,gmv_at_risk,-5028.632654890418,457.12000000011176
+route 90% gateway_d -> gateway_a,routing_change,2026-02-03,in_range,0.0012265758091993186,14675,rule_baseline,p95_latency_delta_ms,-21.9437689897195,-4.0
+route 90% gateway_d -> gateway_a,routing_change,2026-02-03,in_range,0.0012265758091993186,14675,independent_ml,success_rate_delta_pp,-0.018293775642552745,-0.0032218570784281475
+route 90% gateway_d -> gateway_a,routing_change,2026-02-03,in_range,0.0012265758091993186,14675,independent_ml,timeout_rate_delta_pp,0.0036635093561393148,0.009665571235259983
+route 90% gateway_d -> gateway_a,routing_change,2026-02-03,in_range,0.0012265758091993186,14675,independent_ml,failures_delta,5.6780220839355025,1.0000000000027285
+route 90% gateway_d -> gateway_a,routing_change,2026-02-03,in_range,0.0012265758091993186,14675,independent_ml,gmv_at_risk,29054.498227540404,457.12000000011176
+route 90% gateway_d -> gateway_a,routing_change,2026-02-03,in_range,0.0012265758091993186,14675,independent_ml,p95_latency_delta_ms,-21.846799711258427,-4.0
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-02-03,out_of_range,0.37439903846153844,1664,rule_baseline,success_rate_delta_pp,-0.940500478600681,-3.1316450802242435
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-02-03,out_of_range,0.37439903846153844,1664,rule_baseline,timeout_rate_delta_pp,0.21947454458029844,2.986661511695341
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-02-03,out_of_range,0.37439903846153844,1664,rule_baseline,failures_delta,291.9125385480795,972.0000000000009
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-02-03,out_of_range,0.37439903846153844,1664,rule_baseline,gmv_at_risk,973722.1005286472,2977023.88
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-02-03,out_of_range,0.37439903846153844,1664,rule_baseline,p95_latency_delta_ms,494.6873533887083,2268.0
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-02-03,out_of_range,0.37439903846153844,1664,independent_ml,success_rate_delta_pp,-0.795207407732168,-3.1316450802242435
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-02-03,out_of_range,0.37439903846153844,1664,independent_ml,timeout_rate_delta_pp,0.5956118479965442,2.986661511695341
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-02-03,out_of_range,0.37439903846153844,1664,independent_ml,failures_delta,246.8164752119103,972.0000000000009
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-02-03,out_of_range,0.37439903846153844,1664,independent_ml,gmv_at_risk,747919.3951458,2977023.88
+"gateway_a outage 60m, all its traffic rerouted to gateway_b",combined,2026-02-03,out_of_range,0.37439903846153844,1664,independent_ml,p95_latency_delta_ms,650.7089588099461,2268.0
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-02-03,in_range,0.002196855481369804,46430,rule_baseline,success_rate_delta_pp,-1.9078011542725926,-1.867603153124131
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-02-03,in_range,0.002196855481369804,46430,rule_baseline,timeout_rate_delta_pp,0.947079602388297,1.1920871190154005
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-02-03,in_range,0.002196855481369804,46430,rule_baseline,failures_delta,1522.7837971227073,1477.000000000001
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-02-03,in_range,0.002196855481369804,46430,rule_baseline,gmv_at_risk,2117577.0223538177,1956592.4793434571
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-02-03,in_range,0.002196855481369804,46430,rule_baseline,p95_latency_delta_ms,318.8492843924905,809.0
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-02-03,in_range,0.002196855481369804,46430,independent_ml,success_rate_delta_pp,-0.33556637867525607,-1.867603153124131
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-02-03,in_range,0.002196855481369804,46430,independent_ml,timeout_rate_delta_pp,0.17511242361449783,1.1920871190154005
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-02-03,in_range,0.002196855481369804,46430,independent_ml,failures_delta,729.044673943243,1477.000000000001
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-02-03,in_range,0.002196855481369804,46430,independent_ml,gmv_at_risk,551681.411883737,1956592.4793434571
+HDFC UPI -15pp during a 50% traffic surge,combined,2026-02-03,in_range,0.002196855481369804,46430,independent_ml,p95_latency_delta_ms,330.9812382066184,809.0
