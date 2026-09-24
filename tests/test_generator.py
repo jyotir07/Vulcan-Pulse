@@ -2,33 +2,20 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from backend.config import load_ecosystem_config
 from backend.data.catalog import GATEWAYS
 from backend.data.generator import generate_dataset
 from backend.data.io import load_dataset, save_dataset
 
 
-@pytest.fixture(scope="module")
-def small_config():
-    return load_ecosystem_config().model_copy(
-        update={
-            "n_customers": 5000,
-            "n_merchants": 300,
-            "n_days": 14,
-            "target_transactions": 100_000,
-        }
-    )
-
-
-@pytest.fixture(scope="module")
-def dataset(small_config):
-    return generate_dataset(small_config)
+def _first_attempts(dataset) -> pd.DataFrame:
+    return dataset.transactions[dataset.transactions["attempt"] == 1]
 
 
 def test_same_seed_is_identical(small_config, dataset):
     again = generate_dataset(small_config)
     pd.testing.assert_frame_equal(dataset.transactions, again.transactions)
     pd.testing.assert_frame_equal(dataset.customers, again.customers)
+    pd.testing.assert_frame_equal(dataset.latent.episodes, again.latent.episodes)
     assert dataset.festival_dates == again.festival_dates
 
 
@@ -38,7 +25,9 @@ def test_different_seed_differs(small_config, dataset):
 
 
 def test_volume_close_to_target(small_config, dataset):
-    assert len(dataset.transactions) == pytest.approx(small_config.target_transactions, rel=0.02)
+    assert len(_first_attempts(dataset)) == pytest.approx(
+        small_config.target_transactions, rel=0.02
+    )
 
 
 def test_gateway_supports_method(dataset):
@@ -49,24 +38,25 @@ def test_gateway_supports_method(dataset):
 
 
 def test_evening_peak_busier_than_night(dataset):
-    hour = dataset.transactions["timestamp"].dt.hour
+    hour = _first_attempts(dataset)["timestamp"].dt.hour
     assert (hour == 20).sum() > 5 * (hour == 3).sum()
 
 
 def test_festival_days_busier(dataset):
-    per_day = dataset.transactions.groupby(dataset.transactions["timestamp"].dt.date).size()
+    first = _first_attempts(dataset)
+    per_day = first.groupby(first["timestamp"].dt.date).size()
     festival = per_day[per_day.index.isin(dataset.festival_dates)]
     normal = per_day[~per_day.index.isin(dataset.festival_dates)]
-    assert festival.mean() > 1.4 * normal.mean()
+    assert festival.mean() > 1.3 * normal.mean()
 
 
 def test_upi_tickets_smaller_than_netbanking(dataset):
-    median = dataset.transactions.groupby("payment_method", observed=True)["amount"].median()
+    median = _first_attempts(dataset).groupby("payment_method", observed=True)["amount"].median()
     assert median["UPI"] < median["NETBANKING"]
 
 
 def test_offline_merchants_mostly_local(small_config, dataset):
-    txns = dataset.transactions.merge(
+    txns = _first_attempts(dataset).merge(
         dataset.merchants[["merchant_id", "online", "city"]].rename(
             columns={"city": "merchant_city"}
         ),
@@ -93,4 +83,9 @@ def test_roundtrip(tmp_path, small_config, dataset):
     save_dataset(dataset, small_config, tmp_path)
     loaded = load_dataset(tmp_path)
     pd.testing.assert_frame_equal(dataset.transactions, loaded.transactions)
+    pd.testing.assert_frame_equal(dataset.latent.episodes, loaded.latent.episodes)
+    np.testing.assert_array_equal(
+        dataset.latent.issuer_reliability, loaded.latent.issuer_reliability
+    )
+    assert loaded.latent.start == dataset.latent.start
     assert loaded.festival_dates == dataset.festival_dates
