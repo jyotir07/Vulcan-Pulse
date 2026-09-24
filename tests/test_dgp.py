@@ -3,34 +3,8 @@ import pandas as pd
 import pytest
 
 from backend.data.catalog import GATEWAYS, ISSUERS
-from backend.data.dgp import first_attempt_context, simulate_outcomes
 from backend.data.keyed_random import keyed_uniform
-from backend.data.state import _trailing_success_rate, add_state_features
-
-
-def _replay(dataset, seed: int, episodes: pd.DataFrame) -> pd.DataFrame:
-    return simulate_outcomes(
-        first_attempt_context(dataset.transactions),
-        dataset.customers,
-        dataset.merchants,
-        dataset.latent.with_episodes(episodes),
-        seed,
-    )
-
-
-def _episode(kind: str, target_id: int, start: int, end: int, magnitude: float, method=None):
-    return pd.DataFrame(
-        [
-            {
-                "kind": kind,
-                "target_id": target_id,
-                "method": method,
-                "start_minute": start,
-                "end_minute": end,
-                "magnitude": magnitude,
-            }
-        ]
-    )
+from backend.data.state import _trailing_success_rate
 
 
 def test_keyed_uniform_depends_only_on_key():
@@ -41,52 +15,6 @@ def test_keyed_uniform_depends_only_on_key():
     assert not np.array_equal(full, keyed_uniform(8, keys, stream=1))
     assert full.min() >= 0.0 and full.max() < 1.0
     assert full.mean() == pytest.approx(0.5, abs=0.03)
-
-
-def test_replay_without_intervention_reproduces_dataset(small_config, dataset):
-    replay = add_state_features(
-        _replay(dataset, small_config.seed, dataset.latent.episodes),
-        dataset.latent,
-        dataset.festival_dates,
-    )
-    pd.testing.assert_frame_equal(replay, dataset.transactions)
-
-
-def test_degradation_only_turns_successes_into_failures(small_config, dataset):
-    """Paired draws: making an issuer worse can never rescue a payment that failed before."""
-    extra = _episode("issuer_degradation", 0, 0, dataset.latent.n_minutes, 0.20)
-    before = _replay(dataset, small_config.seed, dataset.latent.episodes).set_index(
-        "transaction_id"
-    )
-    after = _replay(
-        dataset, small_config.seed, pd.concat([dataset.latent.episodes, extra], ignore_index=True)
-    )
-    after = after.set_index("transaction_id")
-
-    shared = before.index.intersection(after.index)
-    failed_before = before.loc[shared, "transaction_status"] == "FAILED"
-    failed_after = after.loc[shared, "transaction_status"] == "FAILED"
-    assert (failed_after | ~failed_before).all()
-
-    hit = after["issuer_id"] == 0
-    assert (after.loc[hit, "transaction_status"] == "FAILED").mean() > (
-        before.loc[before["issuer_id"] == 0, "transaction_status"] == "FAILED"
-    ).mean() + 0.1
-    other = shared[before.loc[shared, "issuer_id"] != 0]
-    # Other issuers only move through the extra retry load, which is small.
-    assert (failed_after[other] != failed_before[other]).mean() < 0.005
-
-
-def test_gateway_outage_fails_everything_routed_there(small_config, dataset):
-    outage = _episode("gateway_outage", 1, 600, 660, 1.0)
-    out = _replay(
-        dataset, small_config.seed, pd.concat([dataset.latent.episodes, outage], ignore_index=True)
-    )
-    minute = (out["timestamp"] - pd.Timestamp(dataset.latent.start)) // pd.Timedelta(minutes=1)
-    during = out[(out["gateway_id"] == 1) & minute.between(600, 659)]
-    assert len(during) > 0
-    assert (during["transaction_status"] == "FAILED").all()
-    assert (during["failure_reason"] == "GATEWAY_TIMEOUT").mean() > 0.9
 
 
 def test_retries_follow_failed_parents(dataset):

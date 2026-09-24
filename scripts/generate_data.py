@@ -20,7 +20,7 @@ def main() -> None:
 
     started = time.perf_counter()
     dataset = generate_dataset(config)
-    save_dataset(dataset, config, args.out)
+    save_dataset(dataset, args.out)
     elapsed = time.perf_counter() - started
 
     print(f"Wrote {len(dataset.transactions):,} transactions to {args.out} in {elapsed:.1f}s")
