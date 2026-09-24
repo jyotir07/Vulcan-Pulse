@@ -6,6 +6,7 @@ import pandas as pd
 
 from backend.config import EcosystemConfig
 from backend.data.catalog import CITIES, DEVICES, GATEWAYS, METHODS
+from backend.data.dgp import simulate_outcomes
 from backend.data.entities import (
     cities_table,
     gateways_table,
@@ -13,6 +14,9 @@ from backend.data.entities import (
     generate_merchants,
     issuers_table,
 )
+from backend.data.episodes import generate_episodes
+from backend.data.latent import LatentParams, build_latent
+from backend.data.state import add_state_features
 from backend.data.traffic import pick_festival_dates, sample_timestamps
 
 # Share of a customer's method choice that goes to their preferred method.
@@ -29,8 +33,10 @@ class Dataset:
     issuers: pd.DataFrame
     gateways: pd.DataFrame
     cities: pd.DataFrame
+    # Every attempt, first attempts and retries, with outcomes and observed state features.
     transactions: pd.DataFrame
     festival_dates: list[date]
+    latent: LatentParams
 
 
 def _sample_rows(cum_weights: np.ndarray, u: np.ndarray) -> np.ndarray:
@@ -155,21 +161,26 @@ def generate_transactions(
 
 def generate_dataset(config: EcosystemConfig) -> Dataset:
     # Independent child streams per stage, so changing one stage doesn't reshuffle the others.
-    customer_rng, merchant_rng, calendar_rng, transaction_rng = (
-        np.random.default_rng(s) for s in np.random.SeedSequence(config.seed).spawn(4)
+    customer_rng, merchant_rng, calendar_rng, transaction_rng, episode_rng, latent_rng = (
+        np.random.default_rng(s) for s in np.random.SeedSequence(config.seed).spawn(6)
     )
     customers = generate_customers(config, customer_rng)
     merchants = generate_merchants(config, merchant_rng)
     festival_dates = pick_festival_dates(config, calendar_rng)
-    transactions = generate_transactions(
+    first_attempts = generate_transactions(
         config, customers, merchants, festival_dates, transaction_rng
     )
+    episodes = generate_episodes(config, episode_rng)
+    latent = build_latent(config, first_attempts, episodes, latent_rng)
+
+    attempts = simulate_outcomes(first_attempts, customers, merchants, latent, config.seed)
     return Dataset(
         customers=customers,
         merchants=merchants,
         issuers=issuers_table(),
         gateways=gateways_table(),
         cities=cities_table(),
-        transactions=transactions,
+        transactions=add_state_features(attempts, latent, festival_dates),
         festival_dates=festival_dates,
+        latent=latent,
     )

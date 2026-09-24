@@ -11,6 +11,7 @@ HOURLY_PROFILE = (
     1.20, 1.15, 1.00, 0.95, 0.95, 1.05,
     1.25, 1.45, 1.55, 1.45, 1.05, 0.55,
 )  # fmt: skip
+PEAK_HOURS = (18, 19, 20, 21)
 WEEKEND_MULTIPLIER = 1.10
 MINUTES_PER_DAY = 1440
 
