@@ -8,9 +8,31 @@ difference between runs is the effect of the change, not sampling noise.
 
 import pandas as pd
 
+from backend.data import dgp
 from backend.data.dgp import RETRY_ID_OFFSET, first_attempt_context, simulate_outcomes
 from backend.data.generator import Dataset
 from backend.data.state import add_state_features
+
+
+def _checked_context(dataset: Dataset, context: pd.DataFrame | None) -> pd.DataFrame:
+    if context is None:
+        context = first_attempt_context(dataset.transactions)
+    ids = context["transaction_id"]
+    # Retries take id + RETRY_ID_OFFSET, so a first attempt at or above it would collide.
+    if not ids.is_unique or ids.max() >= RETRY_ID_OFFSET:
+        raise ValueError(f"Context transaction ids must be unique and below {RETRY_ID_OFFSET}")
+    return context
+
+
+def true_success_probability(dataset: Dataset, context: pd.DataFrame | None = None) -> pd.Series:
+    """The best achievable prediction: each attempt's true success probability, by id."""
+    return dgp.true_success_probability(
+        _checked_context(dataset, context),
+        dataset.customers,
+        dataset.merchants,
+        dataset.latent,
+        dataset.config.seed,
+    )
 
 
 def true_outcomes(
@@ -22,12 +44,7 @@ def true_outcomes(
 
     With no overrides this reproduces `dataset.transactions` exactly.
     """
-    if context is None:
-        context = first_attempt_context(dataset.transactions)
-    ids = context["transaction_id"]
-    # Retries take id + RETRY_ID_OFFSET, so a first attempt at or above it would collide.
-    if not ids.is_unique or ids.max() >= RETRY_ID_OFFSET:
-        raise ValueError(f"Context transaction ids must be unique and below {RETRY_ID_OFFSET}")
+    context = _checked_context(dataset, context)
     latent = dataset.latent if episodes is None else dataset.latent.with_episodes(episodes)
     attempts = simulate_outcomes(
         context, dataset.customers, dataset.merchants, latent, dataset.config.seed

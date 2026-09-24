@@ -141,7 +141,7 @@ These are the only view of ecosystem state a model gets:
 
 | Feature | Definition |
 |---|---|
-| `issuer_health` | Success rate of the (issuer, method) over the previous `HEALTH_WINDOW_MINUTES`, **excluding the current minute**, smoothed toward the group mean with `HEALTH_PRIOR_WEIGHT` pseudo-attempts |
+| `issuer_health` | Success rate of the (issuer, method) over the previous `HEALTH_WINDOW_MINUTES`, **excluding the current minute**, smoothed with `HEALTH_PRIOR_WEIGHT` pseudo-attempts toward the group's success rate over all minutes *before* that window. Only the past is used, so the feature never depends on later outcomes |
 | `gateway_health` | The same, per gateway |
 | `gateway_utilization` | Current bucket load ÷ capacity, the same quantity the outcome process uses. Treated as observable system telemetry |
 | `hour`, `is_peak`, `is_festival` | From the timestamp and festival calendar |
@@ -166,9 +166,8 @@ Added transactions need new ids that are unique and below `RETRY_ID_OFFSET`.
   issuer.
 - **No behavioural learning.** Customers don't abandon a merchant or switch methods permanently
   after a failure; the only reaction is the single retry.
-- **Health priors use the whole period.** The smoothing prior in `issuer_health` and
-  `gateway_health` is the group's success rate over the full dataset. This is a mild look-ahead
-  in the feature; the training split in Phase 3 should recompute priors from the training period
-  only.
+- **Observed health is a noisy proxy.** A mid-sized (issuer, method) pair sees only about 10–40
+  attempts per 15-minute window, so `issuer_health` swings a few points on noise alone. Models
+  trained on it learn a weak relationship between health and outcome; see `docs/evaluation.md`.
 - **Merchant "unusualness" is not modelled.** The risk stage uses a high-risk-category flag, not
   whether the merchant is unusual for that customer.

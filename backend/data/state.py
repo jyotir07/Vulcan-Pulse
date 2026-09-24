@@ -18,8 +18,10 @@ from backend.data.latent import LatentParams, minute_index
 from backend.data.traffic import PEAK_HOURS
 
 HEALTH_WINDOW_MINUTES = 15
-# Pseudo-attempts at the group's overall success rate, so quiet windows don't swing to 0 or 1.
+# Pseudo-attempts at the group's historical success rate, so quiet windows don't swing to 0 or 1.
 HEALTH_PRIOR_WEIGHT = 5.0
+# Before a group has any history, its prior starts here with the weight of one attempt.
+HEALTH_PRIOR_START = 0.95
 
 
 @dataclass(frozen=True)
@@ -33,23 +35,26 @@ class HealthTables:
 def _trailing_success_rate(
     group: np.ndarray, n_groups: int, minute: np.ndarray, success: np.ndarray, n_minutes: int
 ) -> np.ndarray:
-    """[group, minute] success rate over minutes [t - W, t - 1], shrunk toward the group mean."""
+    """[group, minute] success rate over minutes [t - W, t - 1], shrunk toward the group's
+    success rate over all minutes before that window. Only the past is ever used."""
     flat = group * n_minutes + minute
     size = n_groups * n_minutes
     attempts = np.bincount(flat, minlength=size).reshape(n_groups, n_minutes)
     successes = np.bincount(flat, weights=success, minlength=size).reshape(n_groups, n_minutes)
 
-    def window(counts: np.ndarray) -> np.ndarray:
-        # Sum over minutes [t - W, t - 1] for every t, via a zero-padded cumulative sum.
-        cum = np.zeros((n_groups, n_minutes + 1))
-        np.cumsum(counts, axis=1, out=cum[:, 1:])
-        end = np.arange(n_minutes)
-        start = np.maximum(end - HEALTH_WINDOW_MINUTES, 0)
-        return cum[:, end] - cum[:, start]
+    # cum[:, t] is the total over minutes [0, t - 1].
+    cum_attempts = np.zeros((n_groups, n_minutes + 1))
+    cum_successes = np.zeros((n_groups, n_minutes + 1))
+    np.cumsum(attempts, axis=1, out=cum_attempts[:, 1:])
+    np.cumsum(successes, axis=1, out=cum_successes[:, 1:])
+    end = np.arange(n_minutes)
+    start = np.maximum(end - HEALTH_WINDOW_MINUTES, 0)
 
-    prior = successes.sum(axis=1) / np.maximum(attempts.sum(axis=1), 1)
-    return (window(successes) + HEALTH_PRIOR_WEIGHT * prior[:, None]) / (
-        window(attempts) + HEALTH_PRIOR_WEIGHT
+    window_attempts = cum_attempts[:, end] - cum_attempts[:, start]
+    window_successes = cum_successes[:, end] - cum_successes[:, start]
+    prior = (cum_successes[:, start] + HEALTH_PRIOR_START) / (cum_attempts[:, start] + 1.0)
+    return (window_successes + HEALTH_PRIOR_WEIGHT * prior) / (
+        window_attempts + HEALTH_PRIOR_WEIGHT
     )
 
 
