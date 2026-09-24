@@ -91,7 +91,7 @@ def test_trailing_health_excludes_own_minute():
     group = np.zeros(3, dtype=int)
     minute = np.array([0, 1, 2])
     success = np.array([0.0, 1.0, 1.0])
-    health = _trailing_success_rate(group, 1, minute, success, n_minutes=3)
+    health = _trailing_success_rate(group, 1, minute, success, n_minutes=3)[0]
     prior = 2 / 3
     # Minute 0 has no history, so it sits at the prior regardless of its own failure.
     assert health[0] == pytest.approx(prior)
