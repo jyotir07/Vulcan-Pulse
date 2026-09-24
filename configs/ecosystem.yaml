@@ -1,0 +1,10 @@
+seed: 42
+
+n_customers: 50000
+n_merchants: 2000
+n_issuers: 12
+n_gateways: 4
+n_cities: 20
+
+n_days: 30
+target_transactions: 1000000
