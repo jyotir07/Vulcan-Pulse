@@ -1,12 +1,13 @@
-"""Evaluate the rule baseline and the independent ML models against ground truth.
+"""Evaluate the rule baseline, independent ML and shared representation against ground truth.
 
-Trains on the first days of the dataset, then scores both models on the held-out test days:
+Fits the baselines on the first days of the dataset and loads the shared-representation ensemble
+trained on the same days by `scripts/train.py`. Then scores every model on the held-out test days:
 - counterfactual impact on every scenario in the grid, on two unseen normal weekdays;
 - transaction-level predictions over the whole test period, alongside the best achievable score
   (the true success probability).
 
 Usage:
-    python scripts/evaluate.py [--data DIR] [--out DIR] [--quick]
+    python scripts/evaluate.py [--data DIR] [--model DIR] [--out DIR] [--quick]
 """
 
 import argparse
@@ -14,10 +15,12 @@ import json
 import platform
 import sys
 import time
+from dataclasses import asdict
 from pathlib import Path
 
 import numpy as np
 import sklearn
+import torch
 
 from backend.config import REPO_ROOT
 from backend.data.io import load_dataset
@@ -26,12 +29,14 @@ from backend.evaluation.harness import OUT_OF_RANGE_SHARE, SUPPORT_QUANTILES, Su
 from backend.evaluation.scoring import TARGETS, summarize_errors, transaction_scores
 from backend.models.independent import IndependentModels
 from backend.models.rule_baseline import RuleBaseline
+from backend.models.shared import SharedModel
 from backend.models.splits import evaluation_windows, first_attempts_on, time_split
 from backend.simulation.interventions import observe
 from backend.simulation.metrics import Predictions
 from backend.simulation.oracle import true_success_probability
 
 DEFAULT_DATA = REPO_ROOT / "data" / "generated" / "default"
+DEFAULT_MODEL = REPO_ROOT / "artifacts" / "shared_model"
 DEFAULT_OUT = REPO_ROOT / "experiments" / "harness"
 
 
@@ -109,6 +114,24 @@ def _markdown(summary: dict) -> str:
             f"{_fmt(s['mean_predicted'], 4)} / {_fmt(s['mean_observed'], 4)} | "
             f"{_fmt(s.get('reason_log_loss'))} | {_fmt(s.get('latency_log_mae'))} |"
         )
+    lines += [
+        "",
+        "## Shared representation training",
+        "",
+        "Masked-field accuracy on held-out training rows, against always guessing each field's "
+        "most common value; fine-tuning validation loss per epoch.",
+        "",
+        "| Seed | Masked-field acc. | Frequency baseline | Fine-tune val loss | Best epoch |",
+        "|---|---|---|---|---|",
+    ]
+    for r in summary["shared_training"]:
+        pre = r["pretrain"]
+        lines.append(
+            f"| {r['seed']} | {_fmt(pre['masked_accuracy'])} | "
+            f"{_fmt(pre['frequency_baseline_accuracy'])} | "
+            f"{', '.join(_fmt(v, 4) for v in r['finetune']['val_loss'])} | "
+            f"{r['finetune']['best_epoch']} |"
+        )
     return "\n".join(lines) + "\n"
 
 
@@ -116,6 +139,7 @@ def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--data", type=Path, default=DEFAULT_DATA)
+    parser.add_argument("--model", type=Path, default=DEFAULT_MODEL)
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
     parser.add_argument(
         "--quick", action="store_true", help="Every 6th scenario and one window, for a smoke run."
@@ -123,6 +147,8 @@ def main() -> None:
     args = parser.parse_args()
     if not (args.data / "manifest.json").exists():
         raise SystemExit(f"No dataset at {args.data}; run scripts/generate_data.py first.")
+    if not (args.model / "model.json").exists():
+        raise SystemExit(f"No trained model at {args.model}; run scripts/train.py first.")
 
     started = time.perf_counter()
     dataset = load_dataset(args.data)
@@ -141,7 +167,11 @@ def main() -> None:
     independent = IndependentModels.fit(
         train, dataset.customers, dataset.merchants, dataset.config.seed
     )
-    predictors = [rules, independent]
+    shared = SharedModel.load(args.model, dataset.customers, dataset.merchants)
+    if shared.train_days != [d.isoformat() for d in split.train_days]:
+        raise SystemExit("The saved model was trained on different days than this split.")
+    torch.set_num_threads(shared.config.threads)
+    predictors = [rules, independent, shared]
 
     _log(f"Scoring {len(test):,} test-period first attempts")
     success = (test["transaction_status"] == "SUCCESS").to_numpy()
@@ -184,10 +214,12 @@ def main() -> None:
         "by_range": by_range.to_dict(orient="records"),
         "by_type": by_type.to_dict(orient="records"),
         "transaction_level": transaction_level,
+        "shared_training": [asdict(r) for r in shared.reports],
         "environment": {
             "python": platform.python_version(),
             "numpy": np.__version__,
             "scikit_learn": sklearn.__version__,
+            "torch": torch.__version__,
         },
         "quick": args.quick,
     }
