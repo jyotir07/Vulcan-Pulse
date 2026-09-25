@@ -1,0 +1,34 @@
+# Shared representation (Set Transformer) training. Sized for CPU: on the development laptop a
+# d_model of 64 trains at about 1,600 rows/s and predicts at about 6,700 rows/s.
+d_model: 64
+n_heads: 4
+n_layers: 2
+ffn_multiplier: 2
+# Dropout's random masks dominated CPU step time; with ~700k rows and ~100k parameters, early
+# stopping on a validation split is enough regularization.
+dropout: 0.0
+
+# Masked-field pretraining over the transaction's input fields.
+numeric_bins: 16
+mask_rate_min: 0.15
+mask_rate_max: 0.30
+pretrain_rows: 300000
+pretrain_epochs: 2
+
+# Joint fine-tuning of encoder and heads. Each epoch keeps every failure and a fresh sample of
+# successes, reweighted by 1 / success_sample_rate so probabilities stay calibrated.
+finetune_epochs: 4
+patience: 1
+success_sample_rate: 0.25
+# Share of rows whose issuer_id is hidden, so the model learns a bank-type fallback.
+entity_dropout: 0.1
+reason_loss_weight: 1.0
+latency_loss_weight: 0.5
+
+batch_size: 1024
+learning_rate: 0.001
+weight_decay: 0.01
+validation_fraction: 0.1
+ensemble_size: 5
+seed: 42
+threads: 8
