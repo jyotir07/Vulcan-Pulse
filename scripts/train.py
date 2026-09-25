@@ -1,5 +1,8 @@
 """Train the shared-representation ensemble on the training days and save it.
 
+Each member is checkpointed in the output directory as it finishes; rerunning the same command
+after an interruption resumes from the members already saved.
+
 Usage:
     python scripts/train.py [--data DIR] [--config FILE] [--out DIR]
 """
@@ -46,7 +49,9 @@ def main() -> None:
         f"Training {config.ensemble_size} members on {len(train):,} first attempts "
         f"({split.train_days[0]}..{split.train_days[-1]})"
     )
-    model = SharedModel.fit(train, dataset.customers, dataset.merchants, config, progress=_log)
+    model = SharedModel.fit(
+        train, dataset.customers, dataset.merchants, config, progress=_log, checkpoint_dir=args.out
+    )
     model.save(args.out)
     _log(f"Wrote {args.out}")
 

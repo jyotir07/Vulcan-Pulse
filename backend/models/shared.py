@@ -6,6 +6,9 @@ models (`FeatureBuilder`), so the comparison isolates the representation, not th
 
 The ensemble prediction is the members' mean; `member_predictions` exposes the spread. Fine-tuning
 keeps every failure and samples successes, reweighting them so probabilities stay calibrated.
+
+Training can checkpoint each member as it finishes. Members depend only on their own seed, so a
+resumed run gives the same ensemble as an uninterrupted one.
 """
 
 import json
@@ -140,6 +143,78 @@ def _finetune(
     return FinetuneReport(train_loss=train_losses, val_loss=val_losses, best_epoch=best_epoch)
 
 
+def _member_report(r: dict) -> MemberReport:
+    return MemberReport(
+        seed=r["seed"],
+        pretrain=PretrainReport(**r["pretrain"]) if r["pretrain"] else None,
+        finetune=FinetuneReport(**r["finetune"]),
+    )
+
+
+def _prepare_checkpoint(directory: Path, config: TrainConfig, train_days: list[str]) -> None:
+    """Refuse to mix members trained under a different config or on different days."""
+    identity = {"config": config.model_dump(), "train_days": train_days}
+    path = directory / "checkpoint.json"
+    if path.exists():
+        if json.loads(path.read_text(encoding="utf-8")) != identity:
+            raise ValueError(
+                f"{directory} holds members from a different config or split; "
+                "use another directory or remove it"
+            )
+        return
+    directory.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(identity, indent=2), encoding="utf-8")
+
+
+def _train_member(
+    k: int,
+    config: TrainConfig,
+    vocab_sizes: list[int],
+    n_classes: list[int],
+    base_rate: float,
+    fit_rows: _Tensors,
+    val: _Tensors,
+    progress,
+) -> tuple[_Member, MemberReport]:
+    seed = config.seed + k
+    torch.manual_seed(seed)
+    member = _Member(config, vocab_sizes)
+    # Start the success head at the base rate instead of 0.5.
+    with torch.no_grad():
+        member.heads.success.bias.fill_(float(np.log(base_rate / (1.0 - base_rate))))
+    pretrain_report = None
+    if config.pretrain_epochs:
+        rows = np.random.default_rng(seed).permutation(len(fit_rows))
+        sample = fit_rows[torch.from_numpy(rows[: config.pretrain_rows])]
+        pretrain_report = pretrain(
+            member.encoder,
+            sample.codes,
+            sample.numeric,
+            torch.cat([sample.codes, sample.bins], dim=1),
+            (val.codes, val.numeric, torch.cat([val.codes, val.bins], dim=1)),
+            n_classes,
+            config.pretrain_epochs,
+            config.batch_size,
+            config.learning_rate,
+            config.weight_decay,
+            (config.mask_rate_min, config.mask_rate_max),
+            torch.Generator().manual_seed(seed),
+        )
+        if progress:
+            progress(
+                f"member {k}: pretrain loss {pretrain_report.train_loss}, masked acc "
+                f"{pretrain_report.masked_accuracy:.3f} vs frequency "
+                f"{pretrain_report.frequency_baseline_accuracy:.3f}"
+            )
+    finetune = _finetune(member, fit_rows, val, config, seed)
+    if progress:
+        progress(
+            f"member {k}: val loss {[round(v, 4) for v in finetune.val_loss]}, "
+            f"best epoch {finetune.best_epoch}"
+        )
+    return member, MemberReport(seed=seed, pretrain=pretrain_report, finetune=finetune)
+
+
 @dataclass(frozen=True)
 class SharedModel:
     features: FeatureBuilder
@@ -160,8 +235,13 @@ class SharedModel:
         merchants: pd.DataFrame,
         config: TrainConfig,
         progress=None,
+        checkpoint_dir: Path | None = None,
     ) -> "SharedModel":
-        """Fit on observed first attempts. `train` must not include any evaluation window."""
+        """Fit on observed first attempts. `train` must not include any evaluation window.
+
+        With `checkpoint_dir`, each finished member is saved there, and members already saved by
+        an earlier run with the same config and training days are loaded instead of retrained.
+        """
         features = FeatureBuilder(customers, merchants)
         x = features(train)
         tokenizer = FieldTokenizer.fit(x, config.numeric_bins)
@@ -185,46 +265,32 @@ class SharedModel:
         fit_rows, val = data[torch.from_numpy(~is_val)], data[torch.from_numpy(is_val)]
         n_classes = tokenizer.vocab_sizes + tokenizer.numeric_bin_counts
 
+        base_rate = float(data.success.mean())
+        train_days = sorted({d.isoformat() for d in train["timestamp"].dt.date})
+        if checkpoint_dir is not None:
+            _prepare_checkpoint(checkpoint_dir, config, train_days)
+
         members, reports = [], []
         for k in range(config.ensemble_size):
-            seed = config.seed + k
-            torch.manual_seed(seed)
-            member = _Member(config, tokenizer.vocab_sizes)
-            # Start the success head at the base rate instead of 0.5.
-            with torch.no_grad():
-                member.heads.success.bias.fill_(float(torch.logit(data.success.mean())))
-            pretrain_report = None
-            if config.pretrain_epochs:
-                rows = np.random.default_rng(seed).permutation(len(fit_rows))
-                sample = fit_rows[torch.from_numpy(rows[: config.pretrain_rows])]
-                pretrain_report = pretrain(
-                    member.encoder,
-                    sample.codes,
-                    sample.numeric,
-                    torch.cat([sample.codes, sample.bins], dim=1),
-                    (val.codes, val.numeric, torch.cat([val.codes, val.bins], dim=1)),
-                    n_classes,
-                    config.pretrain_epochs,
-                    config.batch_size,
-                    config.learning_rate,
-                    config.weight_decay,
-                    (config.mask_rate_min, config.mask_rate_max),
-                    torch.Generator().manual_seed(seed),
-                )
+            done = checkpoint_dir / f"member_{k}.json" if checkpoint_dir else None
+            if done is not None and done.exists():
+                member = _Member(config, tokenizer.vocab_sizes)
+                state = torch.load(checkpoint_dir / f"member_{k}.pt", weights_only=True)
+                member.load_state_dict(state)
+                member.eval()
+                report = _member_report(json.loads(done.read_text(encoding="utf-8")))
                 if progress:
-                    progress(
-                        f"member {k}: pretrain loss {pretrain_report.train_loss}, masked acc "
-                        f"{pretrain_report.masked_accuracy:.3f} vs frequency "
-                        f"{pretrain_report.frequency_baseline_accuracy:.3f}"
-                    )
-            finetune = _finetune(member, fit_rows, val, config, seed)
-            if progress:
-                progress(
-                    f"member {k}: val loss {[round(v, 4) for v in finetune.val_loss]}, "
-                    f"best epoch {finetune.best_epoch}"
+                    progress(f"member {k}: loaded from checkpoint")
+            else:
+                member, report = _train_member(
+                    k, config, tokenizer.vocab_sizes, n_classes, base_rate, fit_rows, val, progress
                 )
+                if done is not None:
+                    torch.save(member.state_dict(), checkpoint_dir / f"member_{k}.pt")
+                    # Written last: its presence marks the member as complete.
+                    done.write_text(json.dumps(asdict(report), indent=2), encoding="utf-8")
             members.append(member)
-            reports.append(MemberReport(seed=seed, pretrain=pretrain_report, finetune=finetune))
+            reports.append(report)
 
         return cls(
             features=features,
@@ -234,7 +300,7 @@ class SharedModel:
             members=members,
             config=config,
             reports=reports,
-            train_days=sorted({d.isoformat() for d in train["timestamp"].dt.date}),
+            train_days=train_days,
         )
 
     def member_predictions(self, frame: pd.DataFrame) -> list[Predictions]:
@@ -309,14 +375,7 @@ class SharedModel:
             member.load_state_dict(torch.load(directory / f"member_{k}.pt", weights_only=True))
             member.eval()
             members.append(member)
-        reports = [
-            MemberReport(
-                seed=r["seed"],
-                pretrain=PretrainReport(**r["pretrain"]) if r["pretrain"] else None,
-                finetune=FinetuneReport(**r["finetune"]),
-            )
-            for r in meta["reports"]
-        ]
+        reports = [_member_report(r) for r in meta["reports"]]
         return cls(
             features=FeatureBuilder(customers, merchants),
             tokenizer=tokenizer,
