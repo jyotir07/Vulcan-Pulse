@@ -160,3 +160,26 @@ def test_shared_model_plugs_into_engine(dataset, shared):
     result = simulate(dataset, cf, shared)
     assert result.source == "shared_representation"
     assert result.counterfactual.transactions == result.baseline.transactions
+
+
+def test_checkpointed_members_are_resumed_not_retrained(dataset, train, tiny_config, tmp_path):
+    config = tiny_config.model_copy(update={"d_model": 16, "pretrain_epochs": 0})
+    fit = SharedModel.fit(
+        train, dataset.customers, dataset.merchants, config, checkpoint_dir=tmp_path
+    )
+    frame = dataset.transactions.head(2000)
+    member_1 = fit.member_predictions(frame)[1].p_success
+    # Simulate an interruption after member 0, with member 0's file holding member 1's weights:
+    # a resumed run must load it as saved, and retrain only the missing member.
+    (tmp_path / "member_1.json").unlink()
+    (tmp_path / "member_0.pt").write_bytes((tmp_path / "member_1.pt").read_bytes())
+    resumed = SharedModel.fit(
+        train, dataset.customers, dataset.merchants, config, checkpoint_dir=tmp_path
+    )
+    np.testing.assert_array_equal(resumed.member_predictions(frame)[0].p_success, member_1)
+    assert (tmp_path / "member_1.json").exists()
+    assert resumed.reports == fit.reports
+
+    other = config.model_copy(update={"seed": config.seed + 1})
+    with pytest.raises(ValueError, match="different config"):
+        SharedModel.fit(train, dataset.customers, dataset.merchants, other, checkpoint_dir=tmp_path)
