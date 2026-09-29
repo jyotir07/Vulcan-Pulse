@@ -301,3 +301,16 @@ def test_baseline_cache_predicts_a_window_once(dataset, observed, rules):
     assert a.baseline == b.baseline
     assert simulate(dataset, second, rules).impact == b.impact
 
+
+def test_method_shift_can_target_one_issuer(dataset, observed):
+    cf = _apply(
+        dataset,
+        observed,
+        {"type": "method_shift", "from": "UPI", "to": "CARD", "percentage": 0.5, "issuer": "hdfc"},
+    )
+    before = cf.baseline.set_index("transaction_id")
+    after = cf.counterfactual.set_index("transaction_id")
+    moved = before["payment_method"].astype(str) != after["payment_method"].astype(str)
+    hdfc_upi = (before["issuer_id"] == 0) & (before["payment_method"].astype(str) == "UPI")
+    assert moved.sum() == round(0.5 * hdfc_upi.sum())
+    assert (before.loc[moved, "issuer_id"] == 0).all()

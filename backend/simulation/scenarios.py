@@ -72,6 +72,13 @@ class MethodShift(_Intervention):
     from_method: MethodName = Field(alias="from")
     to_method: MethodName = Field(alias="to")
     percentage: float = Field(gt=0.0, le=1.0)
+    # Only this issuer's payments move, e.g. steering a degraded bank's UPI users to cards.
+    issuer: str | None = None
+
+    @field_validator("issuer")
+    @classmethod
+    def _known_issuer(cls, value: str | None) -> str | None:
+        return None if value is None else _issuer_name(value)
 
     @model_validator(mode="after")
     def _distinct(self) -> "MethodShift":

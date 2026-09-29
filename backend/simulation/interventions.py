@@ -187,9 +187,10 @@ def _apply_traffic_change(ctx, iv: TrafficChange, span, observed, rng, next_id):
 
 
 def _apply_method_shift(ctx, iv: MethodShift, span, observed, rng):
-    rows = np.flatnonzero(
-        _rows_in(ctx, observed, span) & (ctx["payment_method"] == iv.from_method).to_numpy()
-    )
+    eligible = _rows_in(ctx, observed, span) & (ctx["payment_method"] == iv.from_method).to_numpy()
+    if iv.issuer is not None:
+        eligible &= (ctx["issuer_id"] == _ISSUER_ID[iv.issuer]).to_numpy()
+    rows = np.flatnonzero(eligible)
     chosen = rng.choice(rows, size=int(round(iv.percentage * len(rows))), replace=False)
     ctx = ctx.copy()
     to = METHODS.index(iv.to_method)
