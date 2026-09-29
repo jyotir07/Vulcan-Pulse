@@ -14,6 +14,7 @@ from backend.simulation.interventions import (
     default_window_date,
     observe,
 )
+from backend.simulation.metrics import ensemble_mean
 from backend.simulation.oracle import true_outcomes
 from backend.simulation.scenarios import Scenario
 
@@ -28,6 +29,36 @@ def observed(dataset):
 @pytest.fixture(scope="module")
 def rules(dataset):
     return RuleBaseline.fit(first_attempts_excluding(dataset, default_window_date(dataset)))
+
+
+@pytest.fixture(scope="module")
+def ensemble(dataset):
+    """Two rule baselines fit from different subsets, standing in for an ensemble of seeds."""
+    day = default_window_date(dataset)
+    members = [
+        RuleBaseline.fit(
+            first_attempts_excluding(dataset, day).sample(
+                frac=1.0, random_state=seed, replace=True
+            )
+        )
+        for seed in (0, 1)
+    ]
+    return _Ensemble(members)
+
+
+class _Ensemble:
+    """The parts of the shared model the engine uses, over the rule baseline's predictions."""
+
+    name = "test_ensemble"
+
+    def __init__(self, members):
+        self.members = members
+
+    def predict(self, frame):
+        return ensemble_mean(self.member_predictions(frame))
+
+    def member_predictions(self, frame):
+        return [member.predict(frame) for member in self.members]
 
 
 def _apply(dataset, observed, *interventions, **scenario_fields):
@@ -213,3 +244,21 @@ def test_rule_baseline_calibrated_on_held_out_day(dataset, rules, observed):
     assert predicted.p_success.mean() == pytest.approx(actual, abs=0.01)
     assert np.allclose(predicted.reason_probs.sum(axis=1), 1.0)
     assert set(np.unique(cf.baseline["payment_method"].astype(str))) <= set(METHODS)
+
+
+def test_no_interval_for_a_single_model(dataset, observed, rules):
+    """The rule baseline is one fit, so it has no ensemble spread to report."""
+    cf = _apply(dataset, observed, _degradation())
+    assert simulate(dataset, cf, rules).interval is None
+
+
+def test_ensemble_gets_an_interval_around_its_impact(dataset, observed, ensemble):
+    cf = _apply(dataset, observed, _degradation())
+    result = simulate(dataset, cf, ensemble)
+    assert result.interval is not None
+    low, high = result.interval.success_rate_delta_pp
+    assert low <= result.impact.success_rate_delta_pp <= high
+    assert result.interval.level == pytest.approx(0.90)
+    # The same scenario, without the interval, must report the same impact: the members are
+    # averaged either way.
+    assert simulate(dataset, cf, ensemble, with_interval=False).impact == result.impact

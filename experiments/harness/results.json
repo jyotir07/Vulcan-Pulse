@@ -93,6 +93,19 @@
     },
     {
       "target": "failures_delta",
+      "range": "in_range",
+      "predictor": "shared_representation",
+      "n": 49,
+      "mae": 112.9045210680186,
+      "mae_ci_low": 57.22006682496378,
+      "mae_ci_high": 173.40459852306228,
+      "rmse": 243.926364182192,
+      "median_relative_error": 0.30420756409436395,
+      "sign_accuracy": 1.0,
+      "n_material": 36
+    },
+    {
+      "target": "failures_delta",
       "range": "out_of_range",
       "predictor": "independent_ml",
       "n": 35,
@@ -114,6 +127,19 @@
       "mae_ci_high": 1056.850027051109,
       "rmse": 1735.9154746926822,
       "median_relative_error": 0.03037397773614981,
+      "sign_accuracy": 1.0,
+      "n_material": 35
+    },
+    {
+      "target": "failures_delta",
+      "range": "out_of_range",
+      "predictor": "shared_representation",
+      "n": 35,
+      "mae": 704.5448130420289,
+      "mae_ci_low": 277.2730060054753,
+      "mae_ci_high": 1210.222889092948,
+      "rmse": 1725.9974287619716,
+      "median_relative_error": 0.7335373835316992,
       "sign_accuracy": 1.0,
       "n_material": 35
     },
@@ -145,6 +171,19 @@
     },
     {
       "target": "gmv_at_risk",
+      "range": "in_range",
+      "predictor": "shared_representation",
+      "n": 49,
+      "mae": 346820.5714089009,
+      "mae_ci_low": 196079.600372778,
+      "mae_ci_high": 512735.6695095613,
+      "rmse": 666888.2319224869,
+      "median_relative_error": 0.6997467878809368,
+      "sign_accuracy": 0.7307692307692307,
+      "n_material": 26
+    },
+    {
+      "target": "gmv_at_risk",
       "range": "out_of_range",
       "predictor": "independent_ml",
       "n": 35,
@@ -166,6 +205,19 @@
       "mae_ci_high": 3123563.256817239,
       "rmse": 5101905.521617309,
       "median_relative_error": 0.049072889068459954,
+      "sign_accuracy": 1.0,
+      "n_material": 30
+    },
+    {
+      "target": "gmv_at_risk",
+      "range": "out_of_range",
+      "predictor": "shared_representation",
+      "n": 35,
+      "mae": 2097102.4914046032,
+      "mae_ci_low": 823730.8566276637,
+      "mae_ci_high": 3597424.961745758,
+      "rmse": 5100679.088700773,
+      "median_relative_error": 0.7238198914599747,
       "sign_accuracy": 1.0,
       "n_material": 30
     },
@@ -197,6 +249,19 @@
     },
     {
       "target": "p95_latency_delta_ms",
+      "range": "in_range",
+      "predictor": "shared_representation",
+      "n": 49,
+      "mae": 265.6980182008444,
+      "mae_ci_low": 77.08167801275037,
+      "mae_ci_high": 579.1457598140776,
+      "rmse": 923.9478179143522,
+      "median_relative_error": 0.24519367537375242,
+      "sign_accuracy": 1.0,
+      "n_material": 27
+    },
+    {
+      "target": "p95_latency_delta_ms",
       "range": "out_of_range",
       "predictor": "independent_ml",
       "n": 35,
@@ -219,6 +284,19 @@
       "rmse": 3552.442775811387,
       "median_relative_error": 1.0,
       "sign_accuracy": 0.1724137931034483,
+      "n_material": 29
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "range": "out_of_range",
+      "predictor": "shared_representation",
+      "n": 35,
+      "mae": 1140.3190190339697,
+      "mae_ci_low": 347.82965675390983,
+      "mae_ci_high": 2063.6685194086826,
+      "rmse": 2951.081504318148,
+      "median_relative_error": 0.7443148264402824,
+      "sign_accuracy": 1.0,
       "n_material": 29
     },
     {
@@ -249,6 +327,19 @@
     },
     {
       "target": "success_rate_delta_pp",
+      "range": "in_range",
+      "predictor": "shared_representation",
+      "n": 49,
+      "mae": 0.28849117605660696,
+      "mae_ci_low": 0.1489545768379972,
+      "mae_ci_high": 0.43817809179140804,
+      "rmse": 0.5948152850038191,
+      "median_relative_error": 0.6522376295498419,
+      "sign_accuracy": 1.0,
+      "n_material": 22
+    },
+    {
+      "target": "success_rate_delta_pp",
       "range": "out_of_range",
       "predictor": "independent_ml",
       "n": 35,
@@ -270,6 +361,19 @@
       "mae_ci_high": 1.6665996084151187,
       "rmse": 2.6350322672025066,
       "median_relative_error": 0.03037397773614989,
+      "sign_accuracy": 1.0,
+      "n_material": 33
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "range": "out_of_range",
+      "predictor": "shared_representation",
+      "n": 35,
+      "mae": 1.568417276735688,
+      "mae_ci_low": 0.8657964447091899,
+      "mae_ci_high": 2.383355205281091,
+      "rmse": 2.8747520575776413,
+      "median_relative_error": 0.7334184372570548,
       "sign_accuracy": 1.0,
       "n_material": 33
     },
@@ -301,6 +405,19 @@
     },
     {
       "target": "timeout_rate_delta_pp",
+      "range": "in_range",
+      "predictor": "shared_representation",
+      "n": 49,
+      "mae": 0.2544925217853004,
+      "mae_ci_low": 0.132334681322496,
+      "mae_ci_high": 0.4089789416593242,
+      "rmse": 0.5471866996357815,
+      "median_relative_error": 0.42427039212471745,
+      "sign_accuracy": 0.967741935483871,
+      "n_material": 31
+    },
+    {
+      "target": "timeout_rate_delta_pp",
       "range": "out_of_range",
       "predictor": "independent_ml",
       "n": 35,
@@ -322,6 +439,19 @@
       "mae_ci_high": 2.4587317120338934,
       "rmse": 3.5465031136603575,
       "median_relative_error": 0.4540968908998139,
+      "sign_accuracy": 1.0,
+      "n_material": 33
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "range": "out_of_range",
+      "predictor": "shared_representation",
+      "n": 35,
+      "mae": 1.4054741126632155,
+      "mae_ci_low": 0.7364962351681681,
+      "mae_ci_high": 2.224191013961629,
+      "rmse": 2.791042953563831,
+      "median_relative_error": 0.7651296631644013,
       "sign_accuracy": 1.0,
       "n_material": 33
     }
@@ -355,6 +485,19 @@
     },
     {
       "target": "failures_delta",
+      "type": "combined",
+      "predictor": "shared_representation",
+      "n": 4,
+      "mae": 758.9258425444366,
+      "mae_ci_low": 687.5927433252311,
+      "mae_ci_high": 886.3553415536835,
+      "rmse": 767.1627886762233,
+      "median_relative_error": 0.5933150251225535,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "failures_delta",
       "type": "gateway_outage",
       "predictor": "independent_ml",
       "n": 16,
@@ -376,6 +519,19 @@
       "mae_ci_high": 3.116442340344122,
       "rmse": 2.9136518698065768,
       "median_relative_error": 0.0034003449060492474,
+      "sign_accuracy": 1.0,
+      "n_material": 16
+    },
+    {
+      "target": "failures_delta",
+      "type": "gateway_outage",
+      "predictor": "shared_representation",
+      "n": 16,
+      "mae": 256.961057063938,
+      "mae_ci_low": 160.8802509913787,
+      "mae_ci_high": 361.79606832005265,
+      "rmse": 333.0489701169275,
+      "median_relative_error": 0.719487109134567,
       "sign_accuracy": 1.0,
       "n_material": 16
     },
@@ -407,6 +563,19 @@
     },
     {
       "target": "failures_delta",
+      "type": "issuer_degradation",
+      "predictor": "shared_representation",
+      "n": 28,
+      "mae": 211.38124988930738,
+      "mae_ci_low": 88.93170532616372,
+      "mae_ci_high": 367.0251117200527,
+      "rmse": 444.4497511474272,
+      "median_relative_error": 0.9952875070122611,
+      "sign_accuracy": 1.0,
+      "n_material": 24
+    },
+    {
+      "target": "failures_delta",
       "type": "method_shift",
       "predictor": "independent_ml",
       "n": 10,
@@ -428,6 +597,19 @@
       "mae_ci_high": 38.86335423667534,
       "rmse": 32.15794423484956,
       "median_relative_error": 0.5846516338797455,
+      "sign_accuracy": 1.0,
+      "n_material": 7
+    },
+    {
+      "target": "failures_delta",
+      "type": "method_shift",
+      "predictor": "shared_representation",
+      "n": 10,
+      "mae": 9.352428278923071,
+      "mae_ci_low": 6.5810104562347185,
+      "mae_ci_high": 12.218449930133998,
+      "rmse": 10.487970532787896,
+      "median_relative_error": 0.22035966856115288,
       "sign_accuracy": 1.0,
       "n_material": 7
     },
@@ -459,6 +641,19 @@
     },
     {
       "target": "failures_delta",
+      "type": "routing_change",
+      "predictor": "shared_representation",
+      "n": 12,
+      "mae": 138.42942218681355,
+      "mae_ci_low": 28.212852875543742,
+      "mae_ci_high": 269.99326990805525,
+      "rmse": 254.52181118731437,
+      "median_relative_error": 0.3968365255842924,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "failures_delta",
       "type": "traffic_change",
       "predictor": "independent_ml",
       "n": 14,
@@ -480,6 +675,19 @@
       "mae_ci_high": 2670.1517661286703,
       "rmse": 2742.0468489044233,
       "median_relative_error": 0.16533341989402617,
+      "sign_accuracy": 1.0,
+      "n_material": 14
+    },
+    {
+      "target": "failures_delta",
+      "type": "traffic_change",
+      "predictor": "shared_representation",
+      "n": 14,
+      "mae": 1097.925525690826,
+      "mae_ci_low": 71.58936989541414,
+      "mae_ci_high": 2541.0452042070674,
+      "rmse": 2628.7487450992685,
+      "median_relative_error": 0.13760795728121394,
       "sign_accuracy": 1.0,
       "n_material": 14
     },
@@ -511,6 +719,19 @@
     },
     {
       "target": "gmv_at_risk",
+      "type": "combined",
+      "predictor": "shared_representation",
+      "n": 4,
+      "mae": 1913829.5932031337,
+      "mae_ci_low": 1228165.4308824695,
+      "mae_ci_high": 2610345.8637936967,
+      "rmse": 2043831.273145211,
+      "median_relative_error": 0.7044457100024575,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "gmv_at_risk",
       "type": "gateway_outage",
       "predictor": "independent_ml",
       "n": 16,
@@ -532,6 +753,19 @@
       "mae_ci_high": 51386.49356982592,
       "rmse": 48369.08374381935,
       "median_relative_error": 0.017409093126103708,
+      "sign_accuracy": 1.0,
+      "n_material": 15
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "gateway_outage",
+      "predictor": "shared_representation",
+      "n": 16,
+      "mae": 842810.9590284055,
+      "mae_ci_low": 510725.4457967271,
+      "mae_ci_high": 1188877.6364913932,
+      "rmse": 1100319.8070875106,
+      "median_relative_error": 0.7164847783596817,
       "sign_accuracy": 1.0,
       "n_material": 15
     },
@@ -563,6 +797,19 @@
     },
     {
       "target": "gmv_at_risk",
+      "type": "issuer_degradation",
+      "predictor": "shared_representation",
+      "n": 28,
+      "mae": 600341.2490514461,
+      "mae_ci_low": 210703.19031656304,
+      "mae_ci_high": 1086840.265652714,
+      "rmse": 1385133.4333514299,
+      "median_relative_error": 0.9967545636254902,
+      "sign_accuracy": 1.0,
+      "n_material": 14
+    },
+    {
+      "target": "gmv_at_risk",
       "type": "method_shift",
       "predictor": "independent_ml",
       "n": 10,
@@ -584,6 +831,19 @@
       "mae_ci_high": 512790.47140441596,
       "rmse": 445870.47974056774,
       "median_relative_error": 1.2695963223660027,
+      "sign_accuracy": 0.42857142857142855,
+      "n_material": 7
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "method_shift",
+      "predictor": "shared_representation",
+      "n": 10,
+      "mae": 281193.3073797252,
+      "mae_ci_low": 110706.17629180336,
+      "mae_ci_high": 455179.5380289316,
+      "rmse": 405237.0526587968,
+      "median_relative_error": 1.0706307098054064,
       "sign_accuracy": 0.42857142857142855,
       "n_material": 7
     },
@@ -615,6 +875,19 @@
     },
     {
       "target": "gmv_at_risk",
+      "type": "routing_change",
+      "predictor": "shared_representation",
+      "n": 12,
+      "mae": 353097.84214212623,
+      "mae_ci_low": 45660.53563895121,
+      "mae_ci_high": 731591.8226323219,
+      "rmse": 700567.6605595091,
+      "median_relative_error": 0.35469011943638373,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "gmv_at_risk",
       "type": "traffic_change",
       "predictor": "independent_ml",
       "n": 14,
@@ -636,6 +909,19 @@
       "mae_ci_high": 7816437.185888695,
       "rmse": 8057443.2236882625,
       "median_relative_error": 0.5646798954664236,
+      "sign_accuracy": 0.7,
+      "n_material": 10
+    },
+    {
+      "target": "gmv_at_risk",
+      "type": "traffic_change",
+      "predictor": "shared_representation",
+      "n": 14,
+      "mae": 3242417.0948562142,
+      "mae_ci_low": 213366.68701710057,
+      "mae_ci_high": 7464992.141337074,
+      "rmse": 7723119.751788572,
+      "median_relative_error": 0.5995644360137552,
       "sign_accuracy": 0.7,
       "n_material": 10
     },
@@ -667,6 +953,19 @@
     },
     {
       "target": "p95_latency_delta_ms",
+      "type": "combined",
+      "predictor": "shared_representation",
+      "n": 4,
+      "mae": 2779.4255612063084,
+      "mae_ci_low": 418.70866756294913,
+      "mae_ci_high": 6638.740428945508,
+      "rmse": 4435.44025304702,
+      "median_relative_error": 0.6060437749076824,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "p95_latency_delta_ms",
       "type": "gateway_outage",
       "predictor": "independent_ml",
       "n": 16,
@@ -689,6 +988,19 @@
       "rmse": 649.8714776784715,
       "median_relative_error": 1.0,
       "sign_accuracy": 0.0,
+      "n_material": 14
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "gateway_outage",
+      "predictor": "shared_representation",
+      "n": 16,
+      "mae": 336.23275171840896,
+      "mae_ci_low": 175.23086623843568,
+      "mae_ci_high": 521.3988691428711,
+      "rmse": 499.7749975090949,
+      "median_relative_error": 0.6890499428526718,
+      "sign_accuracy": 1.0,
       "n_material": 14
     },
     {
@@ -719,6 +1031,19 @@
     },
     {
       "target": "p95_latency_delta_ms",
+      "type": "issuer_degradation",
+      "predictor": "shared_representation",
+      "n": 28,
+      "mae": 110.79591536355345,
+      "mae_ci_low": 47.536273338627446,
+      "mae_ci_high": 191.67236479888888,
+      "rmse": 228.30683522250737,
+      "median_relative_error": 0.9927376976815319,
+      "sign_accuracy": 1.0,
+      "n_material": 12
+    },
+    {
+      "target": "p95_latency_delta_ms",
       "type": "method_shift",
       "predictor": "independent_ml",
       "n": 10,
@@ -740,6 +1065,19 @@
       "mae_ci_high": 57.8403329503464,
       "rmse": 50.36875409015859,
       "median_relative_error": 0.07523242693944492,
+      "sign_accuracy": 1.0,
+      "n_material": 8
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "method_shift",
+      "predictor": "shared_representation",
+      "n": 10,
+      "mae": 62.57191727348127,
+      "mae_ci_low": 26.02651272680669,
+      "mae_ci_high": 104.06864794607161,
+      "rmse": 89.74175552634532,
+      "median_relative_error": 0.13486889960694293,
       "sign_accuracy": 1.0,
       "n_material": 8
     },
@@ -771,6 +1109,19 @@
     },
     {
       "target": "p95_latency_delta_ms",
+      "type": "routing_change",
+      "predictor": "shared_representation",
+      "n": 12,
+      "mae": 636.3075319764372,
+      "mae_ci_low": 64.38574524626834,
+      "mae_ci_high": 1558.393243498361,
+      "rmse": 1637.434869324833,
+      "median_relative_error": 0.2644327160433182,
+      "sign_accuracy": 1.0,
+      "n_material": 8
+    },
+    {
+      "target": "p95_latency_delta_ms",
       "type": "traffic_change",
       "predictor": "independent_ml",
       "n": 14,
@@ -792,6 +1143,19 @@
       "mae_ci_high": 4848.321852398549,
       "rmse": 5107.831537586031,
       "median_relative_error": 0.5846007821545132,
+      "sign_accuracy": 1.0,
+      "n_material": 10
+    },
+    {
+      "target": "p95_latency_delta_ms",
+      "type": "traffic_change",
+      "predictor": "shared_representation",
+      "n": 14,
+      "mae": 1790.66050707707,
+      "mae_ci_low": 136.88220959464525,
+      "mae_ci_high": 3823.8394254008263,
+      "rmse": 4055.3133157682864,
+      "median_relative_error": 0.3477811296319312,
       "sign_accuracy": 1.0,
       "n_material": 10
     },
@@ -823,6 +1187,19 @@
     },
     {
       "target": "success_rate_delta_pp",
+      "type": "combined",
+      "predictor": "shared_representation",
+      "n": 4,
+      "mae": 2.0453894159966817,
+      "mae_ci_low": 1.4428468566220987,
+      "mae_ci_high": 2.6614124491086133,
+      "rmse": 2.149275759798245,
+      "median_relative_error": 0.7401762079447245,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "success_rate_delta_pp",
       "type": "gateway_outage",
       "predictor": "independent_ml",
       "n": 16,
@@ -844,6 +1221,19 @@
       "mae_ci_high": 0.010038347809527958,
       "rmse": 0.009382730583492933,
       "median_relative_error": 0.003400344906048638,
+      "sign_accuracy": 1.0,
+      "n_material": 16
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "gateway_outage",
+      "predictor": "shared_representation",
+      "n": 16,
+      "mae": 0.8258688944754295,
+      "mae_ci_low": 0.5168395835788501,
+      "mae_ci_high": 1.1633955426434632,
+      "rmse": 1.0704219428167958,
+      "median_relative_error": 0.7194871091345665,
       "sign_accuracy": 1.0,
       "n_material": 16
     },
@@ -875,6 +1265,19 @@
     },
     {
       "target": "success_rate_delta_pp",
+      "type": "issuer_degradation",
+      "predictor": "shared_representation",
+      "n": 28,
+      "mae": 0.6794201525337575,
+      "mae_ci_low": 0.28580626499978584,
+      "mae_ci_high": 1.1800229925252892,
+      "rmse": 1.4287017285711383,
+      "median_relative_error": 0.995361979158694,
+      "sign_accuracy": 1.0,
+      "n_material": 20
+    },
+    {
+      "target": "success_rate_delta_pp",
       "type": "method_shift",
       "predictor": "independent_ml",
       "n": 10,
@@ -896,6 +1299,19 @@
       "mae_ci_high": 0.12493347264923527,
       "rmse": 0.10336522327815487,
       "median_relative_error": 0.5244303445890588,
+      "sign_accuracy": 1.0,
+      "n_material": 2
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "method_shift",
+      "predictor": "shared_representation",
+      "n": 10,
+      "mae": 0.030066834730071434,
+      "mae_ci_low": 0.02114946493546402,
+      "mae_ci_high": 0.03929656817310789,
+      "rmse": 0.033723498423112556,
+      "median_relative_error": 0.06159516945741093,
       "sign_accuracy": 1.0,
       "n_material": 2
     },
@@ -927,6 +1343,19 @@
     },
     {
       "target": "success_rate_delta_pp",
+      "type": "routing_change",
+      "predictor": "shared_representation",
+      "n": 12,
+      "mae": 0.4443786256175059,
+      "mae_ci_low": 0.09077408485258495,
+      "mae_ci_high": 0.8667729878732227,
+      "rmse": 0.8165492689649922,
+      "median_relative_error": 0.3968365255842927,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "success_rate_delta_pp",
       "type": "traffic_change",
       "predictor": "independent_ml",
       "n": 14,
@@ -948,6 +1377,19 @@
       "mae_ci_high": 3.9638383735707796,
       "rmse": 4.057933004053585,
       "median_relative_error": 0.534546083722219,
+      "sign_accuracy": 1.0,
+      "n_material": 7
+    },
+    {
+      "target": "success_rate_delta_pp",
+      "type": "traffic_change",
+      "predictor": "shared_representation",
+      "n": 14,
+      "mae": 1.6413025865195168,
+      "mae_ci_low": 0.13965908832738297,
+      "mae_ci_high": 3.7173216679975,
+      "rmse": 3.822932237328573,
+      "median_relative_error": 0.4163138370047201,
       "sign_accuracy": 1.0,
       "n_material": 7
     },
@@ -979,6 +1421,19 @@
     },
     {
       "target": "timeout_rate_delta_pp",
+      "type": "combined",
+      "predictor": "shared_representation",
+      "n": 4,
+      "mae": 1.827522771199022,
+      "mae_ci_low": 0.979901268072878,
+      "mae_ci_high": 2.67477966087787,
+      "rmse": 2.039454923835826,
+      "median_relative_error": 0.7639123269367104,
+      "sign_accuracy": 1.0,
+      "n_material": 4
+    },
+    {
+      "target": "timeout_rate_delta_pp",
       "type": "gateway_outage",
       "predictor": "independent_ml",
       "n": 16,
@@ -1000,6 +1455,19 @@
       "mae_ci_high": 0.7979704555929166,
       "rmse": 0.7375091926219216,
       "median_relative_error": 0.4780905067345818,
+      "sign_accuracy": 1.0,
+      "n_material": 16
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "gateway_outage",
+      "predictor": "shared_representation",
+      "n": 16,
+      "mae": 0.8671938183284618,
+      "mae_ci_low": 0.5416615251860326,
+      "mae_ci_high": 1.2213243099817759,
+      "rmse": 1.1259672532247011,
+      "median_relative_error": 0.7441698393812453,
       "sign_accuracy": 1.0,
       "n_material": 16
     },
@@ -1031,6 +1499,19 @@
     },
     {
       "target": "timeout_rate_delta_pp",
+      "type": "issuer_degradation",
+      "predictor": "shared_representation",
+      "n": 28,
+      "mae": 0.3305038290957837,
+      "mae_ci_low": 0.16136201005694056,
+      "mae_ci_high": 0.5360585209421392,
+      "rmse": 0.6158959178684587,
+      "median_relative_error": 0.9965399683504046,
+      "sign_accuracy": 1.0,
+      "n_material": 21
+    },
+    {
+      "target": "timeout_rate_delta_pp",
       "type": "method_shift",
       "predictor": "independent_ml",
       "n": 10,
@@ -1052,6 +1533,19 @@
       "mae_ci_high": 0.0329496380986365,
       "rmse": 0.02732035664723046,
       "median_relative_error": 0.20900076857765368,
+      "sign_accuracy": 1.0,
+      "n_material": 8
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "method_shift",
+      "predictor": "shared_representation",
+      "n": 10,
+      "mae": 0.024825349969496525,
+      "mae_ci_low": 0.018280812964783618,
+      "mae_ci_high": 0.03205280584064931,
+      "rmse": 0.027176029966599183,
+      "median_relative_error": 0.23687616009366502,
       "sign_accuracy": 1.0,
       "n_material": 8
     },
@@ -1083,6 +1577,19 @@
     },
     {
       "target": "timeout_rate_delta_pp",
+      "type": "routing_change",
+      "predictor": "shared_representation",
+      "n": 12,
+      "mae": 0.5043627737326621,
+      "mae_ci_low": 0.12807082934401012,
+      "mae_ci_high": 0.9716625498923411,
+      "rmse": 0.9036989880067863,
+      "median_relative_error": 0.5145218079648335,
+      "sign_accuracy": 1.0,
+      "n_material": 6
+    },
+    {
+      "target": "timeout_rate_delta_pp",
       "type": "traffic_change",
       "predictor": "independent_ml",
       "n": 14,
@@ -1104,6 +1611,19 @@
       "mae_ci_high": 5.336621869772746,
       "rmse": 5.470935769832978,
       "median_relative_error": 0.8601230546013605,
+      "sign_accuracy": 0.8888888888888888,
+      "n_material": 9
+    },
+    {
+      "target": "timeout_rate_delta_pp",
+      "type": "traffic_change",
+      "predictor": "shared_representation",
+      "n": 14,
+      "mae": 1.7801300952479955,
+      "mae_ci_low": 0.18669402065015123,
+      "mae_ci_high": 3.933823630788664,
+      "rmse": 4.052931131706291,
+      "median_relative_error": 0.4186614436607792,
       "sign_accuracy": 0.8888888888888888,
       "n_material": 9
     }
@@ -1211,6 +1731,59 @@
       "latency_log_mae": 0.3001058791528289,
       "latency_median_abs_error_ms": 389.75584218184713
     },
+    "shared_representation": {
+      "auc": 0.5943526636377264,
+      "brier": 0.03653648149240388,
+      "log_loss": 0.15986245419129375,
+      "mean_predicted": 0.9618401299184621,
+      "mean_observed": 0.9618042989710528,
+      "calibration": [
+        {
+          "predicted": 0.9354815427565581,
+          "observed": 0.929053299378993
+        },
+        {
+          "predicted": 0.9512257194095083,
+          "observed": 0.950942721830042
+        },
+        {
+          "predicted": 0.9575724705925247,
+          "observed": 0.9577804583835947
+        },
+        {
+          "predicted": 0.9613609472866176,
+          "observed": 0.9596532773334525
+        },
+        {
+          "predicted": 0.9638943867909877,
+          "observed": 0.9653739612188366
+        },
+        {
+          "predicted": 0.9658574870104403,
+          "observed": 0.9650165311410955
+        },
+        {
+          "predicted": 0.9676152194087428,
+          "observed": 0.969797158430882
+        },
+        {
+          "predicted": 0.9694085865645613,
+          "observed": 0.9709588061835404
+        },
+        {
+          "predicted": 0.9714972386910652,
+          "observed": 0.971585578340705
+        },
+        {
+          "predicted": 0.9744891812833212,
+          "observed": 0.9778830257807962
+        }
+      ],
+      "reason_log_loss": 1.718108271956993,
+      "reason_top1_accuracy": 0.3209732132413148,
+      "latency_log_mae": 0.30063302960144067,
+      "latency_median_abs_error_ms": 392.7010020035941
+    },
     "true_probability": {
       "auc": 0.6008801915990877,
       "brier": 0.036403103516791636,
@@ -1261,10 +1834,359 @@
       ]
     }
   },
+  "shared_training": [
+    {
+      "seed": 42,
+      "pretrain": {
+        "train_loss": [
+          1.3905233539412045,
+          1.266979014100475
+        ],
+        "masked_accuracy": 0.5297812223434448,
+        "frequency_baseline_accuracy": 0.3855050802230835,
+        "field_accuracy": {
+          "payment_method": 0.6897718906402588,
+          "issuer_id": 0.3558001220226288,
+          "bank_type": 0.8866719007492065,
+          "gateway_id": 0.46824151277542114,
+          "merchant_category": 0.5914109945297241,
+          "merchant_size": 0.5342995524406433,
+          "device_type": 0.7142435312271118,
+          "customer_segment": 0.8729726076126099,
+          "city": 0.1522812843322754,
+          "log_amount": 0.1756763458251953,
+          "log_merchant_aov": 0.4011269211769104,
+          "log_customer_history": 0.1625542789697647,
+          "issuer_health": 0.16189368069171906,
+          "gateway_health": 0.11237422376871109,
+          "gateway_utilization": 0.24100226163864136,
+          "hour": 0.2526228427886963,
+          "is_peak": 0.9502618908882141,
+          "is_festival": 0.9309384226799011,
+          "is_new_device": 1.0,
+          "online_merchant": 0.9537440538406372
+        },
+        "field_baseline_accuracy": {
+          "payment_method": 0.677802324295044,
+          "issuer_id": 0.20561020076274872,
+          "bank_type": 0.5850206613540649,
+          "gateway_id": 0.41751617193222046,
+          "merchant_category": 0.15248192846775055,
+          "merchant_size": 0.4927777647972107,
+          "device_type": 0.7075968980789185,
+          "customer_segment": 0.5282256007194519,
+          "city": 0.12841704487800598,
+          "log_amount": 0.063059501349926,
+          "log_merchant_aov": 0.06431242823600769,
+          "log_customer_history": 0.07831622660160065,
+          "issuer_health": 0.06468963623046875,
+          "gateway_health": 0.06114551052451134,
+          "gateway_utilization": 0.0668824166059494,
+          "hour": 0.10154686868190765,
+          "is_peak": 0.6996132731437683,
+          "is_festival": 0.8666177988052368,
+          "is_new_device": 1.0,
+          "online_merchant": 0.7635201811790466
+        }
+      },
+      "finetune": {
+        "train_loss": [
+          0.37290447076577793,
+          0.35845616319416707,
+          0.3568002714224511,
+          0.35360268273278683
+        ],
+        "val_loss": [
+          0.357925077641205,
+          0.35486123849078577,
+          0.35239271635449315,
+          0.3525198283904051
+        ],
+        "best_epoch": 2
+      }
+    },
+    {
+      "seed": 43,
+      "pretrain": {
+        "train_loss": [
+          1.391447721487833,
+          1.2721832384428473
+        ],
+        "masked_accuracy": 0.5278559923171997,
+        "frequency_baseline_accuracy": 0.38520926237106323,
+        "field_accuracy": {
+          "payment_method": 0.6874316334724426,
+          "issuer_id": 0.3552328050136566,
+          "bank_type": 0.8827212452888489,
+          "gateway_id": 0.478147953748703,
+          "merchant_category": 0.5954990386962891,
+          "merchant_size": 0.5244745016098022,
+          "device_type": 0.7160578966140747,
+          "customer_segment": 0.8552831411361694,
+          "city": 0.16546335816383362,
+          "log_amount": 0.17891153693199158,
+          "log_merchant_aov": 0.39542484283447266,
+          "log_customer_history": 0.15727756917476654,
+          "issuer_health": 0.14604492485523224,
+          "gateway_health": 0.10506454855203629,
+          "gateway_utilization": 0.23707273602485657,
+          "hour": 0.26246440410614014,
+          "is_peak": 0.9373299479484558,
+          "is_festival": 0.9301143288612366,
+          "is_new_device": 1.0,
+          "online_merchant": 0.950958251953125
+        },
+        "field_baseline_accuracy": {
+          "payment_method": 0.6740081310272217,
+          "issuer_id": 0.20195280015468597,
+          "bank_type": 0.5827951431274414,
+          "gateway_id": 0.4137677550315857,
+          "merchant_category": 0.15034246444702148,
+          "merchant_size": 0.5012164115905762,
+          "device_type": 0.7097316384315491,
+          "customer_segment": 0.5276758074760437,
+          "city": 0.12807832658290863,
+          "log_amount": 0.06241673603653908,
+          "log_merchant_aov": 0.06788472831249237,
+          "log_customer_history": 0.07656227052211761,
+          "issuer_health": 0.06357421725988388,
+          "gateway_health": 0.06231380254030228,
+          "gateway_utilization": 0.06519622355699539,
+          "hour": 0.09889473766088486,
+          "is_peak": 0.6983726620674133,
+          "is_festival": 0.8662398457527161,
+          "is_new_device": 1.0,
+          "online_merchant": 0.7579852342605591
+        }
+      },
+      "finetune": {
+        "train_loss": [
+          0.37667406962804145,
+          0.35903852413462095,
+          0.3554005148523141
+        ],
+        "val_loss": [
+          0.35636200254237377,
+          0.3523351825276792,
+          0.35344464589442776
+        ],
+        "best_epoch": 1
+      }
+    },
+    {
+      "seed": 44,
+      "pretrain": {
+        "train_loss": [
+          1.3924998289082238,
+          1.2691165518028338
+        ],
+        "masked_accuracy": 0.5281338691711426,
+        "frequency_baseline_accuracy": 0.3855016827583313,
+        "field_accuracy": {
+          "payment_method": 0.6903757452964783,
+          "issuer_id": 0.3535013198852539,
+          "bank_type": 0.8880403637886047,
+          "gateway_id": 0.4501853883266449,
+          "merchant_category": 0.5957870483398438,
+          "merchant_size": 0.5252729058265686,
+          "device_type": 0.7136268019676208,
+          "customer_segment": 0.8765022158622742,
+          "city": 0.14722509682178497,
+          "log_amount": 0.17580349743366241,
+          "log_merchant_aov": 0.3875417113304138,
+          "log_customer_history": 0.16154073178768158,
+          "issuer_health": 0.15597091615200043,
+          "gateway_health": 0.10607995092868805,
+          "gateway_utilization": 0.2340644747018814,
+          "hour": 0.2598861753940582,
+          "is_peak": 0.945892870426178,
+          "is_festival": 0.9333300590515137,
+          "is_new_device": 1.0,
+          "online_merchant": 0.9522583484649658
+        },
+        "field_baseline_accuracy": {
+          "payment_method": 0.6761696934700012,
+          "issuer_id": 0.1995311975479126,
+          "bank_type": 0.5866745114326477,
+          "gateway_id": 0.41817915439605713,
+          "merchant_category": 0.1499781608581543,
+          "merchant_size": 0.49803322553634644,
+          "device_type": 0.7068551182746887,
+          "customer_segment": 0.5301905274391174,
+          "city": 0.12471120059490204,
+          "log_amount": 0.061456941068172455,
+          "log_merchant_aov": 0.06744551658630371,
+          "log_customer_history": 0.07551341503858566,
+          "issuer_health": 0.06192962825298309,
+          "gateway_health": 0.06222375109791756,
+          "gateway_utilization": 0.06462535262107849,
+          "hour": 0.0976351648569107,
+          "is_peak": 0.6978445649147034,
+          "is_festival": 0.8615696430206299,
+          "is_new_device": 1.0,
+          "online_merchant": 0.762991726398468
+        }
+      },
+      "finetune": {
+        "train_loss": [
+          0.37369368572509726,
+          0.3576965701829701,
+          0.35519376553165977
+        ],
+        "val_loss": [
+          0.3558564652967508,
+          0.35151222513642466,
+          0.35291763862653475
+        ],
+        "best_epoch": 1
+      }
+    },
+    {
+      "seed": 45,
+      "pretrain": {
+        "train_loss": [
+          1.3907660327266915,
+          1.2703794061934175
+        ],
+        "masked_accuracy": 0.5276649594306946,
+        "frequency_baseline_accuracy": 0.38523733615875244,
+        "field_accuracy": {
+          "payment_method": 0.694577693939209,
+          "issuer_id": 0.3465476930141449,
+          "bank_type": 0.8873308897018433,
+          "gateway_id": 0.44946300983428955,
+          "merchant_category": 0.5993735790252686,
+          "merchant_size": 0.5430447459220886,
+          "device_type": 0.711979866027832,
+          "customer_segment": 0.8514081835746765,
+          "city": 0.13650886714458466,
+          "log_amount": 0.18051055073738098,
+          "log_merchant_aov": 0.3924013078212738,
+          "log_customer_history": 0.16225506365299225,
+          "issuer_health": 0.15802372992038727,
+          "gateway_health": 0.10971618443727493,
+          "gateway_utilization": 0.2345428466796875,
+          "hour": 0.26366639137268066,
+          "is_peak": 0.9513282775878906,
+          "is_festival": 0.9250696301460266,
+          "is_new_device": 1.0,
+          "online_merchant": 0.9503792524337769
+        },
+        "field_baseline_accuracy": {
+          "payment_method": 0.676519513130188,
+          "issuer_id": 0.19709381461143494,
+          "bank_type": 0.5878474712371826,
+          "gateway_id": 0.41483989357948303,
+          "merchant_category": 0.15073655545711517,
+          "merchant_size": 0.4931906759738922,
+          "device_type": 0.705513596534729,
+          "customer_segment": 0.5301192998886108,
+          "city": 0.12756229937076569,
+          "log_amount": 0.06156111881136894,
+          "log_merchant_aov": 0.06721529364585876,
+          "log_customer_history": 0.07695329934358597,
+          "issuer_health": 0.06136653199791908,
+          "gateway_health": 0.06101313978433609,
+          "gateway_utilization": 0.06623434275388718,
+          "hour": 0.10247942060232162,
+          "is_peak": 0.6981668472290039,
+          "is_festival": 0.8649494051933289,
+          "is_new_device": 1.0,
+          "online_merchant": 0.7555174827575684
+        }
+      },
+      "finetune": {
+        "train_loss": [
+          0.3753643503987976,
+          0.3595031396880824,
+          0.3573493319344146,
+          0.3549664817867479
+        ],
+        "val_loss": [
+          0.3603984903697832,
+          0.3553443615504637,
+          0.35189998562905395,
+          0.3519383940258275
+        ],
+        "best_epoch": 2
+      }
+    },
+    {
+      "seed": 46,
+      "pretrain": {
+        "train_loss": [
+          1.3925842701778477,
+          1.2686602918768093
+        ],
+        "masked_accuracy": 0.5282213091850281,
+        "frequency_baseline_accuracy": 0.3860369324684143,
+        "field_accuracy": {
+          "payment_method": 0.6932415962219238,
+          "issuer_id": 0.3519555926322937,
+          "bank_type": 0.8709677457809448,
+          "gateway_id": 0.47293558716773987,
+          "merchant_category": 0.5776321291923523,
+          "merchant_size": 0.5334747433662415,
+          "device_type": 0.7117422223091125,
+          "customer_segment": 0.8661996126174927,
+          "city": 0.1564698964357376,
+          "log_amount": 0.1800919771194458,
+          "log_merchant_aov": 0.385327011346817,
+          "log_customer_history": 0.15587541460990906,
+          "issuer_health": 0.15656885504722595,
+          "gateway_health": 0.11167537420988083,
+          "gateway_utilization": 0.23920446634292603,
+          "hour": 0.2702368497848511,
+          "is_peak": 0.9524970054626465,
+          "is_festival": 0.931769073009491,
+          "is_new_device": 1.0,
+          "online_merchant": 0.944307267665863
+        },
+        "field_baseline_accuracy": {
+          "payment_method": 0.6723519563674927,
+          "issuer_id": 0.20096439123153687,
+          "bank_type": 0.5863549709320068,
+          "gateway_id": 0.41095417737960815,
+          "merchant_category": 0.15252579748630524,
+          "merchant_size": 0.5054023265838623,
+          "device_type": 0.7042868137359619,
+          "customer_segment": 0.5287345051765442,
+          "city": 0.12988662719726562,
+          "log_amount": 0.06354150921106339,
+          "log_merchant_aov": 0.06599386781454086,
+          "log_customer_history": 0.07806052267551422,
+          "issuer_health": 0.06180735304951668,
+          "gateway_health": 0.06099003925919533,
+          "gateway_utilization": 0.06622909009456635,
+          "hour": 0.10329822450876236,
+          "is_peak": 0.6999104619026184,
+          "is_festival": 0.8657962083816528,
+          "is_new_device": 1.0,
+          "online_merchant": 0.7603930234909058
+        }
+      },
+      "finetune": {
+        "train_loss": [
+          0.3738046602896995,
+          0.358352919315037,
+          0.35392378528080687,
+          0.3540759320658539
+        ],
+        "val_loss": [
+          0.36346270374264683,
+          0.353622556141675,
+          0.3505104585150944,
+          0.3503697090342045
+        ],
+        "best_epoch": 3
+      }
+    }
+  ],
   "environment": {
     "python": "3.11.9",
     "numpy": "2.4.6",
-    "scikit_learn": "1.9.1"
+    "scikit_learn": "1.9.1",
+    "torch": "2.14.0+cpu"
   },
   "quick": false
 }

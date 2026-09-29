@@ -6,7 +6,7 @@ truth can be compared field by field.
 """
 
 from datetime import date
-from typing import Protocol
+from typing import Protocol, runtime_checkable
 
 import numpy as np
 import pandas as pd
@@ -18,11 +18,14 @@ from backend.data.generator import Dataset
 from backend.simulation.interventions import Counterfactual
 from backend.simulation.metrics import (
     Impact,
+    ImpactInterval,
     Metrics,
     Predictions,
     SegmentImpact,
     compute_impact,
     compute_metrics,
+    ensemble_mean,
+    impact_interval,
     segment_impacts,
 )
 from backend.simulation.oracle import true_outcomes
@@ -36,6 +39,13 @@ class Predictor(Protocol):
     def predict(self, frame: pd.DataFrame) -> Predictions: ...
 
 
+@runtime_checkable
+class EnsemblePredictor(Predictor, Protocol):
+    """A predictor whose members disagree, so its spread measures model uncertainty."""
+
+    def member_predictions(self, frame: pd.DataFrame) -> list[Predictions]: ...
+
+
 class SimulationResult(BaseModel):
     source: str
     window_date: date
@@ -43,6 +53,8 @@ class SimulationResult(BaseModel):
     counterfactual: Metrics
     impact: Impact
     segments: list[SegmentImpact]
+    # None unless the predictor is an ensemble; ground truth has no sampling uncertainty.
+    interval: ImpactInterval | None = None
 
 
 def _labelled(frame: pd.DataFrame, dataset: Dataset) -> pd.DataFrame:
@@ -75,13 +87,46 @@ def _result(
     )
 
 
-def simulate(dataset: Dataset, cf: Counterfactual, predictor: Predictor) -> SimulationResult:
-    return _result(
-        predictor.name,
-        cf,
-        dataset,
-        predictor.predict(cf.baseline),
-        predictor.predict(cf.counterfactual),
+def simulate(
+    dataset: Dataset, cf: Counterfactual, predictor: Predictor, with_interval: bool = True
+) -> SimulationResult:
+    # An ensemble's members are needed for the interval anyway, so they are predicted once and
+    # averaged here, rather than paying for a second pass through the model.
+    if with_interval and isinstance(predictor, EnsemblePredictor):
+        before = predictor.member_predictions(cf.baseline)
+        after = predictor.member_predictions(cf.counterfactual)
+        baseline_preds = ensemble_mean(before)
+        counterfactual_preds = ensemble_mean(after)
+        members = list(zip(before, after, strict=True))
+    else:
+        baseline_preds = predictor.predict(cf.baseline)
+        counterfactual_preds = predictor.predict(cf.counterfactual)
+        members = []
+
+    result = _result(predictor.name, cf, dataset, baseline_preds, counterfactual_preds)
+    if not members:
+        return result
+
+    # Each member's own impact gives model uncertainty; the interval's bootstrap term accounts
+    # for which transactions the window happened to contain.
+    affected = int(cf.affected.sum())
+    member_impacts = [
+        compute_impact(
+            compute_metrics(cf.baseline, b), compute_metrics(cf.counterfactual, a), affected
+        )
+        for b, a in members
+    ]
+    return result.model_copy(
+        update={
+            "interval": impact_interval(
+                cf.baseline,
+                baseline_preds,
+                cf.counterfactual,
+                counterfactual_preds,
+                affected,
+                member_impacts,
+            )
+        }
     )
 
 

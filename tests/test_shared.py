@@ -19,6 +19,7 @@ from backend.models.shared import SharedModel
 from backend.models.splits import first_attempts_on, time_split
 from backend.simulation.engine import simulate
 from backend.simulation.interventions import apply_scenario, observe
+from backend.simulation.metrics import impact_interval
 from backend.simulation.scenarios import Scenario
 
 VOCAB = [len(v) for v in CATEGORIES.values()]
@@ -160,6 +161,32 @@ def test_shared_model_plugs_into_engine(dataset, shared):
     result = simulate(dataset, cf, shared)
     assert result.source == "shared_representation"
     assert result.counterfactual.transactions == result.baseline.transactions
+
+
+def test_ensemble_spread_widens_the_shared_models_interval(dataset, shared):
+    """Members trained from different seeds disagree, so the interval must be wider than the
+    bootstrap-only one, and must still contain the reported impact."""
+    scenario = Scenario.model_validate(
+        {"interventions": [{"type": "issuer_degradation", "issuer": "HDFC",
+                            "method": "UPI", "success_rate_delta": -0.15}]}
+    )
+    cf = apply_scenario(dataset, scenario, observe(dataset))
+    result = simulate(dataset, cf, shared)
+    with_members = result.interval
+    # A single member is a point estimate with no ensemble term.
+    alone = impact_interval(
+        cf.baseline,
+        shared.predict(cf.baseline),
+        cf.counterfactual,
+        shared.predict(cf.counterfactual),
+        int(cf.affected.sum()),
+        member_impacts=[],
+        n_bootstrap=20,
+    )
+    assert with_members is not None
+    low, high = with_members.success_rate_delta_pp
+    assert low <= result.impact.success_rate_delta_pp <= high
+    assert (high - low) >= (alone.success_rate_delta_pp[1] - alone.success_rate_delta_pp[0])
 
 
 def test_checkpointed_members_are_resumed_not_retrained(dataset, train, tiny_config, tmp_path):
