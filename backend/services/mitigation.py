@@ -1,7 +1,7 @@
 """Search for actions that recover a scenario's losses, by simulating each candidate.
 
 Candidates are added to the scenario's own interventions and re-run through the engine:
-- reroutes: move 10/20/30/50% of the most-affected gateway's traffic to each other gateway, over
+- reroutes: move 10-100% of the most-affected gateway's traffic to each other gateway, over
   the scenario's time span. Moving too much onto a gateway saturates it, and the engine's load
   accounting makes that backfire; the search reports it rather than hiding it.
 - method steering, for an issuer degradation scoped to one method: move that issuer's payments on
@@ -26,7 +26,7 @@ from backend.simulation.engine import (
 from backend.simulation.interventions import ObservedEcosystem, apply_scenario
 from backend.simulation.scenarios import GatewayOutage, IssuerDegradation, Scenario
 
-SHARES = (0.1, 0.2, 0.3, 0.5)
+SHARES = (0.1, 0.2, 0.3, 0.5, 0.75, 1.0)
 LABEL = "simulation output"
 
 
