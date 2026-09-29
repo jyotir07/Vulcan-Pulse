@@ -13,7 +13,7 @@ import pandas as pd
 
 from backend.data.generator import Dataset
 from backend.evaluation.scoring import TARGETS
-from backend.simulation.engine import Predictor, ground_truth, simulate
+from backend.simulation.engine import BaselineCache, Predictor, ground_truth, simulate
 from backend.simulation.interventions import ObservedEcosystem, apply_scenario
 from backend.simulation.scenarios import Scenario
 
@@ -53,6 +53,7 @@ def run_grid(
 ) -> pd.DataFrame:
     """Long-format results: one row per (scenario, window, predictor, target)."""
     rows = []
+    cache = BaselineCache()
     for window in windows:
         for name, interventions in grid:
             scenario = Scenario.model_validate(
@@ -72,7 +73,7 @@ def run_grid(
                 "transactions_affected": truth.transactions_affected,
             }
             for predictor in predictors:
-                predicted = simulate(dataset, cf, predictor).impact
+                predicted = simulate(dataset, cf, predictor, cache=cache).impact
                 for target in TARGETS:
                     rows.append(
                         {

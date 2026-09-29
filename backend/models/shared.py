@@ -7,6 +7,10 @@ models (`FeatureBuilder`), so the comparison isolates the representation, not th
 The ensemble prediction is the members' mean; `member_predictions` exposes the spread. Fine-tuning
 keeps every failure and samples successes, reweighting them so probabilities stay calibrated.
 
+Cold start: fine-tuning hides the issuer id on a share of rows, so the model learns to fall back on
+the issuer's attributes (bank type) and the rest of the payment. An issuer absent from training has
+an untrained id embedding, so at prediction time its id is always hidden.
+
 Training can checkpoint each member as it finishes. Members depend only on their own seed, so a
 resumed run gives the same ensemble as an uninterrupted one.
 """
@@ -19,7 +23,8 @@ import numpy as np
 import pandas as pd
 import torch
 
-from backend.config import TrainConfig
+from backend.config import REPO_ROOT, TrainConfig
+from backend.data.catalog import ISSUERS
 from backend.data.dgp import FAILURE_REASONS
 from backend.models.encoder import N_FIELDS, FieldTokenizer, PaymentEncoder
 from backend.models.features import CATEGORIES, FeatureBuilder
@@ -28,6 +33,12 @@ from backend.models.pretrain import PretrainReport, pretrain
 from backend.simulation.metrics import Predictions, ensemble_mean
 
 PREDICT_BATCH = 8192
+
+
+def default_model_dir(suite: str = "main") -> Path:
+    name = "shared_model" if suite == "main" else f"shared_model_{suite}"
+    return REPO_ROOT / "artifacts" / name
+
 ISSUER_FIELD = list(CATEGORIES).index("issuer_id")
 
 
@@ -151,9 +162,12 @@ def _member_report(r: dict) -> MemberReport:
     )
 
 
-def _prepare_checkpoint(directory: Path, config: TrainConfig, train_days: list[str]) -> None:
-    """Refuse to mix members trained under a different config or on different days."""
-    identity = {"config": config.model_dump(), "train_days": train_days}
+def _prepare_checkpoint(
+    directory: Path, config: TrainConfig, train_days: list[str], n_rows: int
+) -> None:
+    """Refuse to mix members trained under a different config or on different rows."""
+    # Suites share training days but not rows, so the row count is part of the identity.
+    identity = {"config": config.model_dump(), "train_days": train_days, "n_rows": n_rows}
     path = directory / "checkpoint.json"
     if path.exists():
         if json.loads(path.read_text(encoding="utf-8")) != identity:
@@ -225,6 +239,7 @@ class SharedModel:
     config: TrainConfig
     reports: list[MemberReport]
     train_days: list[str]
+    known_issuers: list[int]
     name: str = "shared_representation"
 
     @classmethod
@@ -268,7 +283,7 @@ class SharedModel:
         base_rate = float(data.success.mean())
         train_days = sorted({d.isoformat() for d in train["timestamp"].dt.date})
         if checkpoint_dir is not None:
-            _prepare_checkpoint(checkpoint_dir, config, train_days)
+            _prepare_checkpoint(checkpoint_dir, config, train_days, len(train))
 
         members, reports = [], []
         for k in range(config.ensemble_size):
@@ -301,10 +316,15 @@ class SharedModel:
             config=config,
             reports=reports,
             train_days=train_days,
+            known_issuers=sorted(int(i) for i in train["issuer_id"].unique()),
         )
 
     def member_predictions(self, frame: pd.DataFrame) -> list[Predictions]:
         codes, numeric = self.tokenizer(self.features(frame))
+        mask = torch.zeros(len(codes), N_FIELDS, dtype=torch.bool)
+        mask[:, ISSUER_FIELD] = torch.from_numpy(
+            ~frame["issuer_id"].isin(self.known_issuers).to_numpy()
+        )
         out = []
         for member in self.members:
             member.eval()
@@ -312,7 +332,7 @@ class SharedModel:
             with torch.inference_mode():
                 for start in range(0, len(codes), PREDICT_BATCH):
                     sl = slice(start, start + PREDICT_BATCH)
-                    parts.append(member(codes[sl], numeric[sl]))
+                    parts.append(member(codes[sl], numeric[sl], mask[sl]))
             p_success = torch.sigmoid(torch.cat([p["success_logit"] for p in parts]))
             reason = torch.softmax(torch.cat([p["reason_logits"] for p in parts]), dim=-1)
             mu = torch.cat([p["latency_mu"] for p in parts]).double().numpy()
@@ -342,6 +362,7 @@ class SharedModel:
             "latency_mean": self.latency_mean,
             "latency_std": self.latency_std,
             "train_days": self.train_days,
+            "known_issuers": self.known_issuers,
             "reports": [asdict(r) for r in self.reports],
         }
         (directory / "model.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
@@ -376,4 +397,6 @@ class SharedModel:
             config=config,
             reports=reports,
             train_days=meta["train_days"],
+            # Models saved before cold-start support were trained on every issuer.
+            known_issuers=meta.get("known_issuers", list(range(len(ISSUERS)))),
         )

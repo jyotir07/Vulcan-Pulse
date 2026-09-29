@@ -20,7 +20,7 @@ A scenario is one or more interventions applied together. Every intervention acc
 | `issuer_degradation` | `issuer`, optional `method`, `success_rate_delta` | Issuer success rate drops by an **absolute** amount: −0.15 means 15 percentage points |
 | `gateway_outage` | `gateway` | The gateway fails every payment routed to it |
 | `traffic_change` | optional `segment` (a method), `volume_delta` | Demand changes by that fraction. New demand is resampled from existing demand in the same segment and time span |
-| `method_shift` | `from`, `to`, `percentage` | That share of `from` payments switch method. If the gateway can't take the new method, the payment is rerouted by the usual routing shares |
+| `method_shift` | `from`, `to`, `percentage`, optional `issuer` | That share of `from` payments switch method; with `issuer`, only that bank's payments. If the gateway can't take the new method, the payment is rerouted by the usual routing shares |
 | `routing_change` | `source_gateway`, `target_gateway`, `traffic_percentage` | That share of the source gateway's traffic moves to the target. Only payments the target supports are moved |
 
 Unknown issuers or gateways, out-of-range values and unknown fields are rejected at validation.
@@ -61,6 +61,15 @@ For a changed context, the engine recomputes features as follows:
 The observed health feature lags, because it is a 15-minute trailing rate. The scenario states
 the new state directly, though, so applying it at once gives a better estimate than simulating
 the lag. With a lag, a short outage would be mostly invisible to the model.
+
+## Prediction reuse
+
+`predict_scenario` sends only the counterfactual rows whose inputs changed (the `affected` rows)
+through the model. Every other row has exactly its baseline inputs, and every predictor scores
+rows independently, so its baseline prediction is reused. A `BaselineCache` also keeps each
+window's baseline predictions per predictor, since the baseline is the same for every scenario on
+that day. Together they cut an ensemble scenario run from about 73 s to about 20 s in the
+evaluation grids; both are tested to give the same numbers as predicting everything.
 
 ## Ground truth
 

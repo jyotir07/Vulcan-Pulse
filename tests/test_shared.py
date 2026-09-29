@@ -210,3 +210,21 @@ def test_checkpointed_members_are_resumed_not_retrained(dataset, train, tiny_con
     other = config.model_copy(update={"seed": config.seed + 1})
     with pytest.raises(ValueError, match="different config"):
         SharedModel.fit(train, dataset.customers, dataset.merchants, other, checkpoint_dir=tmp_path)
+
+
+def test_unseen_issuer_is_hidden_not_looked_up(dataset, train, tiny_config):
+    """A model trained without an issuer predicts its payments from attributes alone."""
+    yes_bank, idfc = 8, 9  # both private banks
+    model = SharedModel.fit(
+        train[~train["issuer_id"].isin([yes_bank, idfc])],
+        dataset.customers,
+        dataset.merchants,
+        tiny_config.model_copy(update={"ensemble_size": 1, "pretrain_epochs": 0}),
+    )
+    assert yes_bank not in model.known_issuers and idfc not in model.known_issuers
+    rows = train[train["issuer_id"] == yes_bank].head(500)
+    # Swapping one unseen issuer for another of the same bank type changes nothing: both hidden.
+    a = model.predict(rows).p_success
+    b = model.predict(rows.assign(issuer_id=idfc)).p_success
+    assert np.isfinite(a).all()
+    assert np.allclose(a, b)
