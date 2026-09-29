@@ -25,7 +25,7 @@ from backend.models.encoder import N_FIELDS, FieldTokenizer, PaymentEncoder
 from backend.models.features import CATEGORIES, FeatureBuilder
 from backend.models.heads import OutcomeHeads, outcome_loss
 from backend.models.pretrain import PretrainReport, pretrain
-from backend.simulation.metrics import Predictions
+from backend.simulation.metrics import Predictions, ensemble_mean
 
 PREDICT_BATCH = 8192
 ISSUER_FIELD = list(CATEGORIES).index("issuer_id")
@@ -328,16 +328,7 @@ class SharedModel:
         return out
 
     def predict(self, frame: pd.DataFrame) -> Predictions:
-        members = self.member_predictions(frame)
-        log_median = np.stack([np.log(m.latency_median_ms) for m in members])
-        sigma = np.stack([m.latency_log_sigma for m in members])
-        return Predictions(
-            p_success=np.mean([m.p_success for m in members], axis=0),
-            reason_probs=np.mean([m.reason_probs for m in members], axis=0),
-            latency_median_ms=np.exp(log_median.mean(axis=0)),
-            # Moment-matched spread of the members' log-latency mixture.
-            latency_log_sigma=np.sqrt((sigma**2).mean(axis=0) + log_median.var(axis=0)),
-        )
+        return ensemble_mean(self.member_predictions(frame))
 
     def save(self, directory: Path) -> None:
         directory.mkdir(parents=True, exist_ok=True)

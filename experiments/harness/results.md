@@ -16,24 +16,34 @@ MAE with a 95% bootstrap interval. Relative error and sign accuracy only count s
 |---|---|---|---|---|---|---|---|
 | failures_delta | in_range | independent_ml | 49 | 134.841 [68.319, 209.409] | 291.478 | 0.349 | 0.97 |
 | failures_delta | in_range | rule_baseline | 49 | 82.175 [35.389, 145.599] | 216.046 | 0.165 | 1.00 |
+| failures_delta | in_range | shared_representation | 49 | 112.905 [57.220, 173.405] | 243.926 | 0.304 | 1.00 |
 | failures_delta | out_of_range | independent_ml | 35 | 801.230 [317.012, 1,387.086] | 1,975.256 | 0.934 | 0.83 |
 | failures_delta | out_of_range | rule_baseline | 35 | 479.753 [44.136, 1,056.850] | 1,735.915 | 0.030 | 1.00 |
+| failures_delta | out_of_range | shared_representation | 35 | 704.545 [277.273, 1,210.223] | 1,725.997 | 0.734 | 1.00 |
 | gmv_at_risk | in_range | independent_ml | 49 | 405,696.782 [226,657.637, 625,811.176] | 834,686.767 | 0.668 | 0.85 |
 | gmv_at_risk | in_range | rule_baseline | 49 | 286,248.622 [145,188.210, 476,846.854] | 662,755.770 | 0.407 | 0.73 |
+| gmv_at_risk | in_range | shared_representation | 49 | 346,820.571 [196,079.600, 512,735.670] | 666,888.232 | 0.700 | 0.73 |
 | gmv_at_risk | out_of_range | independent_ml | 35 | 2,466,717.851 [965,640.730, 4,282,273.322] | 6,085,037.211 | 0.950 | 0.93 |
 | gmv_at_risk | out_of_range | rule_baseline | 35 | 1,435,498.763 [159,971.030, 3,123,563.257] | 5,101,905.522 | 0.049 | 1.00 |
+| gmv_at_risk | out_of_range | shared_representation | 35 | 2,097,102.491 [823,730.857, 3,597,424.962] | 5,100,679.089 | 0.724 | 1.00 |
 | p95_latency_delta_ms | in_range | independent_ml | 49 | 310.950 [93.166, 655.936] | 1,036.677 | 0.293 | 1.00 |
 | p95_latency_delta_ms | in_range | rule_baseline | 49 | 347.532 [108.183, 721.532] | 1,126.730 | 0.313 | 0.93 |
+| p95_latency_delta_ms | in_range | shared_representation | 49 | 265.698 [77.082, 579.146] | 923.948 | 0.245 | 1.00 |
 | p95_latency_delta_ms | out_of_range | independent_ml | 35 | 1,307.287 [402.100, 2,389.664] | 3,405.128 | 0.974 | 1.00 |
 | p95_latency_delta_ms | out_of_range | rule_baseline | 35 | 1,369.671 [434.235, 2,491.005] | 3,552.443 | 1.000 | 0.17 |
+| p95_latency_delta_ms | out_of_range | shared_representation | 35 | 1,140.319 [347.830, 2,063.669] | 2,951.082 | 0.744 | 1.00 |
 | success_rate_delta_pp | in_range | independent_ml | 49 | 0.337 [0.181, 0.513] | 0.682 | 0.701 | 0.91 |
 | success_rate_delta_pp | in_range | rule_baseline | 49 | 0.206 [0.093, 0.361] | 0.518 | 0.306 | 1.00 |
+| success_rate_delta_pp | in_range | shared_representation | 49 | 0.288 [0.149, 0.438] | 0.595 | 0.652 | 1.00 |
 | success_rate_delta_pp | out_of_range | independent_ml | 35 | 1.772 [0.998, 2.696] | 3.238 | 0.934 | 0.85 |
 | success_rate_delta_pp | out_of_range | rule_baseline | 35 | 0.827 [0.142, 1.667] | 2.635 | 0.030 | 1.00 |
+| success_rate_delta_pp | out_of_range | shared_representation | 35 | 1.568 [0.866, 2.383] | 2.875 | 0.733 | 1.00 |
 | timeout_rate_delta_pp | in_range | independent_ml | 49 | 0.301 [0.155, 0.485] | 0.652 | 0.585 | 0.84 |
 | timeout_rate_delta_pp | in_range | rule_baseline | 49 | 0.308 [0.125, 0.543] | 0.801 | 0.319 | 0.97 |
+| timeout_rate_delta_pp | in_range | shared_representation | 49 | 0.254 [0.132, 0.409] | 0.547 | 0.424 | 0.97 |
 | timeout_rate_delta_pp | out_of_range | independent_ml | 35 | 1.594 [0.827, 2.535] | 3.184 | 0.915 | 0.82 |
 | timeout_rate_delta_pp | out_of_range | rule_baseline | 35 | 1.347 [0.450, 2.459] | 3.547 | 0.454 | 1.00 |
+| timeout_rate_delta_pp | out_of_range | shared_representation | 35 | 1.405 [0.736, 2.224] | 2.791 | 0.765 | 1.00 |
 
 ## Success-rate error by scenario type (pp)
 
@@ -41,16 +51,22 @@ MAE with a 95% bootstrap interval. Relative error and sign accuracy only count s
 |---|---|---|---|---|---|
 | combined | independent_ml | 4 | 2.143 [1.509, 2.784] | 0.776 | 1.00 |
 | combined | rule_baseline | 4 | 1.331 [0.043, 2.619] | 0.362 | 1.00 |
+| combined | shared_representation | 4 | 2.045 [1.443, 2.661] | 0.740 | 1.00 |
 | gateway_outage | independent_ml | 16 | 1.060 [0.656, 1.502] | 0.930 | 1.00 |
 | gateway_outage | rule_baseline | 16 | 0.007 [0.004, 0.010] | 0.003 | 1.00 |
+| gateway_outage | shared_representation | 16 | 0.826 [0.517, 1.163] | 0.719 | 1.00 |
 | issuer_degradation | independent_ml | 28 | 0.681 [0.286, 1.184] | 0.998 | 0.70 |
 | issuer_degradation | rule_baseline | 28 | 0.024 [0.013, 0.040] | 0.044 | 1.00 |
+| issuer_degradation | shared_representation | 28 | 0.679 [0.286, 1.180] | 0.995 | 1.00 |
 | method_shift | independent_ml | 10 | 0.020 [0.012, 0.029] | 0.104 | 1.00 |
 | method_shift | rule_baseline | 10 | 0.083 [0.049, 0.125] | 0.524 | 1.00 |
+| method_shift | shared_representation | 10 | 0.030 [0.021, 0.039] | 0.062 | 1.00 |
 | routing_change | independent_ml | 12 | 0.555 [0.155, 1.042] | 0.521 | 1.00 |
 | routing_change | rule_baseline | 12 | 0.569 [0.170, 1.045] | 0.549 | 1.00 |
+| routing_change | shared_representation | 12 | 0.444 [0.091, 0.867] | 0.397 | 1.00 |
 | traffic_change | independent_ml | 14 | 1.933 [0.224, 4.288] | 0.537 | 0.86 |
 | traffic_change | rule_baseline | 14 | 1.804 [0.217, 3.964] | 0.535 | 1.00 |
+| traffic_change | shared_representation | 14 | 1.641 [0.140, 3.717] | 0.416 | 1.00 |
 
 ## Transaction-level predictions on the test period
 
@@ -60,4 +76,17 @@ MAE with a 95% bootstrap interval. Relative error and sign accuracy only count s
 |---|---|---|---|---|---|---|
 | rule_baseline | 0.5159 | 0.03807 | 0.1894 | 0.9603 / 0.9618 | 1.784 | 0.320 |
 | independent_ml | 0.5905 | 0.03653 | 0.1599 | 0.9629 / 0.9618 | 1.730 | 0.300 |
+| shared_representation | 0.5944 | 0.03654 | 0.1599 | 0.9618 / 0.9618 | 1.718 | 0.301 |
 | true_probability | 0.6009 | 0.03640 | 0.1591 | 0.9627 / 0.9618 | – | – |
+
+## Shared representation training
+
+Masked-field accuracy on held-out training rows, against always guessing each field's most common value; fine-tuning validation loss per epoch.
+
+| Seed | Masked-field acc. | Frequency baseline | Fine-tune val loss | Best epoch |
+|---|---|---|---|---|
+| 42 | 0.530 | 0.386 | 0.3579, 0.3549, 0.3524, 0.3525 | 2 |
+| 43 | 0.528 | 0.385 | 0.3564, 0.3523, 0.3534 | 1 |
+| 44 | 0.528 | 0.386 | 0.3559, 0.3515, 0.3529 | 1 |
+| 45 | 0.528 | 0.385 | 0.3604, 0.3553, 0.3519, 0.3519 | 2 |
+| 46 | 0.528 | 0.386 | 0.3635, 0.3536, 0.3505, 0.3504 | 3 |

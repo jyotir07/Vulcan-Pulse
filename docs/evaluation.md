@@ -37,8 +37,9 @@ one row per estimate in `scenario_results.csv`.
 
 | Name | What it is |
 |---|---|
-| `rule_baseline` | Historical success rate per (issuer, method, gateway, 4-hour block), scaled by current ÷ normal health ratios and a load-band factor (`models/rule_baseline.py`) |
+| `rule_baseline` | Historical success rate per (issuer, method, gateway, 4-hour block), scaled by current / normal health ratios and a load-band factor (`models/rule_baseline.py`) |
 | `independent_ml` | Three separate gradient-boosted tree models for success, failure reason and log latency, on transaction fields, observed state and entity attributes (`models/independent.py`) |
+| `shared_representation` | Ensemble of five Set Transformer encoders, masked-field pretrained then fine-tuned jointly on the three outcomes (`models/shared.py`, trained by `scripts/train.py`) |
 | `true_probability` | The outcome process's own success probability. A reference for the best achievable transaction-level score, never a model input |
 
 ## Results
@@ -106,9 +107,9 @@ them.
 
 ## Implications for the shared representation (Phase 4)
 
-A Set Transformer trained on the same observed data will face the same identification problem on
-health-driven interventions. Its extra capacity does not create signal that the data lacks. The
-honest test of the Vulcan-style representation is therefore:
+A Set Transformer trained on the same observed data faces the same identification problem on
+health-driven interventions. Its extra capacity does not create signal the data lacks. The honest
+test of the Vulcan-style representation is therefore:
 - whether it improves on load, routing and combined scenarios, where the effect *is* in the
   data;
 - whether it matches the trees at the transaction level;
@@ -117,3 +118,98 @@ honest test of the Vulcan-style representation is therefore:
 It should not be expected to beat a structural rule on degradations. How much natural incident
 variation training data needs before learned models catch up is a question worth answering
 directly, as an experiment.
+
+## The shared representation, measured
+
+Trained by `python scripts/train.py`: five members, `d_model` 64, two set-attention blocks, masked-
+field pretraining then four fine-tuning epochs. 84 minutes on 8 CPU threads.
+
+**Pretraining works.** Masked-field accuracy is 0.528 against a 0.386 frequency baseline, and
+pretraining loss falls within two epochs (1.393 to 1.269). The encoder learns the field
+co-occurrences before it sees an outcome.
+
+The per-field breakdown is the interesting part, because it shows where the structure is:
+
+| Field | Masked acc. | Frequency | Gain |
+|---|---|---|---|
+| merchant_category | 0.591 | 0.152 | +0.439 |
+| log_merchant_aov | 0.401 | 0.064 | +0.337 |
+| customer_segment | 0.873 | 0.528 | +0.345 |
+| bank_type | 0.887 | 0.585 | +0.302 |
+| is_peak | 0.950 | 0.700 | +0.251 |
+| gateway_utilization | 0.241 | 0.067 | +0.174 |
+| online_merchant | 0.954 | 0.764 | +0.190 |
+| hour | 0.253 | 0.102 | +0.151 |
+| issuer_id | 0.356 | 0.206 | +0.150 |
+| issuer_health | 0.162 | 0.065 | +0.097 |
+| is_new_device | 1.000 | 1.000 | +0.000 |
+
+Category, amount, segment and bank type are largely predictable from the other fields, as
+expected. Note `gateway_utilization` at 0.241 against 0.067: the encoder *can* infer load, and it
+does. What it cannot do is turn a health number into a success probability, because in the
+observed data the two are barely associated — which is the whole of the Phase 3 finding, visible
+here in the pretraining loss. `is_new_device` adds nothing over its own base rate; that field is
+a deterministic function of its neighbours.
+
+**At the transaction level it ties the trees and edges past them.** AUC 0.5944 against 0.5905 for
+the independent models and a 0.6009 ceiling; Brier and log loss are equal to four decimal places;
+reason log loss is the best of the three (1.718 against 1.730). So the representation costs
+nothing in per-payment accuracy.
+
+**On counterfactuals it wins where the effect is in the data, and not otherwise.** Success-rate
+MAE in pp:
+
+| Scenario type | rules | independent ML | shared |
+|---|---|---|---|
+| routing_change | 0.569 | 0.555 | **0.444** |
+| traffic_change | 1.804 | 1.933 | **1.641** |
+| method_shift | 0.083 | **0.020** | 0.030 |
+| combined | **1.331** | 2.143 | 2.045 |
+| gateway_outage | **0.007** | 1.060 | 0.826 |
+| issuer_degradation | **0.024** | 0.681 | 0.679 |
+
+This is the pattern Phase 3 predicted. On routing and traffic — where the true response runs
+through nonlinear load saturation and the data contains the relevant variation — the shared
+representation is the best of the three, and it keeps its advantage out of range. On degradation
+and outage it is barely better than the trees, and both remain an order of magnitude worse than
+the rule baseline, for the same reason as before: degraded states are too rare in training for any
+model to learn the health-to-success slope. It gets the *sign* right on every degradation where
+the trees get it wrong 30% of the time, which is a real gain, but it is not a slope.
+
+**P95 latency improves out of range**, from 1,307 ms to 1,140 ms, the best of the three. Neither
+learned model ties latency to timeouts, so an outage's latency jump stays hard to predict.
+
+**Net effect on the headline numbers**, success-rate MAE: in range 0.206 (rules), 0.288 (shared),
+0.337 (independent ML); out of range 0.827, 1.568, 1.772. The shared representation sits between
+the rules and the trees overall, and it is the best learned model everywhere.
+
+**Cold start is untested here.** The plan predicted the shared representation would win there,
+via attribute-only fallbacks for unseen entities. That experiment is Phase 5, and these numbers
+say nothing about it.
+
+### What this does not show
+
+The shared model trains on the same observations as the trees, so it inherits the same ceiling on
+health-driven interventions. More capacity did not buy identification. If the shared
+representation is to beat a structural rule on degradations, the fix is in the data — more
+natural incident variation, or explicit supervision for the health-to-success slope — not in the
+model.
+
+## Uncertainty
+
+`simulate` reports a 90% interval per impact field for ensemble predictors, from two independent
+sources whose variances add (`simulation/metrics.py`, `impact_interval`):
+
+- **model uncertainty**: the spread of the five members' own impact estimates;
+- **sampling uncertainty**: a bootstrap that resamples five-minute blocks, not rows, since
+  transactions in the same block share load and issuer health.
+
+Both frames are resampled on the same drawn blocks, so baseline and counterfactual stay paired in
+time. Bootstrap draws are computed from per-block sums, so a resample is a matrix product rather
+than a re-scoring of 30,000 rows; that plus predicting the members once instead of twice brings
+the interval's cost to about 3 seconds on a 31,000-transaction day, against 54 seconds for the
+two ensemble passes it rides on.
+
+Whether these intervals are honest is Phase 5's calibration experiment: it checks how often the
+true impact lands inside the predicted interval. Do not read a narrow interval as a validated one
+until then.
