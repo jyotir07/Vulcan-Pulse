@@ -91,6 +91,12 @@ class RuleBaseline:
             .reindex(index=range(n_i), columns=range(n_m))
             .to_numpy()
         )
+        # An issuer never seen in training is compared against the method's typical health, the
+        # same fallback its success rate gets through shrinkage.
+        method_health = train.groupby(c["method"])["issuer_health"].mean().reindex(range(n_m))
+        normal_issuer_health = np.where(
+            np.isnan(normal_issuer_health), method_health.to_numpy()[None, :], normal_issuer_health
+        )
         normal_gateway_health = (
             train.groupby(c["gateway"])["gateway_health"].mean().reindex(range(n_g)).to_numpy()
         )

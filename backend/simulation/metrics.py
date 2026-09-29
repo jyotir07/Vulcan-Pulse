@@ -57,6 +57,14 @@ class Predictions:
         if np.any((self.p_success < 0) | (self.p_success > 1)):
             raise ValueError("p_success must be within [0, 1]")
 
+    def take(self, rows: np.ndarray) -> "Predictions":
+        return Predictions(
+            p_success=self.p_success[rows],
+            reason_probs=self.reason_probs[rows],
+            latency_median_ms=self.latency_median_ms[rows],
+            latency_log_sigma=self.latency_log_sigma[rows],
+        )
+
 
 class Metrics(BaseModel):
     transactions: int

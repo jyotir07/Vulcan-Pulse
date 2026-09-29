@@ -7,7 +7,7 @@ import pytest
 from backend.data.catalog import GATEWAYS, METHODS
 from backend.models.rule_baseline import RuleBaseline
 from backend.models.splits import first_attempts_excluding
-from backend.simulation.engine import ground_truth, simulate
+from backend.simulation.engine import BaselineCache, ground_truth, predict_scenario, simulate
 from backend.simulation.interventions import (
     WARMUP_MINUTES,
     apply_scenario,
@@ -262,3 +262,42 @@ def test_ensemble_gets_an_interval_around_its_impact(dataset, observed, ensemble
     # The same scenario, without the interval, must report the same impact: the members are
     # averaged either way.
     assert simulate(dataset, cf, ensemble, with_interval=False).impact == result.impact
+
+
+@pytest.mark.parametrize(
+    "iv",
+    [
+        _degradation(),
+        {"type": "traffic_change", "segment": "UPI", "volume_delta": 0.5},
+        {"type": "method_shift", "from": "CARD", "to": "UPI", "percentage": 0.3},
+    ],
+)
+def test_reusing_unchanged_rows_matches_predicting_everything(dataset, observed, ensemble, iv):
+    cf = _apply(dataset, observed, iv)
+    spliced = predict_scenario(cf, ensemble)
+    full = ensemble.member_predictions(cf.counterfactual)
+    for (_, member), expected in zip(spliced.members, full, strict=True):
+        assert np.allclose(member.p_success, expected.p_success)
+        assert np.allclose(member.reason_probs, expected.reason_probs)
+        assert np.allclose(member.latency_median_ms, expected.latency_median_ms)
+
+
+def test_baseline_cache_predicts_a_window_once(dataset, observed, rules):
+    calls = []
+
+    class Counting:
+        name = "counting"
+
+        def predict(self, frame):
+            calls.append(len(frame))
+            return rules.predict(frame)
+
+    predictor, cache = Counting(), BaselineCache()
+    first = _apply(dataset, observed, _degradation())
+    second = _apply(dataset, observed, _degradation(-0.3))
+    a = simulate(dataset, first, predictor, cache=cache)
+    b = simulate(dataset, second, predictor, cache=cache)
+    assert calls.count(len(first.baseline)) == 1
+    assert a.baseline == b.baseline
+    assert simulate(dataset, second, rules).impact == b.impact
+

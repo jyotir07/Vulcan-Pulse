@@ -172,3 +172,34 @@ def test_run_grid_long_format(dataset, split, train):
     assert outage["truth"].iloc[0] < 0
     # An outage drives gateway health to 0, far outside anything seen in training.
     assert outage["range"].iloc[0] == "out_of_range"
+
+
+def test_cold_start_suite_never_sees_held_out_entities(dataset, split):
+    from backend.models.splits import entity_holdout, suite_training_rows
+
+    holdout = entity_holdout(dataset)
+    train = suite_training_rows(dataset, split, "cold_start")
+    assert not holdout.involved(train).any()
+    assert len(holdout.issuers) == 2
+    assert np.array_equal(holdout.merchants, entity_holdout(dataset).merchants)
+    full = suite_training_rows(dataset, split, "main")
+    assert holdout.involved(full).any()
+
+
+def test_normal_only_suite_has_no_peak_or_festival_rows(dataset, split):
+    from backend.models.splits import suite_training_rows
+
+    train = suite_training_rows(dataset, split, "normal_only")
+    assert not train["is_peak"].any() and not train["is_festival"].any()
+    assert len(train) > 0
+
+
+def test_rule_baseline_scores_an_issuer_it_never_saw(dataset, split):
+    from backend.models.splits import entity_holdout, suite_training_rows
+
+    holdout = entity_holdout(dataset)
+    rules = RuleBaseline.fit(suite_training_rows(dataset, split, "cold_start"))
+    test = first_attempts_on(dataset, split.test_days)
+    unseen = test[holdout.issuer_rows(test)]
+    p = rules.predict(unseen).p_success
+    assert np.isfinite(p).all() and 0.8 < p.mean() < 1.0
